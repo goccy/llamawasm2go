@@ -36,7 +36,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_2_5(m)
 	InitElemSeg_2_6(m)
 	InitElemSeg_2_7(m)
-	m.DataEnd = 8790771
+	m.DataEnd = 8796099
 	initData_0(m)
 	return m
 }
@@ -81,7 +81,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_2_5(m)
 	InitElemSeg_2_6(m)
 	InitElemSeg_2_7(m)
-	m.DataEnd = 8790771
+	m.DataEnd = 8796099
 	return m
 }
 func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, wasmify base.WasmifyImports, memory []byte, memSize uint64, globals []uint64) *base.Module {
@@ -109,14 +109,14 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_2_5(m)
 	InitElemSeg_2_6(m)
 	InitElemSeg_2_7(m)
-	m.DataEnd = 8790771
+	m.DataEnd = 8796099
 	base.RestoreGlobals(m, globals)
 	return m
 }
 func initData_0(m *base.Module) {
-	copy(m.Memory[8388608:], wasm2goData_data_bin[0:190137])
-	copy(m.Memory[8579784:], wasm2goData_data_bin[190137:354558])
-	copy(m.Memory[8745968:], wasm2goData_data_bin[354558:399361])
+	copy(m.Memory[8388608:], wasm2goData_data_bin[0:195465])
+	copy(m.Memory[8585112:], wasm2goData_data_bin[195465:359886])
+	copy(m.Memory[8751296:], wasm2goData_data_bin[359886:404689])
 }
 func Initialize(m *base.Module) {
 	Fn17(m)
