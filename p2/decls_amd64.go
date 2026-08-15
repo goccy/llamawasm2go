@@ -145,6 +145,11 @@ func Fn1125sse(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64,
 func Fn1126(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 func Fn1126avx2(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 func Fn1126sse(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+// gcasmHasAVX512VNNI mirrors base.HasAVX512VNNI for the tile kernel's
+// entry branch (asm reads package-local data only).
+var gcasmHasAVX512VNNI = base.HasAVX512VNNI
+
 func Fn1127nrc2fast(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64)
 func Fn1127(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 func Fn1127avx2(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
