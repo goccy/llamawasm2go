@@ -29,7 +29,14 @@ func Fn1112(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5
 func Fn1113(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 func Fn1115(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 func Fn1117(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+// gcasmHasAVX2 mirrors base.HasAVX2 for the feature-dispatch stubs
+// (asm reads package-local data only).
+var gcasmHasAVX2 = base.HasAVX2
+
 func Fn1123(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+func Fn1123avx2(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+func Fn1123sse(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 func Fn1129(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 func Fn1132(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 func Fn1138(m *base.Module, l0 int64, l1 int64)
