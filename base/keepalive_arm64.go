@@ -32,5 +32,6 @@ func init() {
 	(Wasi_snapshot_preview1Imports)(nil).Path_open64(nil, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 	(Wasi_snapshot_preview1Imports)(nil).Proc_exit64(nil, 0)
 	(Wasi_snapshot_preview1Imports)(nil).Random_get64(nil, 0, 0)
+	(Wasi_snapshot_preview1Imports)(nil).Sched_yield64(nil)
 	(WasmifyImports)(nil).Callback_invoke(nil, 0, 0, 0, 0)
 }
