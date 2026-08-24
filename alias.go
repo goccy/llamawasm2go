@@ -116,8 +116,14 @@ func Fn328(m *base.Module) int32
 //go:linkname Fn329 github.com/goccy/llamawasm2go/p2.Fn329
 func Fn329(m *base.Module)
 
-//go:linkname Fn3040 github.com/goccy/llamawasm2go/p1.Fn3040
-func Fn3040(m *base.Module, l0 int32, l1 int64)
+//go:linkname Fn963 github.com/goccy/llamawasm2go/p2.Fn963
+func Fn963(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn964 github.com/goccy/llamawasm2go/p1.Fn964
+func Fn964(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn3041 github.com/goccy/llamawasm2go/p1.Fn3041
+func Fn3041(m *base.Module, l0 int32, l1 int64)
 
 //go:linkname InitElemSeg_0_0 github.com/goccy/llamawasm2go/p0.InitElemSeg_0_0
 func InitElemSeg_0_0(m *base.Module)
