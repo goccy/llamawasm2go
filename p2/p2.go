@@ -1568,6 +1568,7 @@ func InitElemSeg_2_6(m *base.Module) {
 	m.T0[1695] = Fn2500
 	m.T0[1696] = Fn2598
 	m.T0[1697] = Fn2599
+	m.T0[1698] = Fn2600
 	m.T0[1699] = Fn1615
 	m.T0[1700] = Fn2500
 	m.T0[1701] = Fn2601
@@ -1818,9 +1819,9 @@ func InitElemSeg_2_6(m *base.Module) {
 	m.T0[2043] = Fn1615
 	m.T0[2044] = Fn2500
 	m.T0[2045] = Fn2803
-	m.T0[2047] = Fn2805
 }
 func InitElemSeg_2_7(m *base.Module) {
+	m.T0[2047] = Fn2805
 	m.T0[2048] = Fn1615
 	m.T0[2049] = Fn1615
 	m.T0[2050] = Fn2500

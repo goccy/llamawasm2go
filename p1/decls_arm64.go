@@ -173,6 +173,7 @@ func Fn2297(m *base.Module, l0 int64, l1 int32)
 func Fn2300(m *base.Module, l0 int64, l1 int32, l2 int64)
 func Fn2301(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int32)
 func Fn2302(m *base.Module, l0 int64, l1 int64, l2 int64)
+func Fn2303(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int64)
 func Fn2304(m *base.Module, l0 int64, l1 int64) (r0 int32)
 func Fn2315(m *base.Module, l0 int64, l1 int64)
 func Fn2316(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32)
@@ -251,7 +252,6 @@ func Fn2591(m *base.Module, l0 int64, l1 int64)
 func Fn2593(m *base.Module, l0 int64, l1 int64, l2 int64) (r0 int64)
 func Fn2594(m *base.Module, l0 int64, l1 int64) (r0 int64)
 func Fn2596(m *base.Module, l0 int64, l1 int64)
-func Fn2600(m *base.Module, l0 int64, l1 int64) (r0 int64)
 func Fn2602(m *base.Module, l0 int64, l1 int64)
 func Fn2603(m *base.Module, l0 int64, l1 int64) (r0 int64)
 func Fn2605(m *base.Module, l0 int64, l1 int64)
@@ -6504,6 +6504,13 @@ func gcasmLNgcasmFwdH_base_Simd_p_v128_any_true(a0 int64, a1 int64) int32
 
 func gcasmFwdH_base_Simd_p_v128_any_true(a0 int64, a1 int64) int32 {
 	return gcasmLNgcasmFwdH_base_Simd_p_v128_any_true(a0, a1)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_SpinRelax github.com/goccy/llamawasm2go/base.SpinRelax
+func gcasmLNgcasmFwdH_base_SpinRelax()
+
+func gcasmFwdH_base_SpinRelax() {
+	gcasmLNgcasmFwdH_base_SpinRelax()
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_ThreadSpawn_m64 github.com/goccy/llamawasm2go/base.ThreadSpawn_m64
