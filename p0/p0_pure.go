@@ -93882,6 +93882,7 @@ func Fn798(m *base.Module, l0 int64) {
 	_ = __sa239
 	var __sa240 [2]uint64
 	_ = __sa240
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v2 int32
@@ -171669,6 +171670,10 @@ L1406:
 	goto L1407
 L1407:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v7598 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v7522)+192))))
 	if v7598 == v7585 {
 		goto L1407
@@ -204149,6 +204154,10 @@ L6773:
 	goto L6774
 L6774:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v26487 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v26459)+192))))
 	if v26487 == v26474 {
 		goto L6774
@@ -204199,6 +204208,10 @@ L6783:
 	goto L6784
 L6784:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v26505 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v26466)+192))))
 	if v26505 == v26492 {
 		goto L6784
@@ -213146,6 +213159,10 @@ L8047:
 	goto L8048
 L8048:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v31718 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v31688)+192))))
 	if v31718 == v31705 {
 		goto L8048
@@ -214342,6 +214359,10 @@ L8218:
 	goto L8219
 L8219:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v32325 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v32279)+192))))
 	if v32325 == v32312 {
 		goto L8219
@@ -215048,6 +215069,10 @@ L8318:
 	goto L8319
 L8319:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v32730 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v32684)+192))))
 	if v32730 == v32717 {
 		goto L8319
@@ -215913,6 +215938,10 @@ L8442:
 	goto L8443
 L8443:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v33259 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v33213)+192))))
 	if v33259 == v33246 {
 		goto L8443
@@ -218757,6 +218786,10 @@ L8801:
 	goto L8802
 L8802:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v35167 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v35091)+192))))
 	if v35167 == v35154 {
 		goto L8802
@@ -219464,6 +219497,10 @@ L8900:
 	goto L8901
 L8901:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v35615 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v35539)+192))))
 	if v35615 == v35602 {
 		goto L8901
@@ -227535,6 +227572,10 @@ L10037:
 	goto L10038
 L10038:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v40675 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v40283)+192))))
 	if v40675 == v40662 {
 		goto L10038
@@ -228329,6 +228370,10 @@ L10146:
 	goto L10147
 L10147:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v41370 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v41003)+192))))
 	if v41370 == v41357 {
 		goto L10147
@@ -234931,6 +234976,10 @@ L10988:
 	goto L10989
 L10989:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v44902 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v44572)+192))))
 	if v44902 == v44889 {
 		goto L10989
@@ -235050,6 +235099,10 @@ L11001:
 	goto L11002
 L11002:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v44988 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v44958)+192))))
 	if v44988 == v44975 {
 		goto L11002
@@ -236750,6 +236803,10 @@ L11232:
 	goto L11233
 L11233:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v45968 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v45328)+192))))
 	if v45968 == v45955 {
 		goto L11233
@@ -236867,6 +236924,10 @@ L11244:
 	goto L11245
 L11245:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v46048 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v46020)+192))))
 	if v46048 == v46035 {
 		goto L11245
@@ -239838,6 +239899,10 @@ L11669:
 	goto L11670
 L11670:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v47880 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v47446)+192))))
 	if v47880 == v47867 {
 		goto L11670
@@ -240745,6 +240810,10 @@ L11791:
 	goto L11792
 L11792:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v48651 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v48246)+192))))
 	if v48651 == v48638 {
 		goto L11792
@@ -252612,6 +252681,10 @@ L13643:
 	goto L13644
 L13644:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v55381 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v55266)+192))))
 	if v55381 == v55368 {
 		goto L13644
@@ -297141,6 +297214,10 @@ L19372:
 	goto L19373
 L19373:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v84814 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v84793)+192))))
 	if v84814 == v84801 {
 		goto L19373
@@ -297197,6 +297274,10 @@ L19382:
 	goto L19383
 L19383:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v84833 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v924)+192))))
 	if v84833 == v84820 {
 		goto L19383
@@ -305857,6 +305938,7 @@ func Fn825(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 
 func Fn860(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
 	var __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h, __sv45, __sv45__h, __sv46, __sv46__h, __sv47, __sv47__h, __sv48, __sv48__h, __sv49, __sv49__h, __sv50, __sv50__h, __sv51, __sv51__h, __sv52, __sv52__h, __sv53, __sv53__h, __sv54, __sv54__h, __sv55, __sv55__h, __sv56, __sv56__h, __sv57, __sv57__h, __sv58, __sv58__h, __sv59, __sv59__h, __sv60, __sv60__h, __sv61, __sv61__h, __sv62, __sv62__h, __sv63, __sv63__h, __sv64, __sv64__h, __sv65, __sv65__h, __sv66, __sv66__h, __sv67, __sv67__h, __sv68, __sv68__h, __sv69, __sv69__h, __sv70, __sv70__h, __sv71, __sv71__h, __sv72, __sv72__h, __sv73, __sv73__h, __sv74, __sv74__h, __sv75, __sv75__h, __sv76, __sv76__h, __sv77, __sv77__h, __sv78, __sv78__h uint64
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h, __sv45, __sv45__h, __sv46, __sv46__h, __sv47, __sv47__h, __sv48, __sv48__h, __sv49, __sv49__h, __sv50, __sv50__h, __sv51, __sv51__h, __sv52, __sv52__h, __sv53, __sv53__h, __sv54, __sv54__h, __sv55, __sv55__h, __sv56, __sv56__h, __sv57, __sv57__h, __sv58, __sv58__h, __sv59, __sv59__h, __sv60, __sv60__h, __sv61, __sv61__h, __sv62, __sv62__h, __sv63, __sv63__h, __sv64, __sv64__h, __sv65, __sv65__h, __sv66, __sv66__h, __sv67, __sv67__h, __sv68, __sv68__h, __sv69, __sv69__h, __sv70, __sv70__h, __sv71, __sv71__h, __sv72, __sv72__h, __sv73, __sv73__h, __sv74, __sv74__h, __sv75, __sv75__h, __sv76, __sv76__h, __sv77, __sv77__h, __sv78, __sv78__h
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v4 int32
@@ -307951,6 +308033,10 @@ L112:
 	goto L113
 L113:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v974 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v947)+192))))
 	if v974 == v957 {
 		goto L113
@@ -309409,6 +309495,10 @@ L294:
 	goto L295
 L295:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v4264 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v4237)+192))))
 	if v4264 == v4247 {
 		goto L295
@@ -309926,6 +310016,7 @@ L365:
 func Fn862(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
 	var __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h uint64
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -311582,6 +311673,10 @@ L112:
 	goto L113
 L113:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v410 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v386)+192))))
 	if v410 == v397 {
 		goto L113
@@ -312779,6 +312874,10 @@ L294:
 	goto L295
 L295:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1306 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1225)+192))))
 	if v1306 == v1293 {
 		goto L295
@@ -314217,6 +314316,7 @@ func Fn862l188(m *base.Module) {
 func Fn864(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
 	var __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h uint64
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -315931,6 +316031,10 @@ L112:
 	goto L113
 L113:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v410 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v386)+192))))
 	if v410 == v397 {
 		goto L113
@@ -317196,6 +317300,10 @@ L303:
 	goto L304
 L304:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1333 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1252)+192))))
 	if v1333 == v1320 {
 		goto L304
@@ -318921,6 +319029,7 @@ func Fn864l191(m *base.Module) {
 	return
 }
 func Fn867(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -322823,6 +322932,10 @@ L396:
 	goto L397
 L397:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1038 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1014)+192))))
 	if v1038 == v1025 {
 		goto L397
@@ -323855,6 +323968,10 @@ L588:
 	goto L589
 L589:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1647 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1566)+192))))
 	if v1647 == v1634 {
 		goto L589
@@ -327043,6 +327160,7 @@ func Fn867l449(m *base.Module) {
 	return
 }
 func Fn869(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -330925,6 +331043,10 @@ L396:
 	goto L397
 L397:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1022 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v998)+192))))
 	if v1022 == v1009 {
 		goto L397
@@ -331957,6 +332079,10 @@ L588:
 	goto L589
 L589:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1631 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1550)+192))))
 	if v1631 == v1618 {
 		goto L589
@@ -335334,6 +335460,7 @@ func Fn869l449(m *base.Module) {
 	return
 }
 func Fn871(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -339174,6 +339301,10 @@ L396:
 	goto L397
 L397:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1038 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1014)+192))))
 	if v1038 == v1025 {
 		goto L397
@@ -340258,6 +340389,10 @@ L584:
 	goto L585
 L585:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1706 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1625)+192))))
 	if v1706 == v1693 {
 		goto L585
@@ -343106,6 +343241,7 @@ func Fn871l454(m *base.Module) {
 	return
 }
 func Fn873(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -346924,6 +347060,10 @@ L396:
 	goto L397
 L397:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1021 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v997)+192))))
 	if v1021 == v1008 {
 		goto L397
@@ -348007,6 +348147,10 @@ L584:
 	goto L585
 L585:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1689 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1608)+192))))
 	if v1689 == v1676 {
 		goto L585
@@ -351082,6 +351226,7 @@ func Fn873l454(m *base.Module) {
 func Fn875(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
 	var __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h, __sv45, __sv45__h, __sv46, __sv46__h, __sv47, __sv47__h, __sv48, __sv48__h, __sv49, __sv49__h, __sv50, __sv50__h, __sv51, __sv51__h, __sv52, __sv52__h, __sv53, __sv53__h, __sv54, __sv54__h, __sv55, __sv55__h, __sv56, __sv56__h, __sv57, __sv57__h, __sv58, __sv58__h, __sv59, __sv59__h, __sv60, __sv60__h uint64
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h, __sv45, __sv45__h, __sv46, __sv46__h, __sv47, __sv47__h, __sv48, __sv48__h, __sv49, __sv49__h, __sv50, __sv50__h, __sv51, __sv51__h, __sv52, __sv52__h, __sv53, __sv53__h, __sv54, __sv54__h, __sv55, __sv55__h, __sv56, __sv56__h, __sv57, __sv57__h, __sv58, __sv58__h, __sv59, __sv59__h, __sv60, __sv60__h
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v4 int64
@@ -355624,6 +355769,10 @@ L396:
 	goto L397
 L397:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v2315 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v2288)+192))))
 	if v2315 == v2298 {
 		goto L397
@@ -357173,6 +357322,10 @@ L578:
 	goto L579
 L579:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v6340 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v6313)+192))))
 	if v6340 == v6323 {
 		goto L579
@@ -357605,6 +357758,7 @@ L633:
 func Fn877(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
 	var __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h uint64
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -361679,6 +361833,10 @@ L396:
 	goto L397
 L397:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1022 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v998)+192))))
 	if v1022 == v1009 {
 		goto L397
@@ -363001,6 +363159,10 @@ L578:
 	goto L579
 L579:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v2098 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v2017)+192))))
 	if v2098 == v2085 {
 		goto L579
@@ -364348,6 +364510,7 @@ func Fn877l475(m *base.Module) {
 	return
 }
 func Fn879(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int32
@@ -368226,6 +368389,10 @@ L396:
 	goto L397
 L397:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1022 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v998)+192))))
 	if v1022 == v1009 {
 		goto L397
@@ -369255,6 +369422,10 @@ L615:
 	goto L616
 L616:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1613 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1532)+192))))
 	if v1613 == v1600 {
 		goto L616
@@ -372602,6 +372773,7 @@ func Fn879l500(m *base.Module) {
 func Fn881(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
 	var __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h, __sv45, __sv45__h uint64
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h, __sv45, __sv45__h
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -374672,6 +374844,10 @@ L112:
 	goto L113
 L113:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v410 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v386)+192))))
 	if v410 == v397 {
 		goto L113
@@ -376229,6 +376405,10 @@ L294:
 	goto L295
 L295:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1788 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1707)+192))))
 	if v1788 == v1775 {
 		goto L295
@@ -377132,6 +377312,7 @@ L49:
 	goto L34
 }
 func Fn883(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -378674,6 +378855,10 @@ L112:
 	goto L113
 L113:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v410 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v386)+192))))
 	if v410 == v397 {
 		goto L113
@@ -379755,6 +379940,10 @@ L303:
 	goto L304
 L304:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1054 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v973)+192))))
 	if v1054 == v1041 {
 		goto L304
@@ -382509,6 +382698,7 @@ func Fn883l170(m *base.Module) {
 func Fn885(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
 	var __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h, __sv45, __sv45__h, __sv46, __sv46__h, __sv47, __sv47__h, __sv48, __sv48__h uint64
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h, __sv45, __sv45__h, __sv46, __sv46__h, __sv47, __sv47__h, __sv48, __sv48__h
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -384511,6 +384701,10 @@ L112:
 	goto L113
 L113:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v410 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v386)+192))))
 	if v410 == v397 {
 		goto L113
@@ -386152,6 +386346,10 @@ L318:
 	goto L319
 L319:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1806 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1725)+192))))
 	if v1806 == v1793 {
 		goto L319
@@ -387105,6 +387303,7 @@ L61:
 	goto L34
 }
 func Fn887(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -388649,6 +388848,10 @@ L112:
 	goto L113
 L113:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v410 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v386)+192))))
 	if v410 == v397 {
 		goto L113
@@ -389731,6 +389934,10 @@ L303:
 	goto L304
 L304:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1053 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v972)+192))))
 	if v1053 == v1040 {
 		goto L304
@@ -392473,6 +392680,7 @@ func Fn887l170(m *base.Module) {
 func Fn891(m *base.Module, l0 int64, l1 int64, l2 int64) int32 {
 	var __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h uint64
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = __sv1, __sv1__h, __sv2, __sv2__h, __sv3, __sv3__h, __sv4, __sv4__h, __sv5, __sv5__h, __sv6, __sv6__h, __sv7, __sv7__h, __sv8, __sv8__h, __sv9, __sv9__h, __sv10, __sv10__h, __sv11, __sv11__h, __sv12, __sv12__h, __sv13, __sv13__h, __sv14, __sv14__h, __sv15, __sv15__h, __sv16, __sv16__h, __sv17, __sv17__h, __sv18, __sv18__h, __sv19, __sv19__h, __sv20, __sv20__h, __sv21, __sv21__h, __sv22, __sv22__h, __sv23, __sv23__h, __sv24, __sv24__h, __sv25, __sv25__h, __sv26, __sv26__h, __sv27, __sv27__h, __sv28, __sv28__h, __sv29, __sv29__h, __sv30, __sv30__h, __sv31, __sv31__h, __sv32, __sv32__h, __sv33, __sv33__h, __sv34, __sv34__h, __sv35, __sv35__h, __sv36, __sv36__h, __sv37, __sv37__h, __sv38, __sv38__h, __sv39, __sv39__h, __sv40, __sv40__h, __sv41, __sv41__h, __sv42, __sv42__h, __sv43, __sv43__h, __sv44, __sv44__h
+	var __spinGuard uint32
 	mBase := m.M
 	_ = mBase
 	var v3 int64
@@ -394403,6 +394611,10 @@ L112:
 	goto L113
 L113:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v410 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v386)+192))))
 	if v410 == v397 {
 		goto L113
@@ -395891,6 +396103,10 @@ L294:
 	goto L295
 L295:
 	;
+	__spinGuard++
+	if __spinGuard&16383 == 0 {
+		base.SpinRelax()
+	}
 	v1712 = int32(atomic.LoadUint32((*uint32)(unsafe.Add(mBase, uint64(v1631)+192))))
 	if v1712 == v1699 {
 		goto L295

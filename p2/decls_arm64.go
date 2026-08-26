@@ -1243,7 +1243,6 @@ func Fn2298(m *base.Module, l0 int64) (r0 int64)
 func Fn2299(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64)
 func Fn23(m *base.Module, l0 int64)
 func Fn230(m *base.Module, l0 int64, l1 int64)
-func Fn2303(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int64)
 func Fn2305(m *base.Module, l0 int64, l1 int64)
 func Fn2306(m *base.Module, l0 int64) (r0 int64)
 func Fn2307(m *base.Module, l0 int64)
@@ -1485,6 +1484,7 @@ func Fn2598(m *base.Module, l0 int64, l1 int64)
 func Fn2599(m *base.Module, l0 int64, l1 int64)
 func Fn26(m *base.Module, l0 int64)
 func Fn260(m *base.Module, l0 int64, l1 int64, l2 int32)
+func Fn2600(m *base.Module, l0 int64, l1 int64) (r0 int64)
 func Fn2601(m *base.Module, l0 int64, l1 int64)
 func Fn2604(m *base.Module, l0 int64, l1 int64)
 func Fn2606(m *base.Module, l0 int64, l1 int64) (r0 int64)
@@ -4323,6 +4323,13 @@ func gcasmLNgcasmFwdH_base_Simd_p_v128_any_true(a0 int64, a1 int64) int32
 
 func gcasmFwdH_base_Simd_p_v128_any_true(a0 int64, a1 int64) int32 {
 	return gcasmLNgcasmFwdH_base_Simd_p_v128_any_true(a0, a1)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_SpinRelax github.com/goccy/llamawasm2go/base.SpinRelax
+func gcasmLNgcasmFwdH_base_SpinRelax()
+
+func gcasmFwdH_base_SpinRelax() {
+	gcasmLNgcasmFwdH_base_SpinRelax()
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Wasm_trap_div_zero github.com/goccy/llamawasm2go/base.Wasm_trap_div_zero
