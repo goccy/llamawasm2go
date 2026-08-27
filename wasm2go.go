@@ -62,6 +62,9 @@ func NewWithWASI(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env 
 func New(env base.EnvImports, wasmify base.WasmifyImports) *base.Module {
 	return NewWithWASI(base.DefaultWASI(), env, wasmify)
 }
+
+const InitialMemoryBytes = 9371648
+
 func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, env base.EnvImports, wasmify base.WasmifyImports, memory []byte, memSize uint64) *base.Module {
 	m := &base.Module{Wasi_snapshot_preview1: wasi_snapshot_preview1, Env: env, Wasmify: wasmify}
 	m.Memory = memory
