@@ -481337,8 +481337,6 @@ func Fn2266(m *base.Module, l0 int32) int32 {
 	_ = v151
 	var v152 int64
 	_ = v152
-	var v158 int32
-	_ = v158
 	var v159 int64
 	_ = v159
 	var v162 int32
@@ -481450,11 +481448,9 @@ func Fn2266(m *base.Module, l0 int32) int32 {
 					if v151 != 0 {
 						v152 = m.G1
 						*(*int32)(unsafe.Add(mBase, uint64(v152+int64(560)))) = v151
-						v158 = int32(-1)
 					} else {
-						v158 = int32(0)
 					}
-					if v158 != 0 {
+					if v151 != 0 {
 						v159 = m.G1
 						v162 = *(*int32)(unsafe.Add(mBase, uint64(v159+int64(560))))
 						Fn352(m, v162, int64(8431854))
@@ -481580,11 +481576,9 @@ func Fn2266(m *base.Module, l0 int32) int32 {
 							if v151 != 0 {
 								v152 = m.G1
 								*(*int32)(unsafe.Add(mBase, uint64(v152+int64(560)))) = v151
-								v158 = int32(-1)
 							} else {
-								v158 = int32(0)
 							}
-							if v158 != 0 {
+							if v151 != 0 {
 								v159 = m.G1
 								v162 = *(*int32)(unsafe.Add(mBase, uint64(v159+int64(560))))
 								Fn352(m, v162, int64(8431854))
@@ -481767,11 +481761,9 @@ func Fn2266(m *base.Module, l0 int32) int32 {
 									if v151 != 0 {
 										v152 = m.G1
 										*(*int32)(unsafe.Add(mBase, uint64(v152+int64(560)))) = v151
-										v158 = int32(-1)
 									} else {
-										v158 = int32(0)
 									}
-									if v158 != 0 {
+									if v151 != 0 {
 										v159 = m.G1
 										v162 = *(*int32)(unsafe.Add(mBase, uint64(v159+int64(560))))
 										Fn352(m, v162, int64(8431854))
