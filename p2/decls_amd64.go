@@ -3663,46 +3663,67 @@ func gcasmFwdH_base_Simd_p_f32x4_extract_lane(a0 int64, a1 int64, a2 int32) floa
 	return gcasmLNgcasmFwdH_base_Simd_p_f32x4_extract_lane(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1002 github.com/goccy/llamawasm2go/base.Simd_p_fx1002
-func gcasmLNgcasmFwdH_base_Simd_p_fx1002(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1003 github.com/goccy/llamawasm2go/base.Simd_p_fx1003
+func gcasmLNgcasmFwdH_base_Simd_p_fx1003(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
 
-func gcasmFwdH_base_Simd_p_fx1002(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1002(a0, a1, a2, a3, a4, a5, a6)
+func gcasmFwdH_base_Simd_p_fx1003(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1003(a0, a1, a2, a3, a4)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1003 github.com/goccy/llamawasm2go/base.Simd_p_fx1003
-func gcasmLNgcasmFwdH_base_Simd_p_fx1003(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1004 github.com/goccy/llamawasm2go/base.Simd_p_fx1004
+func gcasmLNgcasmFwdH_base_Simd_p_fx1004(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
 
-func gcasmFwdH_base_Simd_p_fx1003(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1003(a0, a1, a2, a3, a4, a5, a6, a7)
+func gcasmFwdH_base_Simd_p_fx1004(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1004(a0, a1, a2, a3, a4)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1006 github.com/goccy/llamawasm2go/base.Simd_p_fx1006
+func gcasmLNgcasmFwdH_base_Simd_p_fx1006(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
+
+func gcasmFwdH_base_Simd_p_fx1006(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1006(a0, a1, a2, a3, a4)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1007 github.com/goccy/llamawasm2go/base.Simd_p_fx1007
+func gcasmLNgcasmFwdH_base_Simd_p_fx1007(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64)
+
+func gcasmFwdH_base_Simd_p_fx1007(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1007(a0, a1, a2, a3, a4, a5)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1008 github.com/goccy/llamawasm2go/base.Simd_p_fx1008
-func gcasmLNgcasmFwdH_base_Simd_p_fx1008(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx1008(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx1008(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1008(a0, a1, a2, a3, a4)
+func gcasmFwdH_base_Simd_p_fx1008(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1008(a0, a1, a2)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1009 github.com/goccy/llamawasm2go/base.Simd_p_fx1009
-func gcasmLNgcasmFwdH_base_Simd_p_fx1009(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx1009(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx1009(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1009(a0, a1, a2, a3, a4)
+func gcasmFwdH_base_Simd_p_fx1009(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1009(a0, a1, a2)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1010 github.com/goccy/llamawasm2go/base.Simd_p_fx1010
+func gcasmLNgcasmFwdH_base_Simd_p_fx1010(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
+
+func gcasmFwdH_base_Simd_p_fx1010(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1010(a0, a1, a2, a3, a4, a5, a6)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1011 github.com/goccy/llamawasm2go/base.Simd_p_fx1011
-func gcasmLNgcasmFwdH_base_Simd_p_fx1011(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx1011(a0 *base.Module, a1 int64)
 
-func gcasmFwdH_base_Simd_p_fx1011(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1011(a0, a1, a2, a3, a4)
+func gcasmFwdH_base_Simd_p_fx1011(a0 *base.Module, a1 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1011(a0, a1)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1012 github.com/goccy/llamawasm2go/base.Simd_p_fx1012
-func gcasmLNgcasmFwdH_base_Simd_p_fx1012(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx1012(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
 
-func gcasmFwdH_base_Simd_p_fx1012(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1012(a0, a1, a2, a3, a4, a5)
+func gcasmFwdH_base_Simd_p_fx1012(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1012(a0, a1, a2, a3, a4)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1013 github.com/goccy/llamawasm2go/base.Simd_p_fx1013
@@ -3719,53 +3740,32 @@ func gcasmFwdH_base_Simd_p_fx1014(a0 *base.Module, a1 int64, a2 int64) {
 	gcasmLNgcasmFwdH_base_Simd_p_fx1014(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1015 github.com/goccy/llamawasm2go/base.Simd_p_fx1015
-func gcasmLNgcasmFwdH_base_Simd_p_fx1015(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
-
-func gcasmFwdH_base_Simd_p_fx1015(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1015(a0, a1, a2, a3, a4, a5, a6)
-}
-
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1016 github.com/goccy/llamawasm2go/base.Simd_p_fx1016
-func gcasmLNgcasmFwdH_base_Simd_p_fx1016(a0 *base.Module, a1 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx1016(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx1016(a0 *base.Module, a1 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1016(a0, a1)
+func gcasmFwdH_base_Simd_p_fx1016(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1016(a0, a1, a2)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1017 github.com/goccy/llamawasm2go/base.Simd_p_fx1017
-func gcasmLNgcasmFwdH_base_Simd_p_fx1017(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx1017(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx1017(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1017(a0, a1, a2, a3, a4)
-}
-
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1018 github.com/goccy/llamawasm2go/base.Simd_p_fx1018
-func gcasmLNgcasmFwdH_base_Simd_p_fx1018(a0 *base.Module, a1 int64, a2 int64)
-
-func gcasmFwdH_base_Simd_p_fx1018(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1018(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx1017(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1017(a0, a1, a2)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1019 github.com/goccy/llamawasm2go/base.Simd_p_fx1019
-func gcasmLNgcasmFwdH_base_Simd_p_fx1019(a0 *base.Module, a1 int64, a2 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx1019(a0 *base.Module, a1 int64)
 
-func gcasmFwdH_base_Simd_p_fx1019(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1019(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx1019(a0 *base.Module, a1 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1019(a0, a1)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1021 github.com/goccy/llamawasm2go/base.Simd_p_fx1021
-func gcasmLNgcasmFwdH_base_Simd_p_fx1021(a0 *base.Module, a1 int64, a2 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1020 github.com/goccy/llamawasm2go/base.Simd_p_fx1020
+func gcasmLNgcasmFwdH_base_Simd_p_fx1020(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx1021(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1021(a0, a1, a2)
-}
-
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx1022 github.com/goccy/llamawasm2go/base.Simd_p_fx1022
-func gcasmLNgcasmFwdH_base_Simd_p_fx1022(a0 *base.Module, a1 int64, a2 int64)
-
-func gcasmFwdH_base_Simd_p_fx1022(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx1022(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx1020(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx1020(a0, a1, a2)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx11 github.com/goccy/llamawasm2go/base.Simd_p_fx11
@@ -4020,109 +4020,123 @@ func gcasmFwdH_base_Simd_p_fx630(a0 *base.Module, a1 int64, a2 int64) {
 	gcasmLNgcasmFwdH_base_Simd_p_fx630(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx846 github.com/goccy/llamawasm2go/base.Simd_p_fx846
-func gcasmLNgcasmFwdH_base_Simd_p_fx846(a0 *base.Module, a1 int64, a2 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx841 github.com/goccy/llamawasm2go/base.Simd_p_fx841
+func gcasmLNgcasmFwdH_base_Simd_p_fx841(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx846(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx846(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx841(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx841(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx879 github.com/goccy/llamawasm2go/base.Simd_p_fx879
-func gcasmLNgcasmFwdH_base_Simd_p_fx879(a0 *base.Module, a1 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx874 github.com/goccy/llamawasm2go/base.Simd_p_fx874
+func gcasmLNgcasmFwdH_base_Simd_p_fx874(a0 *base.Module, a1 int64)
 
-func gcasmFwdH_base_Simd_p_fx879(a0 *base.Module, a1 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx879(a0, a1)
+func gcasmFwdH_base_Simd_p_fx874(a0 *base.Module, a1 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx874(a0, a1)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx880 github.com/goccy/llamawasm2go/base.Simd_p_fx880
-func gcasmLNgcasmFwdH_base_Simd_p_fx880(a0 *base.Module, a1 int64, a2 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx875 github.com/goccy/llamawasm2go/base.Simd_p_fx875
+func gcasmLNgcasmFwdH_base_Simd_p_fx875(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx880(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx880(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx875(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx875(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx881 github.com/goccy/llamawasm2go/base.Simd_p_fx881
-func gcasmLNgcasmFwdH_base_Simd_p_fx881(a0 *base.Module, a1 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx876 github.com/goccy/llamawasm2go/base.Simd_p_fx876
+func gcasmLNgcasmFwdH_base_Simd_p_fx876(a0 *base.Module, a1 int64)
 
-func gcasmFwdH_base_Simd_p_fx881(a0 *base.Module, a1 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx881(a0, a1)
+func gcasmFwdH_base_Simd_p_fx876(a0 *base.Module, a1 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx876(a0, a1)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx883 github.com/goccy/llamawasm2go/base.Simd_p_fx883
-func gcasmLNgcasmFwdH_base_Simd_p_fx883(a0 *base.Module, a1 int64, a2 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx878 github.com/goccy/llamawasm2go/base.Simd_p_fx878
+func gcasmLNgcasmFwdH_base_Simd_p_fx878(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx883(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx883(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx878(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx878(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx901 github.com/goccy/llamawasm2go/base.Simd_p_fx901
-func gcasmLNgcasmFwdH_base_Simd_p_fx901(a0 *base.Module, a1 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx896 github.com/goccy/llamawasm2go/base.Simd_p_fx896
+func gcasmLNgcasmFwdH_base_Simd_p_fx896(a0 *base.Module, a1 int64)
 
-func gcasmFwdH_base_Simd_p_fx901(a0 *base.Module, a1 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx901(a0, a1)
+func gcasmFwdH_base_Simd_p_fx896(a0 *base.Module, a1 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx896(a0, a1)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx902 github.com/goccy/llamawasm2go/base.Simd_p_fx902
-func gcasmLNgcasmFwdH_base_Simd_p_fx902(a0 *base.Module, a1 int64, a2 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx897 github.com/goccy/llamawasm2go/base.Simd_p_fx897
+func gcasmLNgcasmFwdH_base_Simd_p_fx897(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx902(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx902(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx897(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx897(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx904 github.com/goccy/llamawasm2go/base.Simd_p_fx904
-func gcasmLNgcasmFwdH_base_Simd_p_fx904(a0 *base.Module, a1 int64, a2 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx899 github.com/goccy/llamawasm2go/base.Simd_p_fx899
+func gcasmLNgcasmFwdH_base_Simd_p_fx899(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx904(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx904(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx899(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx899(a0, a1, a2)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx900 github.com/goccy/llamawasm2go/base.Simd_p_fx900
+func gcasmLNgcasmFwdH_base_Simd_p_fx900(a0 *base.Module, a1 int64, a2 int64, a3 int64)
+
+func gcasmFwdH_base_Simd_p_fx900(a0 *base.Module, a1 int64, a2 int64, a3 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx900(a0, a1, a2, a3)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx905 github.com/goccy/llamawasm2go/base.Simd_p_fx905
-func gcasmLNgcasmFwdH_base_Simd_p_fx905(a0 *base.Module, a1 int64, a2 int64, a3 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx905(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
 
-func gcasmFwdH_base_Simd_p_fx905(a0 *base.Module, a1 int64, a2 int64, a3 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx905(a0, a1, a2, a3)
+func gcasmFwdH_base_Simd_p_fx905(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx905(a0, a1, a2, a3, a4, a5, a6)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx910 github.com/goccy/llamawasm2go/base.Simd_p_fx910
-func gcasmLNgcasmFwdH_base_Simd_p_fx910(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx906 github.com/goccy/llamawasm2go/base.Simd_p_fx906
+func gcasmLNgcasmFwdH_base_Simd_p_fx906(a0 *base.Module, a1 int64)
 
-func gcasmFwdH_base_Simd_p_fx910(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx910(a0, a1, a2, a3, a4, a5, a6)
+func gcasmFwdH_base_Simd_p_fx906(a0 *base.Module, a1 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx906(a0, a1)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx907 github.com/goccy/llamawasm2go/base.Simd_p_fx907
+func gcasmLNgcasmFwdH_base_Simd_p_fx907(a0 *base.Module, a1 int64, a2 int64)
+
+func gcasmFwdH_base_Simd_p_fx907(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx907(a0, a1, a2)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx908 github.com/goccy/llamawasm2go/base.Simd_p_fx908
+func gcasmLNgcasmFwdH_base_Simd_p_fx908(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
+
+func gcasmFwdH_base_Simd_p_fx908(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx908(a0, a1, a2, a3, a4)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx909 github.com/goccy/llamawasm2go/base.Simd_p_fx909
+func gcasmLNgcasmFwdH_base_Simd_p_fx909(a0 *base.Module, a1 int64, a2 float32, a3 float32, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64)
+
+func gcasmFwdH_base_Simd_p_fx909(a0 *base.Module, a1 int64, a2 float32, a3 float32, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx909(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx911 github.com/goccy/llamawasm2go/base.Simd_p_fx911
-func gcasmLNgcasmFwdH_base_Simd_p_fx911(a0 *base.Module, a1 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx911(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64)
 
-func gcasmFwdH_base_Simd_p_fx911(a0 *base.Module, a1 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx911(a0, a1)
-}
-
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx912 github.com/goccy/llamawasm2go/base.Simd_p_fx912
-func gcasmLNgcasmFwdH_base_Simd_p_fx912(a0 *base.Module, a1 int64, a2 int64)
-
-func gcasmFwdH_base_Simd_p_fx912(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx912(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx911(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx911(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx913 github.com/goccy/llamawasm2go/base.Simd_p_fx913
-func gcasmLNgcasmFwdH_base_Simd_p_fx913(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx913(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64)
 
-func gcasmFwdH_base_Simd_p_fx913(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx913(a0, a1, a2, a3, a4)
+func gcasmFwdH_base_Simd_p_fx913(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx913(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx914 github.com/goccy/llamawasm2go/base.Simd_p_fx914
-func gcasmLNgcasmFwdH_base_Simd_p_fx914(a0 *base.Module, a1 int64, a2 float32, a3 float32, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx917 github.com/goccy/llamawasm2go/base.Simd_p_fx917
+func gcasmLNgcasmFwdH_base_Simd_p_fx917(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64)
 
-func gcasmFwdH_base_Simd_p_fx914(a0 *base.Module, a1 int64, a2 float32, a3 float32, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx914(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
-}
-
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx916 github.com/goccy/llamawasm2go/base.Simd_p_fx916
-func gcasmLNgcasmFwdH_base_Simd_p_fx916(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64)
-
-func gcasmFwdH_base_Simd_p_fx916(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx916(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9)
+func gcasmFwdH_base_Simd_p_fx917(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx917(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx918 github.com/goccy/llamawasm2go/base.Simd_p_fx918
@@ -4132,60 +4146,81 @@ func gcasmFwdH_base_Simd_p_fx918(a0 *base.Module, a1 int64, a2 int64, a3 int64, 
 	gcasmLNgcasmFwdH_base_Simd_p_fx918(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx922 github.com/goccy/llamawasm2go/base.Simd_p_fx922
-func gcasmLNgcasmFwdH_base_Simd_p_fx922(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx919 github.com/goccy/llamawasm2go/base.Simd_p_fx919
+func gcasmLNgcasmFwdH_base_Simd_p_fx919(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64)
 
-func gcasmFwdH_base_Simd_p_fx922(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx922(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+func gcasmFwdH_base_Simd_p_fx919(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx919(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx923 github.com/goccy/llamawasm2go/base.Simd_p_fx923
-func gcasmLNgcasmFwdH_base_Simd_p_fx923(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx925 github.com/goccy/llamawasm2go/base.Simd_p_fx925
+func gcasmLNgcasmFwdH_base_Simd_p_fx925(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64)
 
-func gcasmFwdH_base_Simd_p_fx923(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx923(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
+func gcasmFwdH_base_Simd_p_fx925(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx925(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx924 github.com/goccy/llamawasm2go/base.Simd_p_fx924
-func gcasmLNgcasmFwdH_base_Simd_p_fx924(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx926 github.com/goccy/llamawasm2go/base.Simd_p_fx926
+func gcasmLNgcasmFwdH_base_Simd_p_fx926(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64)
 
-func gcasmFwdH_base_Simd_p_fx924(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx924(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
+func gcasmFwdH_base_Simd_p_fx926(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx926(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx930 github.com/goccy/llamawasm2go/base.Simd_p_fx930
-func gcasmLNgcasmFwdH_base_Simd_p_fx930(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx927 github.com/goccy/llamawasm2go/base.Simd_p_fx927
+func gcasmLNgcasmFwdH_base_Simd_p_fx927(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64)
 
-func gcasmFwdH_base_Simd_p_fx930(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx930(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11)
+func gcasmFwdH_base_Simd_p_fx927(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx927(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx931 github.com/goccy/llamawasm2go/base.Simd_p_fx931
-func gcasmLNgcasmFwdH_base_Simd_p_fx931(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx928 github.com/goccy/llamawasm2go/base.Simd_p_fx928
+func gcasmLNgcasmFwdH_base_Simd_p_fx928(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
 
-func gcasmFwdH_base_Simd_p_fx931(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx931(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
+func gcasmFwdH_base_Simd_p_fx928(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx928(a0, a1, a2, a3, a4)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx932 github.com/goccy/llamawasm2go/base.Simd_p_fx932
-func gcasmLNgcasmFwdH_base_Simd_p_fx932(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx937 github.com/goccy/llamawasm2go/base.Simd_p_fx937
+func gcasmLNgcasmFwdH_base_Simd_p_fx937(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64)
 
-func gcasmFwdH_base_Simd_p_fx932(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx932(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
+func gcasmFwdH_base_Simd_p_fx937(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx937(a0, a1, a2, a3, a4, a5)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx933 github.com/goccy/llamawasm2go/base.Simd_p_fx933
-func gcasmLNgcasmFwdH_base_Simd_p_fx933(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx938 github.com/goccy/llamawasm2go/base.Simd_p_fx938
+func gcasmLNgcasmFwdH_base_Simd_p_fx938(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
 
-func gcasmFwdH_base_Simd_p_fx933(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx933(a0, a1, a2, a3, a4)
+func gcasmFwdH_base_Simd_p_fx938(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx938(a0, a1, a2, a3, a4, a5, a6)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx939 github.com/goccy/llamawasm2go/base.Simd_p_fx939
+func gcasmLNgcasmFwdH_base_Simd_p_fx939(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64)
+
+func gcasmFwdH_base_Simd_p_fx939(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx939(a0, a1, a2, a3, a4, a5, a6, a7)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx940 github.com/goccy/llamawasm2go/base.Simd_p_fx940
+func gcasmLNgcasmFwdH_base_Simd_p_fx940(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
+
+func gcasmFwdH_base_Simd_p_fx940(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx940(a0, a1, a2, a3, a4, a5, a6)
+}
+
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx941 github.com/goccy/llamawasm2go/base.Simd_p_fx941
+func gcasmLNgcasmFwdH_base_Simd_p_fx941(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64)
+
+func gcasmFwdH_base_Simd_p_fx941(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx941(a0, a1, a2, a3, a4, a5, a6, a7)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx942 github.com/goccy/llamawasm2go/base.Simd_p_fx942
-func gcasmLNgcasmFwdH_base_Simd_p_fx942(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx942(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
 
-func gcasmFwdH_base_Simd_p_fx942(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx942(a0, a1, a2, a3, a4, a5)
+func gcasmFwdH_base_Simd_p_fx942(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx942(a0, a1, a2, a3, a4, a5, a6)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx943 github.com/goccy/llamawasm2go/base.Simd_p_fx943
@@ -4202,88 +4237,67 @@ func gcasmFwdH_base_Simd_p_fx944(a0 *base.Module, a1 int64, a2 int64, a3 int64, 
 	gcasmLNgcasmFwdH_base_Simd_p_fx944(a0, a1, a2, a3, a4, a5, a6, a7)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx945 github.com/goccy/llamawasm2go/base.Simd_p_fx945
-func gcasmLNgcasmFwdH_base_Simd_p_fx945(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
-
-func gcasmFwdH_base_Simd_p_fx945(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx945(a0, a1, a2, a3, a4, a5, a6)
-}
-
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx946 github.com/goccy/llamawasm2go/base.Simd_p_fx946
-func gcasmLNgcasmFwdH_base_Simd_p_fx946(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx946(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx946(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx946(a0, a1, a2, a3, a4, a5, a6, a7)
+func gcasmFwdH_base_Simd_p_fx946(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx946(a0, a1, a2)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx947 github.com/goccy/llamawasm2go/base.Simd_p_fx947
-func gcasmLNgcasmFwdH_base_Simd_p_fx947(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx947(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64)
 
-func gcasmFwdH_base_Simd_p_fx947(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx947(a0, a1, a2, a3, a4, a5, a6)
+func gcasmFwdH_base_Simd_p_fx947(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx947(a0, a1, a2, a3, a4, a5, a6, a7, a8)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx948 github.com/goccy/llamawasm2go/base.Simd_p_fx948
-func gcasmLNgcasmFwdH_base_Simd_p_fx948(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx953 github.com/goccy/llamawasm2go/base.Simd_p_fx953
+func gcasmLNgcasmFwdH_base_Simd_p_fx953(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64, a14 int64, a15 int64)
 
-func gcasmFwdH_base_Simd_p_fx948(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx948(a0, a1, a2, a3, a4, a5, a6)
+func gcasmFwdH_base_Simd_p_fx953(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64, a14 int64, a15 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx953(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx949 github.com/goccy/llamawasm2go/base.Simd_p_fx949
-func gcasmLNgcasmFwdH_base_Simd_p_fx949(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx954 github.com/goccy/llamawasm2go/base.Simd_p_fx954
+func gcasmLNgcasmFwdH_base_Simd_p_fx954(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64, a14 int64, a15 int64)
 
-func gcasmFwdH_base_Simd_p_fx949(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx949(a0, a1, a2, a3, a4, a5, a6, a7)
+func gcasmFwdH_base_Simd_p_fx954(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64, a14 int64, a15 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx954(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx951 github.com/goccy/llamawasm2go/base.Simd_p_fx951
-func gcasmLNgcasmFwdH_base_Simd_p_fx951(a0 *base.Module, a1 int64, a2 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx981 github.com/goccy/llamawasm2go/base.Simd_p_fx981
+func gcasmLNgcasmFwdH_base_Simd_p_fx981(a0 *base.Module, a1 int64, a2 int64, a3 int64)
 
-func gcasmFwdH_base_Simd_p_fx951(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx951(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx981(a0 *base.Module, a1 int64, a2 int64, a3 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx981(a0, a1, a2, a3)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx952 github.com/goccy/llamawasm2go/base.Simd_p_fx952
-func gcasmLNgcasmFwdH_base_Simd_p_fx952(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx993 github.com/goccy/llamawasm2go/base.Simd_p_fx993
+func gcasmLNgcasmFwdH_base_Simd_p_fx993(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx952(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx952(a0, a1, a2, a3, a4, a5, a6, a7, a8)
+func gcasmFwdH_base_Simd_p_fx993(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx993(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx958 github.com/goccy/llamawasm2go/base.Simd_p_fx958
-func gcasmLNgcasmFwdH_base_Simd_p_fx958(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64, a14 int64, a15 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx994 github.com/goccy/llamawasm2go/base.Simd_p_fx994
+func gcasmLNgcasmFwdH_base_Simd_p_fx994(a0 *base.Module, a1 int64, a2 int64)
 
-func gcasmFwdH_base_Simd_p_fx958(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64, a14 int64, a15 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx958(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15)
+func gcasmFwdH_base_Simd_p_fx994(a0 *base.Module, a1 int64, a2 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx994(a0, a1, a2)
 }
 
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx959 github.com/goccy/llamawasm2go/base.Simd_p_fx959
-func gcasmLNgcasmFwdH_base_Simd_p_fx959(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64, a14 int64, a15 int64)
+//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx997 github.com/goccy/llamawasm2go/base.Simd_p_fx997
+func gcasmLNgcasmFwdH_base_Simd_p_fx997(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64)
 
-func gcasmFwdH_base_Simd_p_fx959(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64, a8 int64, a9 int64, a10 int64, a11 int64, a12 int64, a13 int64, a14 int64, a15 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx959(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15)
-}
-
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx986 github.com/goccy/llamawasm2go/base.Simd_p_fx986
-func gcasmLNgcasmFwdH_base_Simd_p_fx986(a0 *base.Module, a1 int64, a2 int64, a3 int64)
-
-func gcasmFwdH_base_Simd_p_fx986(a0 *base.Module, a1 int64, a2 int64, a3 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx986(a0, a1, a2, a3)
+func gcasmFwdH_base_Simd_p_fx997(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx997(a0, a1, a2, a3, a4, a5, a6)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx998 github.com/goccy/llamawasm2go/base.Simd_p_fx998
-func gcasmLNgcasmFwdH_base_Simd_p_fx998(a0 *base.Module, a1 int64, a2 int64)
+func gcasmLNgcasmFwdH_base_Simd_p_fx998(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64)
 
-func gcasmFwdH_base_Simd_p_fx998(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx998(a0, a1, a2)
-}
-
-//go:linkname gcasmLNgcasmFwdH_base_Simd_p_fx999 github.com/goccy/llamawasm2go/base.Simd_p_fx999
-func gcasmLNgcasmFwdH_base_Simd_p_fx999(a0 *base.Module, a1 int64, a2 int64)
-
-func gcasmFwdH_base_Simd_p_fx999(a0 *base.Module, a1 int64, a2 int64) {
-	gcasmLNgcasmFwdH_base_Simd_p_fx999(a0, a1, a2)
+func gcasmFwdH_base_Simd_p_fx998(a0 *base.Module, a1 int64, a2 int64, a3 int64, a4 int64, a5 int64, a6 int64, a7 int64) {
+	gcasmLNgcasmFwdH_base_Simd_p_fx998(a0, a1, a2, a3, a4, a5, a6, a7)
 }
 
 //go:linkname gcasmLNgcasmFwdH_base_Simd_p_i32x4_all_true github.com/goccy/llamawasm2go/base.Simd_p_i32x4_all_true
@@ -15191,7 +15205,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 														v98 = v83
 														v99 = int32(0)
 														if base.B2i32(v42 == v99)|base.B2i32(l5 == int64(0)) == v99 {
-															v107, v107__h = base.Simd_p_fx906(m, int64(l5), int64(v22))
+															v107, v107__h = base.Simd_p_fx901(m, int64(l5), int64(v22))
 														} else {
 															v110, v110__h = 0x0, 0x0
 															base.Simd_p_m64_v128_store(m, v22, int64(144), v110, v110__h)
@@ -15220,7 +15234,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 															*(*int32)(unsafe.Add(mBase, uint64(v98)+92)) = l6
 															*(*int32)(unsafe.Add(mBase, uint64(v98)+88)) = l4
 															*(*int64)(unsafe.Add(mBase, uint64(v98)+80)) = int64(48)
-															v129, v129__h = base.Simd_p_fx907(m, int64(v22), int64(v98))
+															v129, v129__h = base.Simd_p_fx902(m, int64(v22), int64(v98))
 															*(*int64)(unsafe.Add(mBase, uint64(v98)+168)) = l3
 															*(*int64)(unsafe.Add(mBase, uint64(v98)+160)) = l2
 															*(*int64)(unsafe.Add(mBase, uint64(v98)+152)) = l1
@@ -15240,7 +15254,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 													v98 = v96
 													v99 = int32(0)
 													if base.B2i32(v42 == v99)|base.B2i32(l5 == int64(0)) == v99 {
-														v107, v107__h = base.Simd_p_fx906(m, int64(l5), int64(v22))
+														v107, v107__h = base.Simd_p_fx901(m, int64(l5), int64(v22))
 													} else {
 														v110, v110__h = 0x0, 0x0
 														base.Simd_p_m64_v128_store(m, v22, int64(144), v110, v110__h)
@@ -15269,7 +15283,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 														*(*int32)(unsafe.Add(mBase, uint64(v98)+92)) = l6
 														*(*int32)(unsafe.Add(mBase, uint64(v98)+88)) = l4
 														*(*int64)(unsafe.Add(mBase, uint64(v98)+80)) = int64(48)
-														v129, v129__h = base.Simd_p_fx907(m, int64(v22), int64(v98))
+														v129, v129__h = base.Simd_p_fx902(m, int64(v22), int64(v98))
 														*(*int64)(unsafe.Add(mBase, uint64(v98)+168)) = l3
 														*(*int64)(unsafe.Add(mBase, uint64(v98)+160)) = l2
 														*(*int64)(unsafe.Add(mBase, uint64(v98)+152)) = l1
@@ -15308,7 +15322,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 												v98 = v83
 												v99 = int32(0)
 												if base.B2i32(v42 == v99)|base.B2i32(l5 == int64(0)) == v99 {
-													v107, v107__h = base.Simd_p_fx906(m, int64(l5), int64(v22))
+													v107, v107__h = base.Simd_p_fx901(m, int64(l5), int64(v22))
 												} else {
 													v110, v110__h = 0x0, 0x0
 													base.Simd_p_m64_v128_store(m, v22, int64(144), v110, v110__h)
@@ -15337,7 +15351,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 													*(*int32)(unsafe.Add(mBase, uint64(v98)+92)) = l6
 													*(*int32)(unsafe.Add(mBase, uint64(v98)+88)) = l4
 													*(*int64)(unsafe.Add(mBase, uint64(v98)+80)) = int64(48)
-													v129, v129__h = base.Simd_p_fx907(m, int64(v22), int64(v98))
+													v129, v129__h = base.Simd_p_fx902(m, int64(v22), int64(v98))
 													*(*int64)(unsafe.Add(mBase, uint64(v98)+168)) = l3
 													*(*int64)(unsafe.Add(mBase, uint64(v98)+160)) = l2
 													*(*int64)(unsafe.Add(mBase, uint64(v98)+152)) = l1
@@ -15357,7 +15371,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 											v98 = v96
 											v99 = int32(0)
 											if base.B2i32(v42 == v99)|base.B2i32(l5 == int64(0)) == v99 {
-												v107, v107__h = base.Simd_p_fx906(m, int64(l5), int64(v22))
+												v107, v107__h = base.Simd_p_fx901(m, int64(l5), int64(v22))
 											} else {
 												v110, v110__h = 0x0, 0x0
 												base.Simd_p_m64_v128_store(m, v22, int64(144), v110, v110__h)
@@ -15386,7 +15400,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 												*(*int32)(unsafe.Add(mBase, uint64(v98)+92)) = l6
 												*(*int32)(unsafe.Add(mBase, uint64(v98)+88)) = l4
 												*(*int64)(unsafe.Add(mBase, uint64(v98)+80)) = int64(48)
-												v129, v129__h = base.Simd_p_fx907(m, int64(v22), int64(v98))
+												v129, v129__h = base.Simd_p_fx902(m, int64(v22), int64(v98))
 												*(*int64)(unsafe.Add(mBase, uint64(v98)+168)) = l3
 												*(*int64)(unsafe.Add(mBase, uint64(v98)+160)) = l2
 												*(*int64)(unsafe.Add(mBase, uint64(v98)+152)) = l1
@@ -15481,7 +15495,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 														v98 = v83
 														v99 = int32(0)
 														if base.B2i32(v42 == v99)|base.B2i32(l5 == int64(0)) == v99 {
-															v107, v107__h = base.Simd_p_fx906(m, int64(l5), int64(v22))
+															v107, v107__h = base.Simd_p_fx901(m, int64(l5), int64(v22))
 														} else {
 															v110, v110__h = 0x0, 0x0
 															base.Simd_p_m64_v128_store(m, v22, int64(144), v110, v110__h)
@@ -15510,7 +15524,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 															*(*int32)(unsafe.Add(mBase, uint64(v98)+92)) = l6
 															*(*int32)(unsafe.Add(mBase, uint64(v98)+88)) = l4
 															*(*int64)(unsafe.Add(mBase, uint64(v98)+80)) = int64(48)
-															v129, v129__h = base.Simd_p_fx907(m, int64(v22), int64(v98))
+															v129, v129__h = base.Simd_p_fx902(m, int64(v22), int64(v98))
 															*(*int64)(unsafe.Add(mBase, uint64(v98)+168)) = l3
 															*(*int64)(unsafe.Add(mBase, uint64(v98)+160)) = l2
 															*(*int64)(unsafe.Add(mBase, uint64(v98)+152)) = l1
@@ -15530,7 +15544,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 													v98 = v96
 													v99 = int32(0)
 													if base.B2i32(v42 == v99)|base.B2i32(l5 == int64(0)) == v99 {
-														v107, v107__h = base.Simd_p_fx906(m, int64(l5), int64(v22))
+														v107, v107__h = base.Simd_p_fx901(m, int64(l5), int64(v22))
 													} else {
 														v110, v110__h = 0x0, 0x0
 														base.Simd_p_m64_v128_store(m, v22, int64(144), v110, v110__h)
@@ -15559,7 +15573,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 														*(*int32)(unsafe.Add(mBase, uint64(v98)+92)) = l6
 														*(*int32)(unsafe.Add(mBase, uint64(v98)+88)) = l4
 														*(*int64)(unsafe.Add(mBase, uint64(v98)+80)) = int64(48)
-														v129, v129__h = base.Simd_p_fx907(m, int64(v22), int64(v98))
+														v129, v129__h = base.Simd_p_fx902(m, int64(v22), int64(v98))
 														*(*int64)(unsafe.Add(mBase, uint64(v98)+168)) = l3
 														*(*int64)(unsafe.Add(mBase, uint64(v98)+160)) = l2
 														*(*int64)(unsafe.Add(mBase, uint64(v98)+152)) = l1
@@ -15598,7 +15612,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 												v98 = v83
 												v99 = int32(0)
 												if base.B2i32(v42 == v99)|base.B2i32(l5 == int64(0)) == v99 {
-													v107, v107__h = base.Simd_p_fx906(m, int64(l5), int64(v22))
+													v107, v107__h = base.Simd_p_fx901(m, int64(l5), int64(v22))
 												} else {
 													v110, v110__h = 0x0, 0x0
 													base.Simd_p_m64_v128_store(m, v22, int64(144), v110, v110__h)
@@ -15627,7 +15641,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 													*(*int32)(unsafe.Add(mBase, uint64(v98)+92)) = l6
 													*(*int32)(unsafe.Add(mBase, uint64(v98)+88)) = l4
 													*(*int64)(unsafe.Add(mBase, uint64(v98)+80)) = int64(48)
-													v129, v129__h = base.Simd_p_fx907(m, int64(v22), int64(v98))
+													v129, v129__h = base.Simd_p_fx902(m, int64(v22), int64(v98))
 													*(*int64)(unsafe.Add(mBase, uint64(v98)+168)) = l3
 													*(*int64)(unsafe.Add(mBase, uint64(v98)+160)) = l2
 													*(*int64)(unsafe.Add(mBase, uint64(v98)+152)) = l1
@@ -15647,7 +15661,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 											v98 = v96
 											v99 = int32(0)
 											if base.B2i32(v42 == v99)|base.B2i32(l5 == int64(0)) == v99 {
-												v107, v107__h = base.Simd_p_fx906(m, int64(l5), int64(v22))
+												v107, v107__h = base.Simd_p_fx901(m, int64(l5), int64(v22))
 											} else {
 												v110, v110__h = 0x0, 0x0
 												base.Simd_p_m64_v128_store(m, v22, int64(144), v110, v110__h)
@@ -15676,7 +15690,7 @@ func Fn521(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int32, l5 
 												*(*int32)(unsafe.Add(mBase, uint64(v98)+92)) = l6
 												*(*int32)(unsafe.Add(mBase, uint64(v98)+88)) = l4
 												*(*int64)(unsafe.Add(mBase, uint64(v98)+80)) = int64(48)
-												v129, v129__h = base.Simd_p_fx907(m, int64(v22), int64(v98))
+												v129, v129__h = base.Simd_p_fx902(m, int64(v22), int64(v98))
 												*(*int64)(unsafe.Add(mBase, uint64(v98)+168)) = l3
 												*(*int64)(unsafe.Add(mBase, uint64(v98)+160)) = l2
 												*(*int64)(unsafe.Add(mBase, uint64(v98)+152)) = l1

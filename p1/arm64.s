@@ -786645,149 +786645,125 @@ TEXT ·Fn895l166(SB), NOSPLIT, $0-8
 	JMP ·Fn895l166dotprod(SB)
 	JMP ·Fn895l166generic(SB)
 
-TEXT ·Fn895l166dotprod(SB), $480-8
+TEXT ·Fn895l166dotprod(SB), $320-8
 	NO_LOCAL_POINTERS
 	MOVD m+0(FP), R0
 	MOVD	R0, m+0(FP)
-	LDP	48(R0), (R7, R8)
-	MOVD	R8, 456(RSP)
-	LDP	64(R0), (R9, R10)
-	MOVD	R9, 448(RSP)
-	MOVD	R10, 440(RSP)
-	LDP	80(R0), (R11, R12)
-	MOVD	R11, 432(RSP)
-	MOVD	R12, 424(RSP)
-	LDP	96(R0), (R13, R14)
-	MOVD	R13, 416(RSP)
-	LDP	112(R0), (R15, R16)
-	MOVD	R15, 408(RSP)
-	MOVD	R16, 400(RSP)
-	LDP	128(R0), (R17, R19)
-	MOVD	R17, 392(RSP)
-	MOVD	R19, 384(RSP)
-	LDP	144(R0), (R20, R21)
-	MOVD	R20, 376(RSP)
-	MOVD	R21, 368(RSP)
-	LDP	160(R0), (R22, R23)
-	MOVD	R22, 360(RSP)
-	MOVD	R23, 352(RSP)
-	MOVD	176(R0), R24
-	LDP	32(R0), (R25, R26)
-	MOVD	R26, 344(RSP)
-	MOVD	R25, 464(RSP)
-	MUL	R26, R7, R7
+	LDP	40(R0), (R7, R8)
+	MOVD	R7, 304(RSP)
+	LDP	56(R0), (R9, R10)
+	MOVD	R9, 296(RSP)
+	MOVD	R10, 288(RSP)
+	LDP	72(R0), (R11, R12)
+	MOVD	R11, 280(RSP)
+	MOVD	R12, 272(RSP)
+	LDP	88(R0), (R13, R14)
+	MOVD	R13, 264(RSP)
+	MOVD	R14, 256(RSP)
+	LDP	104(R0), (R15, R16)
+	MOVD	R16, 248(RSP)
+	LDP	120(R0), (R17, R19)
+	MOVD	R19, 240(RSP)
+	MOVD	R17, 232(RSP)
+	LDP	136(R0), (R20, R21)
+	MOVD	R20, 224(RSP)
+	MOVD	R21, 216(RSP)
+	LDP	152(R0), (R22, R23)
+	MOVD	R22, 208(RSP)
+	MOVD	R23, 200(RSP)
+	LDP	168(R0), (R24, R25)
+	MOVD	R24, 192(RSP)
+	MUL	R7, R8, R8
 	HINT	$0
-	MSUB	R17, R7, R14, R7
-	MOVD	R7, 328(RSP)
-	ADD	$1, R24, R14
-	MOVW	R14, 188(RSP)
-	MOVWU	R24, R24
-	MOVD	R24, 336(RSP)
+	MSUB	R19, R8, R15, R8
+	MOVD	R8, 176(RSP)
+	ADD	$1, R25, R4
+	MOVW	R4, 124(RSP)
+	MOVWU	R25, R15
+	MOVD	R15, 184(RSP)
 	MOVD	ZR, R1
-	JMP	pc264
-pc180:
+	JMP	pc248
+pc172:
 	MOVD	m+0(FP), R0
-	MOVD	328(RSP), R7
-	MOVD	R6, R9
-	MOVD	440(RSP), R10
-	MOVD	432(RSP), R11
-	MOVD	424(RSP), R12
-	MOVD	416(RSP), R13
-	MOVW	188(RSP), R14
-	MOVD	408(RSP), R15
-	MOVD	400(RSP), R16
-	MOVD	392(RSP), R17
-	MOVD	384(RSP), R19
-	MOVD	376(RSP), R20
-	MOVD	368(RSP), R21
-	MOVD	360(RSP), R22
-	MOVD	352(RSP), R23
-	MOVD	336(RSP), R24
-	MOVD	464(RSP), R25
-	MOVD	344(RSP), R26
-	MOVD	R8, R1
-	MOVD	456(RSP), R8
-pc264:
-	MOVD	R1, 272(RSP)
-	MADD	R17, R7, R15, R30
-	MADD	R30, R21, R16, R30
-	MUL	R24, R1, R2
-	LSL	$3, R2, R2
-	ADD	R2<<4, R2, R2
-	ADD	R2, R30, R30
-	MOVD	R30, 256(RSP)
-	LSL	$2, R1, R2
-	MOVD	R2, 248(RSP)
+	MOVW	124(RSP), R4
+	MOVD	176(RSP), R8
+	MOVD	288(RSP), R10
+	MOVD	280(RSP), R11
+	MOVD	272(RSP), R12
+	MOVD	264(RSP), R13
+	MOVD	256(RSP), R14
+	MOVD	184(RSP), R15
+	MOVD	248(RSP), R16
+	MOVD	232(RSP), R17
+	MOVD	240(RSP), R19
+	MOVD	224(RSP), R20
+	MOVD	216(RSP), R21
+	MOVD	208(RSP), R22
+	MOVD	200(RSP), R23
+	MOVD	192(RSP), R24
+	MOVD	R7, R1
+	MOVD	304(RSP), R7
+pc248:
+	MOVD	R1, 168(RSP)
+	MADD	R19, R8, R16, R25
+	MADD	R25, R22, R17, R25
+	MUL	R15, R1, R26
+	LSL	$3, R26, R26
+	ADD	R26<<4, R26, R26
+	ADD	R26, R25, R2
+	MOVD	R2, 160(RSP)
+	LSL	$2, R1, R25
+	MOVD	R25, 152(RSP)
 	MOVD	ZR, R3
-	JMP	pc408
-pc312:
+	JMP	pc352
+pc296:
 	MOVD	m+0(FP), R0
-	MOVD	272(RSP), R1
-	MOVD	248(RSP), R2
-	MOVD	328(RSP), R7
-	MOVD	456(RSP), R8
-	MOVD	R6, R9
-	MOVD	440(RSP), R10
-	MOVD	432(RSP), R11
-	MOVD	424(RSP), R12
-	MOVD	416(RSP), R13
-	MOVW	188(RSP), R14
-	MOVD	408(RSP), R15
-	MOVD	400(RSP), R16
-	MOVD	392(RSP), R17
-	MOVD	384(RSP), R19
-	MOVD	376(RSP), R20
-	MOVD	368(RSP), R21
-	MOVD	360(RSP), R22
-	MOVD	352(RSP), R23
-	MOVD	336(RSP), R24
-	MOVD	464(RSP), R25
-	MOVD	344(RSP), R26
-	MOVD	256(RSP), R30
-	MOVD	R5, R3
-pc408:
-	MOVD	R3, 240(RSP)
-	MADD	R7, R20, R13, R4
-	MADD	R17, R4, R12, R4
-	ADD	R8<<2, R4, R4
-	MADD	R19, R22, R10, R5
-	ADD	R11, R5, R5
-	MUL	R24, R3, R6
-	LSL	$3, R6, R6
-	ADD	R6<<4, R6, R6
-	ADD	R3<<4, R4, R4
-	MOVD	R4, 232(RSP)
-	ADD	R6, R5, R5
-	MOVD	R5, 224(RSP)
+	MOVD	160(RSP), R2
+	MOVW	124(RSP), R4
+	MOVD	176(RSP), R8
+	MOVD	280(RSP), R11
+	MOVD	272(RSP), R12
+	MOVD	264(RSP), R13
+	MOVD	256(RSP), R14
+	MOVD	184(RSP), R15
+	MOVD	240(RSP), R19
+	MOVD	224(RSP), R20
+	MOVD	216(RSP), R21
+	MOVD	200(RSP), R23
+	MOVD	R7, R3
+pc352:
+	MOVD	R3, 144(RSP)
+	MADD	R8, R21, R14, R7
+	MADD	R19, R7, R13, R7
+	ADD	R9<<2, R7, R7
+	ADD	R3<<4, R7, R7
+	MOVD	R7, 136(RSP)
+	MADD	R20, R23, R11, R7
+	ADD	R12, R7, R7
+	MUL	R15, R3, R8
+	LSL	$3, R8, R8
+	ADD	R8<<4, R8, R8
+	ADD	R8, R7, R3
+	MOVD	R3, 128(RSP)
+	MOVD	ZR, R1
+	MOVD	ZR, R5
 	MOVD	ZR, R6
-	MOVD	ZR, 200(RSP)
-	MOVD	ZR, 208(RSP)
-	JMP	pc512
-pc476:
-	MOVD	216(RSP), R8
-	ADD	$136, R8, R6
-	MOVD	224(RSP), R5
-	MOVD	464(RSP), R25
-	MOVD	256(RSP), R30
-	MOVD	R7, R14
-	MOVD	R1, 200(RSP)
-	MOVD	R0, 208(RSP)
-	MOVD	m+0(FP), R0
-pc512:
-	MOVW	R14, 180(RSP)
-	MOVD	R6, 216(RSP)
-	ADD	R30, R6, R4
-	MOVHU	(R25)(R4), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R6, R2
-	MOVD	R5, R3
-	MOVD	208(RSP), R5
-	MOVD	200(RSP), R6
 	MOVD R0, R23
 	MOVD 1176(R23), R21
 	MOVD (R21), R21
 	MOVD 32(R23), R20
-	MOVD R1, R25
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl416:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
 	MOVD $8793760, R26
 	ADD R26, R25, R25
 	ADD $4, R25, R27
@@ -786795,7 +786771,7 @@ pc512:
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F16
 	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $120, R24, R24
 	MOVD R24, R25
@@ -786803,7 +786779,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $120, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -786812,7 +786791,7 @@ pc512:
 	WORD $0x4f000403 // movi v3.4s, #0
 	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
 	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $104, R24, R24
 	MOVD R24, R25
@@ -786820,7 +786799,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $104, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -786829,7 +786811,7 @@ pc512:
 	WORD $0x4f000403 // movi v3.4s, #0
 	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
 	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $88, R24, R24
 	MOVD R24, R25
@@ -786837,14 +786819,17 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $88, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $72, R24, R24
 	MOVD R24, R25
@@ -786852,14 +786837,17 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $72, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $56, R24, R24
 	MOVD R24, R25
@@ -786867,14 +786855,17 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $56, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $40, R24, R24
 	MOVD R24, R25
@@ -786882,14 +786873,17 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $40, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $24, R24, R24
 	MOVD R24, R25
@@ -786897,14 +786891,17 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $24, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $8, R24, R24
 	MOVD R24, R25
@@ -786912,7 +786909,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $8, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -786921,7 +786921,7 @@ pc512:
 	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
 	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
 	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	MOVD R24, R25
 	ADD $8, R25, R27
@@ -786933,232 +786933,26 @@ pc512:
 	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
 	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
 	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e33d400 // fadd v0.4s, v0.4s, v19.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	180(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc476
-	MOVD	248(RSP), R5
-	MOVD	352(RSP), R6
-	MUL	R6, R5, R5
-	MOVD	232(RSP), R6
-	ADD	R5<<2, R6, R5
+	WORD $0x4e33d7c0 // fadd v0.4s, v30.4s, v19.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl416
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	152(RSP), R7
+	MOVD	192(RSP), R8
+	MUL	R8, R7, R7
+	MOVD	136(RSP), R8
+	ADD	R7<<2, R8, R7
 	MOVD	ZR, R2
 	MOVD	R0, R3
 	MOVD	R1, R4
 	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	188(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc656
-pc632:
-	MOVD	320(RSP), R8
-	ADD	$136, R8, R8
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R8, R0
 	MOVD	R7, R1
-pc656:
-	MOVW	R1, 196(RSP)
-	MOVD	R0, 320(RSP)
-	MOVD	256(RSP), R7
-	ADD	R7, R0, R4
-	ADD	$2, R4, R7
-	MOVD	464(RSP), R8
-	MOVHU	(R8)(R7), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R3, R5
-	MOVD	R2, R6
-	MOVD	R0, R2
-	MOVD	224(RSP), R3
-	MOVD	m+0(FP), R0
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $124, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
-	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $104, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $108, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
-	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $88, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $92, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $72, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $76, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $56, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $60, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $40, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $44, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $24, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $28, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $8, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $12, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
-	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612812 // xtn v18.4h, v0.4s
-	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
-	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
-	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e33d400 // fadd v0.4s, v0.4s, v19.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	196(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc632
-	MOVD	248(RSP), R5
-	ORR	$1, R5, R5
-	MOVD	352(RSP), R6
-	MUL	R6, R5, R5
-	MOVD	232(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
 	MOVD R1, R25
 	MOVD R2, R26
 	ADD R26, R25, R25
@@ -787170,40 +786964,30 @@ pc656:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	188(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc820
-pc796:
-	MOVD	312(RSP), R6
-	ADD	$136, R6, R6
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R6, R0
-	MOVD	R5, R1
-pc820:
-	MOVW	R1, 192(RSP)
-	MOVD	R2, 296(RSP)
-	MOVD	R3, 304(RSP)
-	MOVD	R0, 312(RSP)
-	MOVD	256(RSP), R5
-	ADD	R5, R0, R4
-	MOVD	R4, 288(RSP)
-	ADD	$4, R4, R5
-	MOVD	464(RSP), R6
-	MOVHU	(R6)(R5), R5
-	MOVD	224(RSP), R3
-	ADD	R3, R0, R6
-	MOVD	R6, 280(RSP)
-	UBFIZ	$2, R5, $16, R1
-	MOVD	R0, R2
 	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	160(RSP), R2
+	MOVD	128(RSP), R3
+	MOVW	124(RSP), R4
+	MOVD	ZR, R5
+	MOVD	ZR, R6
 	MOVD R0, R23
 	MOVD 1176(R23), R21
 	MOVD (R21), R21
 	MOVD 32(R23), R20
-	MOVD R1, R25
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl492:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $2, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
 	MOVD $8793760, R26
 	ADD R26, R25, R25
 	ADD $4, R25, R27
@@ -787211,7 +786995,7 @@ pc820:
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F16
 	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $120, R24, R24
 	MOVD R24, R25
@@ -787219,13 +787003,149 @@ pc820:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $128, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $124, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F18
 	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	MOVD R2, R24
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
+	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $108, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F19
+	WORD $0x4e040673 // dup v19.4s, v19.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
+	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $92, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $76, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $60, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $44, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $28, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $12, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
+	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
+	MOVD R1, R24
 	ADD R3, R24, R24
 	MOVD R24, R25
 	ADD $8, R25, R27
@@ -787233,535 +787153,633 @@ pc820:
 	BLO gcasmsimdoob
 	FMOVD (R20)(R25), F0
 	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612800 // xtn v0.4h, v0.4s
-	WORD $0x0e217800 // fcvtl v0.4s, v0.4h
-	FMOVD F16, R0
-	VMOV V16.D[1], R1
-	FMOVD F0, R2
-	VMOV V0.D[1], R3
-	FMOVD F17, R4
-	VMOV V17.D[1], R5
-	FMOVD F18, R6
-	VMOV V18.D[1], R7
+	WORD $0x0e612812 // xtn v18.4h, v0.4s
+	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
+	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
+	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
+	WORD $0x4e33d7c0 // fadd v0.4s, v30.4s, v19.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl492
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	152(RSP), R7
+	ORR	$1, R7, R7
+	MOVD	192(RSP), R8
+	MUL	R8, R7, R7
+	MOVD	136(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	160(RSP), R2
+	ADD	$64, R2, R4
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	128(RSP), R3
+	MOVW	124(RSP), R5
+	MOVD	ZR, R6
+	MOVD	ZR, R7
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R6, F30
+	VMOV R7, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl576:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $4, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $128, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
+	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $112, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F19
+	WORD $0x4e040673 // dup v19.4s, v19.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
+	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $96, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $80, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R4, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $48, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $32, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $16, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
+	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612812 // xtn v18.4h, v0.4s
+	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
+	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
+	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
+	WORD $0x4e33d7c0 // fadd v0.4s, v30.4s, v19.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	ADD $136, R4, R4
+	SUBW $1, R5, R5
+	CMPW $1, R5
+	BGT gcasmfxl576
+	MOVD R1, R2
+	MOVD R4, R3
+	MOVW R5, R4
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	152(RSP), R7
+	ORR	$2, R7, R7
+	MOVD	192(RSP), R8
+	MUL	R8, R7, R7
+	MOVD	136(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	160(RSP), R2
+	MOVD	128(RSP), R3
+	MOVW	124(RSP), R4
+	MOVD	ZR, R5
+	MOVD	ZR, R6
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl656:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $6, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $132, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
+	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $116, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F19
+	WORD $0x4e040673 // dup v19.4s, v19.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
+	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $100, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $84, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $68, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $52, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $36, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $20, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
+	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612812 // xtn v18.4h, v0.4s
+	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
+	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
+	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
+	WORD $0x4e33d7c0 // fadd v0.4s, v30.4s, v19.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl656
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	152(RSP), R7
+	ORR	$3, R7, R7
+	MOVD	192(RSP), R8
+	MUL	R8, R7, R7
+	MOVD	136(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	144(RSP), R7
+	ADD	$1, R7, R7
 	MOVD	288(RSP), R8
-	ADD	$64, R8, R9
-	MOVD	R0, R10
-	MOVD	R1, R11
-	MOVD	R2, R12
-	MOVD	R3, R13
-	MOVD	m+0(FP), R0
-	MOVD	280(RSP), R1
-	MOVD	R8, R2
-	MOVD	R9, R3
-	MOVD	304(RSP), R8
 	MOVD	296(RSP), R9
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	FMOVD R4, F1
-	VMOV R5, V1.D[1]
-	FMOVD R6, F2
-	VMOV R7, V2.D[1]
-	WORD $0x4f000410 // movi v16.4s, #0
-	WORD $0x4e829430 // sdot v16.4s, v1.16b, v2.16b
-	FMOVD R10, F0
-	VMOV R11, V0.D[1]
-	FMOVD R12, F1
-	VMOV R13, V1.D[1]
-	WORD $0x6e21dc11 // fmul v17.4s, v0.4s, v1.4s (renum)
-	ADD $104, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $112, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e939643 // sdot v3.4s, v18.16b, v19.16b
-	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
-	ADD $88, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $96, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949650 // sdot v16.4s, v18.16b, v20.16b
-	ADD $72, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $80, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949653 // sdot v19.4s, v18.16b, v20.16b
-	ADD $56, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	MOVD R3, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949650 // sdot v16.4s, v18.16b, v20.16b
-	ADD $40, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $48, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949653 // sdot v19.4s, v18.16b, v20.16b
-	ADD $24, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $32, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949650 // sdot v16.4s, v18.16b, v20.16b
-	ADD $8, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $16, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949653 // sdot v19.4s, v18.16b, v20.16b
-	WORD $0x4eb38600 // add v0.4s, v16.4s, v19.4s (renum)
-	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
-	WORD $0x6e33de33 // fmul v19.4s, v17.4s, v19.4s (renum)
-	FMOVD R8, F0
-	VMOV R9, V0.D[1]
-	WORD $0x4e33d400 // fadd v0.4s, v0.4s, v19.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	192(RSP), R5
-	SUB	$1, R5, R5
-	CMPW	$1, R5
-	BGT	pc796
-	MOVD	248(RSP), R5
-	ORR	$2, R5, R5
-	MOVD	352(RSP), R6
-	MUL	R6, R5, R5
-	MOVD	232(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	188(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc1048
-pc1024:
-	MOVD	264(RSP), R8
-	ADD	$136, R8, R8
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R8, R0
-	MOVD	R7, R1
-pc1048:
-	MOVW	R1, 184(RSP)
-	MOVD	R0, 264(RSP)
-	MOVD	256(RSP), R7
-	ADD	R7, R0, R4
-	ADD	$6, R4, R7
-	MOVD	464(RSP), R8
-	MOVHU	(R8)(R7), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R3, R5
-	MOVD	R2, R6
-	MOVD	R0, R2
-	MOVD	224(RSP), R3
-	MOVD	m+0(FP), R0
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $132, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
-	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $104, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $116, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
-	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $88, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $100, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $72, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $84, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $56, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $68, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $40, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $52, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $24, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $36, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $8, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $20, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
-	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612812 // xtn v18.4h, v0.4s
-	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
-	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
-	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e33d400 // fadd v0.4s, v0.4s, v19.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	184(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc1024
-	MOVD	248(RSP), R5
-	ORR	$3, R5, R5
-	MOVD	352(RSP), R6
-	MUL	R6, R5, R5
-	MOVD	232(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	240(RSP), R5
-	ADD	$1, R5, R5
-	MOVD	448(RSP), R6
-	MOVD	456(RSP), R7
-	SUB	R7, R6, R8
-	UBFX	$2, R8, $30, R8
-	NOP
-	CMP	R5, R8
-	BNE	pc312
-	MOVD	272(RSP), R8
-	ADD	$1, R8, R8
-	MOVD	344(RSP), R9
-	AND	$-4, R9, R10
+	SUB	R9, R8, R10
 	UBFX	$2, R10, $30, R10
 	NOP
-	CMP	R8, R10
-	BNE	pc180
+	CMP	R7, R10
+	BNE	pc296
+	MOVD	168(RSP), R7
+	ADD	$1, R7, R7
+	MOVD	304(RSP), R10
+	AND	$-4, R10, R11
+	UBFX	$2, R11, $30, R11
+	NOP
+	CMP	R7, R11
+	BNE	pc172
 	RET	(R30)
 gcasmsimdoob:
 	CALL ·gcasmFwdH_base_Wasm_trap_simd_oob(SB)
 	RET
 
-TEXT ·Fn895l166generic(SB), $480-8
+TEXT ·Fn895l166generic(SB), $320-8
 	NO_LOCAL_POINTERS
 	MOVD m+0(FP), R0
 	MOVD	R0, m+0(FP)
-	LDP	48(R0), (R7, R8)
-	MOVD	R8, 456(RSP)
-	LDP	64(R0), (R9, R10)
-	MOVD	R9, 448(RSP)
-	MOVD	R10, 440(RSP)
-	LDP	80(R0), (R11, R12)
-	MOVD	R11, 432(RSP)
-	MOVD	R12, 424(RSP)
-	LDP	96(R0), (R13, R14)
-	MOVD	R13, 416(RSP)
-	LDP	112(R0), (R15, R16)
-	MOVD	R15, 408(RSP)
-	MOVD	R16, 400(RSP)
-	LDP	128(R0), (R17, R19)
-	MOVD	R17, 392(RSP)
-	MOVD	R19, 384(RSP)
-	LDP	144(R0), (R20, R21)
-	MOVD	R20, 376(RSP)
-	MOVD	R21, 368(RSP)
-	LDP	160(R0), (R22, R23)
-	MOVD	R22, 360(RSP)
-	MOVD	R23, 352(RSP)
-	MOVD	176(R0), R24
-	LDP	32(R0), (R25, R26)
-	MOVD	R26, 344(RSP)
-	MOVD	R25, 464(RSP)
-	MUL	R26, R7, R7
+	LDP	40(R0), (R7, R8)
+	MOVD	R7, 304(RSP)
+	LDP	56(R0), (R9, R10)
+	MOVD	R9, 296(RSP)
+	MOVD	R10, 288(RSP)
+	LDP	72(R0), (R11, R12)
+	MOVD	R11, 280(RSP)
+	MOVD	R12, 272(RSP)
+	LDP	88(R0), (R13, R14)
+	MOVD	R13, 264(RSP)
+	MOVD	R14, 256(RSP)
+	LDP	104(R0), (R15, R16)
+	MOVD	R16, 248(RSP)
+	LDP	120(R0), (R17, R19)
+	MOVD	R19, 240(RSP)
+	MOVD	R17, 232(RSP)
+	LDP	136(R0), (R20, R21)
+	MOVD	R20, 224(RSP)
+	MOVD	R21, 216(RSP)
+	LDP	152(R0), (R22, R23)
+	MOVD	R22, 208(RSP)
+	MOVD	R23, 200(RSP)
+	LDP	168(R0), (R24, R25)
+	MOVD	R24, 192(RSP)
+	MUL	R7, R8, R8
 	HINT	$0
-	MSUB	R17, R7, R14, R7
-	MOVD	R7, 328(RSP)
-	ADD	$1, R24, R14
-	MOVW	R14, 188(RSP)
-	MOVWU	R24, R24
-	MOVD	R24, 336(RSP)
+	MSUB	R19, R8, R15, R8
+	MOVD	R8, 176(RSP)
+	ADD	$1, R25, R4
+	MOVW	R4, 124(RSP)
+	MOVWU	R25, R15
+	MOVD	R15, 184(RSP)
 	MOVD	ZR, R1
-	JMP	pc264
-pc180:
+	JMP	pc248
+pc172:
 	MOVD	m+0(FP), R0
-	MOVD	328(RSP), R7
-	MOVD	R6, R9
-	MOVD	440(RSP), R10
-	MOVD	432(RSP), R11
-	MOVD	424(RSP), R12
-	MOVD	416(RSP), R13
-	MOVW	188(RSP), R14
-	MOVD	408(RSP), R15
-	MOVD	400(RSP), R16
-	MOVD	392(RSP), R17
-	MOVD	384(RSP), R19
-	MOVD	376(RSP), R20
-	MOVD	368(RSP), R21
-	MOVD	360(RSP), R22
-	MOVD	352(RSP), R23
-	MOVD	336(RSP), R24
-	MOVD	464(RSP), R25
-	MOVD	344(RSP), R26
-	MOVD	R8, R1
-	MOVD	456(RSP), R8
-pc264:
-	MOVD	R1, 272(RSP)
-	MADD	R17, R7, R15, R30
-	MADD	R30, R21, R16, R30
-	MUL	R24, R1, R2
-	LSL	$3, R2, R2
-	ADD	R2<<4, R2, R2
-	ADD	R2, R30, R30
-	MOVD	R30, 256(RSP)
-	LSL	$2, R1, R2
-	MOVD	R2, 248(RSP)
+	MOVW	124(RSP), R4
+	MOVD	176(RSP), R8
+	MOVD	288(RSP), R10
+	MOVD	280(RSP), R11
+	MOVD	272(RSP), R12
+	MOVD	264(RSP), R13
+	MOVD	256(RSP), R14
+	MOVD	184(RSP), R15
+	MOVD	248(RSP), R16
+	MOVD	232(RSP), R17
+	MOVD	240(RSP), R19
+	MOVD	224(RSP), R20
+	MOVD	216(RSP), R21
+	MOVD	208(RSP), R22
+	MOVD	200(RSP), R23
+	MOVD	192(RSP), R24
+	MOVD	R7, R1
+	MOVD	304(RSP), R7
+pc248:
+	MOVD	R1, 168(RSP)
+	MADD	R19, R8, R16, R25
+	MADD	R25, R22, R17, R25
+	MUL	R15, R1, R26
+	LSL	$3, R26, R26
+	ADD	R26<<4, R26, R26
+	ADD	R26, R25, R2
+	MOVD	R2, 160(RSP)
+	LSL	$2, R1, R25
+	MOVD	R25, 152(RSP)
 	MOVD	ZR, R3
-	JMP	pc408
-pc312:
+	JMP	pc352
+pc296:
 	MOVD	m+0(FP), R0
-	MOVD	272(RSP), R1
-	MOVD	248(RSP), R2
-	MOVD	328(RSP), R7
-	MOVD	456(RSP), R8
-	MOVD	R6, R9
-	MOVD	440(RSP), R10
-	MOVD	432(RSP), R11
-	MOVD	424(RSP), R12
-	MOVD	416(RSP), R13
-	MOVW	188(RSP), R14
-	MOVD	408(RSP), R15
-	MOVD	400(RSP), R16
-	MOVD	392(RSP), R17
-	MOVD	384(RSP), R19
-	MOVD	376(RSP), R20
-	MOVD	368(RSP), R21
-	MOVD	360(RSP), R22
-	MOVD	352(RSP), R23
-	MOVD	336(RSP), R24
-	MOVD	464(RSP), R25
-	MOVD	344(RSP), R26
-	MOVD	256(RSP), R30
-	MOVD	R5, R3
-pc408:
-	MOVD	R3, 240(RSP)
-	MADD	R7, R20, R13, R4
-	MADD	R17, R4, R12, R4
-	ADD	R8<<2, R4, R4
-	MADD	R19, R22, R10, R5
-	ADD	R11, R5, R5
-	MUL	R24, R3, R6
-	LSL	$3, R6, R6
-	ADD	R6<<4, R6, R6
-	ADD	R3<<4, R4, R4
-	MOVD	R4, 232(RSP)
-	ADD	R6, R5, R5
-	MOVD	R5, 224(RSP)
+	MOVD	160(RSP), R2
+	MOVW	124(RSP), R4
+	MOVD	176(RSP), R8
+	MOVD	280(RSP), R11
+	MOVD	272(RSP), R12
+	MOVD	264(RSP), R13
+	MOVD	256(RSP), R14
+	MOVD	184(RSP), R15
+	MOVD	240(RSP), R19
+	MOVD	224(RSP), R20
+	MOVD	216(RSP), R21
+	MOVD	200(RSP), R23
+	MOVD	R7, R3
+pc352:
+	MOVD	R3, 144(RSP)
+	MADD	R8, R21, R14, R7
+	MADD	R19, R7, R13, R7
+	ADD	R9<<2, R7, R7
+	ADD	R3<<4, R7, R7
+	MOVD	R7, 136(RSP)
+	MADD	R20, R23, R11, R7
+	ADD	R12, R7, R7
+	MUL	R15, R3, R8
+	LSL	$3, R8, R8
+	ADD	R8<<4, R8, R8
+	ADD	R8, R7, R3
+	MOVD	R3, 128(RSP)
+	MOVD	ZR, R1
+	MOVD	ZR, R5
 	MOVD	ZR, R6
-	MOVD	ZR, 200(RSP)
-	MOVD	ZR, 208(RSP)
-	JMP	pc512
-pc476:
-	MOVD	216(RSP), R8
-	ADD	$136, R8, R6
-	MOVD	224(RSP), R5
-	MOVD	464(RSP), R25
-	MOVD	256(RSP), R30
-	MOVD	R7, R14
-	MOVD	R1, 200(RSP)
-	MOVD	R0, 208(RSP)
-	MOVD	m+0(FP), R0
-pc512:
-	MOVW	R14, 180(RSP)
-	MOVD	R6, 216(RSP)
-	ADD	R30, R6, R4
-	MOVHU	(R25)(R4), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R6, R2
-	MOVD	R5, R3
-	MOVD	208(RSP), R5
-	MOVD	200(RSP), R6
 	MOVD R0, R23
 	MOVD 1176(R23), R21
 	MOVD (R21), R21
 	MOVD 32(R23), R20
-	MOVD R1, R25
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl416:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
 	MOVD $8793760, R26
 	ADD R26, R25, R25
 	ADD $4, R25, R27
@@ -787769,7 +787787,7 @@ pc512:
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F16
 	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $120, R24, R24
 	MOVD R24, R25
@@ -787777,7 +787795,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $120, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -787787,7 +787808,7 @@ pc512:
 	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
 	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
 	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $104, R24, R24
 	MOVD R24, R25
@@ -787795,7 +787816,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $104, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -787805,7 +787829,7 @@ pc512:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $88, R24, R24
 	MOVD R24, R25
@@ -787813,7 +787837,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $88, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -787823,7 +787850,7 @@ pc512:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $72, R24, R24
 	MOVD R24, R25
@@ -787831,7 +787858,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $72, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -787841,7 +787871,7 @@ pc512:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $56, R24, R24
 	MOVD R24, R25
@@ -787849,7 +787879,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $56, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -787859,7 +787892,7 @@ pc512:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $40, R24, R24
 	MOVD R24, R25
@@ -787867,7 +787900,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $40, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -787877,7 +787913,7 @@ pc512:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $24, R24, R24
 	MOVD R24, R25
@@ -787885,7 +787921,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $24, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -787895,7 +787934,7 @@ pc512:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $8, R24, R24
 	MOVD R24, R25
@@ -787903,7 +787942,10 @@ pc512:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $8, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -787929,7 +787971,7 @@ pc512:
 	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
 	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
 	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	MOVD R24, R25
 	ADD $8, R25, R27
@@ -787941,67 +787983,61 @@ pc512:
 	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
 	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
 	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e32d400 // fadd v0.4s, v0.4s, v18.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	180(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc476
-	MOVD	248(RSP), R5
-	MOVD	352(RSP), R6
-	MUL	R6, R5, R5
-	MOVD	232(RSP), R6
-	ADD	R5<<2, R6, R5
+	WORD $0x4e32d7c0 // fadd v0.4s, v30.4s, v18.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl416
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	152(RSP), R7
+	MOVD	192(RSP), R8
+	MUL	R8, R7, R7
+	MOVD	136(RSP), R8
+	ADD	R7<<2, R8, R7
 	MOVD	ZR, R2
 	MOVD	R0, R3
 	MOVD	R1, R4
 	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	188(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc656
-pc632:
-	MOVD	320(RSP), R8
-	ADD	$136, R8, R8
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R8, R0
 	MOVD	R7, R1
-pc656:
-	MOVW	R1, 196(RSP)
-	MOVD	R0, 320(RSP)
-	MOVD	256(RSP), R7
-	ADD	R7, R0, R4
-	ADD	$2, R4, R7
-	MOVD	464(RSP), R8
-	MOVHU	(R8)(R7), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R3, R5
-	MOVD	R2, R6
-	MOVD	R0, R2
-	MOVD	224(RSP), R3
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
 	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	160(RSP), R2
+	MOVD	128(RSP), R3
+	MOVW	124(RSP), R4
+	MOVD	ZR, R5
+	MOVD	ZR, R6
 	MOVD R0, R23
 	MOVD 1176(R23), R21
 	MOVD (R21), R21
 	MOVD 32(R23), R20
-	MOVD R1, R25
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl492:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $2, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
 	MOVD $8793760, R26
 	ADD R26, R25, R25
 	ADD $4, R25, R27
@@ -788009,7 +788045,7 @@ pc656:
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F16
 	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $120, R24, R24
 	MOVD R24, R25
@@ -788017,7 +788053,10 @@ pc656:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $124, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $124, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -788027,7 +788066,7 @@ pc656:
 	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
 	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
 	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $104, R24, R24
 	MOVD R24, R25
@@ -788035,7 +788074,10 @@ pc656:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $108, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $108, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -788045,7 +788087,7 @@ pc656:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $88, R24, R24
 	MOVD R24, R25
@@ -788053,7 +788095,10 @@ pc656:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $92, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $92, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -788063,7 +788108,7 @@ pc656:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $72, R24, R24
 	MOVD R24, R25
@@ -788071,7 +788116,10 @@ pc656:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $76, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $76, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -788081,7 +788129,7 @@ pc656:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $56, R24, R24
 	MOVD R24, R25
@@ -788089,7 +788137,10 @@ pc656:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $60, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $60, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -788099,7 +788150,7 @@ pc656:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $40, R24, R24
 	MOVD R24, R25
@@ -788107,7 +788158,10 @@ pc656:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $44, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $44, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -788117,7 +788171,7 @@ pc656:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $24, R24, R24
 	MOVD R24, R25
@@ -788125,7 +788179,10 @@ pc656:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $28, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $28, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -788135,7 +788192,7 @@ pc656:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $8, R24, R24
 	MOVD R24, R25
@@ -788143,7 +788200,10 @@ pc656:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $12, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $12, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -788169,7 +788229,7 @@ pc656:
 	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
 	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
 	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	MOVD R24, R25
 	ADD $8, R25, R27
@@ -788181,26 +788241,27 @@ pc656:
 	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
 	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
 	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e32d400 // fadd v0.4s, v0.4s, v18.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	196(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc632
-	MOVD	248(RSP), R5
-	ORR	$1, R5, R5
-	MOVD	352(RSP), R6
-	MUL	R6, R5, R5
-	MOVD	232(RSP), R6
-	ADD	R5<<2, R6, R5
+	WORD $0x4e32d7c0 // fadd v0.4s, v30.4s, v18.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl492
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	152(RSP), R7
+	ORR	$1, R7, R7
+	MOVD	192(RSP), R8
+	MUL	R8, R7, R7
+	MOVD	136(RSP), R8
+	ADD	R7<<2, R8, R7
 	MOVD	ZR, R2
 	MOVD	R0, R3
 	MOVD	R1, R4
 	MOVD	m+0(FP), R0
-	MOVD	R5, R1
+	MOVD	R7, R1
 	MOVD R1, R25
 	MOVD R2, R26
 	ADD R26, R25, R25
@@ -788212,40 +788273,31 @@ pc656:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	188(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc820
-pc796:
-	MOVD	312(RSP), R6
-	ADD	$136, R6, R6
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R6, R0
-	MOVD	R5, R1
-pc820:
-	MOVW	R1, 192(RSP)
-	MOVD	R2, 296(RSP)
-	MOVD	R3, 304(RSP)
-	MOVD	R0, 312(RSP)
-	MOVD	256(RSP), R5
-	ADD	R5, R0, R4
-	MOVD	R4, 288(RSP)
-	ADD	$4, R4, R5
-	MOVD	464(RSP), R6
-	MOVHU	(R6)(R5), R5
-	MOVD	224(RSP), R3
-	ADD	R3, R0, R6
-	MOVD	R6, 280(RSP)
-	UBFIZ	$2, R5, $16, R1
-	MOVD	R0, R2
+	MOVD	160(RSP), R2
+	ADD	$64, R2, R4
 	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	128(RSP), R3
+	MOVW	124(RSP), R5
+	MOVD	ZR, R6
+	MOVD	ZR, R7
 	MOVD R0, R23
 	MOVD 1176(R23), R21
 	MOVD (R21), R21
 	MOVD 32(R23), R20
-	MOVD R1, R25
+	FMOVD R6, F30
+	VMOV R7, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl576:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $4, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
 	MOVD $8793760, R26
 	ADD R26, R25, R25
 	ADD $4, R25, R27
@@ -788253,7 +788305,7 @@ pc820:
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F16
 	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $120, R24, R24
 	MOVD R24, R25
@@ -788261,13 +788313,180 @@ pc820:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $128, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $128, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F18
 	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	MOVD R2, R24
+	WORD $0x0e32c233 // smull v19.8h, v17.8b, v18.8b
+	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
+	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
+	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $112, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $96, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $80, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R4, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $48, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $32, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $16, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0b0a090803020100, R22
+	FMOVD R22, F3
+	MOVD $0x1b1a191813121110, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0f0e0d0c07060504, R22
+	FMOVD R22, F3
+	MOVD $0x1f1e1d1c17161514, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
+	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
+	MOVD R1, R24
 	ADD R3, R24, R24
 	MOVD R24, R25
 	ADD $8, R25, R27
@@ -788275,460 +788494,320 @@ pc820:
 	BLO gcasmsimdoob
 	FMOVD (R20)(R25), F0
 	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612800 // xtn v0.4h, v0.4s
-	WORD $0x0e217800 // fcvtl v0.4s, v0.4h
-	FMOVD F16, R0
-	VMOV V16.D[1], R1
-	FMOVD F0, R2
-	VMOV V0.D[1], R3
-	FMOVD F17, R4
-	VMOV V17.D[1], R5
-	FMOVD F18, R6
-	VMOV V18.D[1], R7
+	WORD $0x0e612814 // xtn v20.4h, v0.4s
+	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
+	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
+	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
+	WORD $0x4e32d7c0 // fadd v0.4s, v30.4s, v18.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	ADD $136, R4, R4
+	SUBW $1, R5, R5
+	CMPW $1, R5
+	BGT gcasmfxl576
+	MOVD R1, R2
+	MOVD R4, R3
+	MOVW R5, R4
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	152(RSP), R7
+	ORR	$2, R7, R7
+	MOVD	192(RSP), R8
+	MUL	R8, R7, R7
+	MOVD	136(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	160(RSP), R2
+	MOVD	128(RSP), R3
+	MOVW	124(RSP), R4
+	MOVD	ZR, R5
+	MOVD	ZR, R6
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl656:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $6, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $132, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x0e32c233 // smull v19.8h, v17.8b, v18.8b
+	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
+	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
+	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $116, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $100, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $84, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $68, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $52, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $36, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $20, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0b0a090803020100, R22
+	FMOVD R22, F3
+	MOVD $0x1b1a191813121110, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0f0e0d0c07060504, R22
+	FMOVD R22, F3
+	MOVD $0x1f1e1d1c17161514, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
+	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612814 // xtn v20.4h, v0.4s
+	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
+	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
+	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
+	WORD $0x4e32d7c0 // fadd v0.4s, v30.4s, v18.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl656
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	152(RSP), R7
+	ORR	$3, R7, R7
+	MOVD	192(RSP), R8
+	MUL	R8, R7, R7
+	MOVD	136(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	144(RSP), R7
+	ADD	$1, R7, R7
 	MOVD	288(RSP), R8
-	ADD	$64, R8, R9
-	MOVD	R0, R10
-	MOVD	R1, R11
-	MOVD	R2, R12
-	MOVD	R3, R13
-	MOVD	m+0(FP), R0
-	MOVD	280(RSP), R1
-	MOVD	R8, R2
-	MOVD	R9, R3
-	MOVD	304(RSP), R8
 	MOVD	296(RSP), R9
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	FMOVD R4, F1
-	VMOV R5, V1.D[1]
-	FMOVD R6, F2
-	VMOV R7, V2.D[1]
-	WORD $0x0e22c030 // smull v16.8h, v1.8b, v2.8b
-	WORD $0x4e602a10 // saddlp v16.4s, v16.8h
-	FMOVD R4, F1
-	VMOV R5, V1.D[1]
-	FMOVD R6, F2
-	VMOV R7, V2.D[1]
-	WORD $0x4e22c031 // smull2 v17.8h, v1.16b, v2.16b
-	WORD $0x4e602a31 // saddlp v17.4s, v17.8h
-	FMOVD R10, F0
-	VMOV R11, V0.D[1]
-	FMOVD R12, F1
-	VMOV R13, V1.D[1]
-	WORD $0x6e21dc12 // fmul v18.4s, v0.4s, v1.4s (renum)
-	ADD $104, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a93 // ldr q19, [x20, x25]
-	ADD $112, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c275 // smull v21.8h, v19.8b, v20.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e34c274 // smull2 v20.8h, v19.16b, v20.16b
-	WORD $0x4e606a91 // sadalp v17.4s, v20.8h
-	ADD $88, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $96, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x0e33c295 // smull v21.8h, v20.8b, v19.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e33c293 // smull2 v19.8h, v20.16b, v19.16b
-	WORD $0x4e606a71 // sadalp v17.4s, v19.8h
-	ADD $72, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a93 // ldr q19, [x20, x25]
-	ADD $80, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c275 // smull v21.8h, v19.8b, v20.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e34c274 // smull2 v20.8h, v19.16b, v20.16b
-	WORD $0x4e606a91 // sadalp v17.4s, v20.8h
-	ADD $56, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	MOVD R3, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x0e33c295 // smull v21.8h, v20.8b, v19.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e33c293 // smull2 v19.8h, v20.16b, v19.16b
-	WORD $0x4e606a71 // sadalp v17.4s, v19.8h
-	ADD $40, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a93 // ldr q19, [x20, x25]
-	ADD $48, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c275 // smull v21.8h, v19.8b, v20.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e34c274 // smull2 v20.8h, v19.16b, v20.16b
-	WORD $0x4e606a91 // sadalp v17.4s, v20.8h
-	ADD $24, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $32, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x0e33c295 // smull v21.8h, v20.8b, v19.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e33c293 // smull2 v19.8h, v20.16b, v19.16b
-	WORD $0x4e606a71 // sadalp v17.4s, v19.8h
-	ADD $8, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a93 // ldr q19, [x20, x25]
-	ADD $16, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c275 // smull v21.8h, v19.8b, v20.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e34c274 // smull2 v20.8h, v19.16b, v20.16b
-	WORD $0x4e606a91 // sadalp v17.4s, v20.8h
-	WORD $0x4eb01e01 // mov v1.16b, v16.16b (fuse)
-	WORD $0x4eb11e22 // mov v2.16b, v17.16b (fuse)
-	MOVD $0x0b0a090803020100, R22
-	FMOVD R22, F3
-	MOVD $0x1b1a191813121110, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb01e01 // mov v1.16b, v16.16b (fuse)
-	WORD $0x4eb11e22 // mov v2.16b, v17.16b (fuse)
-	MOVD $0x0f0e0d0c07060504, R22
-	FMOVD R22, F3
-	MOVD $0x1f1e1d1c17161514, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032031 // tbl v17.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb18680 // add v0.4s, v20.4s, v17.4s (renum)
-	WORD $0x4e21d811 // scvtf v17.4s, v0.4s (renum)
-	WORD $0x6e31de51 // fmul v17.4s, v18.4s, v17.4s (renum)
-	FMOVD R8, F0
-	VMOV R9, V0.D[1]
-	WORD $0x4e31d400 // fadd v0.4s, v0.4s, v17.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	192(RSP), R5
-	SUB	$1, R5, R5
-	CMPW	$1, R5
-	BGT	pc796
-	MOVD	248(RSP), R5
-	ORR	$2, R5, R5
-	MOVD	352(RSP), R6
-	MUL	R6, R5, R5
-	MOVD	232(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	188(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc1048
-pc1024:
-	MOVD	264(RSP), R8
-	ADD	$136, R8, R8
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R8, R0
-	MOVD	R7, R1
-pc1048:
-	MOVW	R1, 184(RSP)
-	MOVD	R0, 264(RSP)
-	MOVD	256(RSP), R7
-	ADD	R7, R0, R4
-	ADD	$6, R4, R7
-	MOVD	464(RSP), R8
-	MOVHU	(R8)(R7), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R3, R5
-	MOVD	R2, R6
-	MOVD	R0, R2
-	MOVD	224(RSP), R3
-	MOVD	m+0(FP), R0
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $132, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	WORD $0x0e32c233 // smull v19.8h, v17.8b, v18.8b
-	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
-	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
-	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $104, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $116, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $88, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $100, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $72, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $84, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $56, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $68, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $40, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $52, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $24, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $36, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $8, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $20, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
-	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
-	MOVD $0x0b0a090803020100, R22
-	FMOVD R22, F3
-	MOVD $0x1b1a191813121110, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
-	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
-	MOVD $0x0f0e0d0c07060504, R22
-	FMOVD R22, F3
-	MOVD $0x1f1e1d1c17161514, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
-	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612814 // xtn v20.4h, v0.4s
-	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
-	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
-	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e32d400 // fadd v0.4s, v0.4s, v18.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	184(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc1024
-	MOVD	248(RSP), R5
-	ORR	$3, R5, R5
-	MOVD	352(RSP), R6
-	MUL	R6, R5, R5
-	MOVD	232(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	240(RSP), R5
-	ADD	$1, R5, R5
-	MOVD	448(RSP), R6
-	MOVD	456(RSP), R7
-	SUB	R7, R6, R8
-	UBFX	$2, R8, $30, R8
-	NOP
-	CMP	R5, R8
-	BNE	pc312
-	MOVD	272(RSP), R8
-	ADD	$1, R8, R8
-	MOVD	344(RSP), R9
-	AND	$-4, R9, R10
+	SUB	R9, R8, R10
 	UBFX	$2, R10, $30, R10
 	NOP
-	CMP	R8, R10
-	BNE	pc180
+	CMP	R7, R10
+	BNE	pc296
+	MOVD	168(RSP), R7
+	ADD	$1, R7, R7
+	MOVD	304(RSP), R10
+	AND	$-4, R10, R11
+	UBFX	$2, R11, $30, R11
+	NOP
+	CMP	R7, R11
+	BNE	pc172
 	RET	(R30)
 gcasmsimdoob:
 	CALL ·gcasmFwdH_base_Wasm_trap_simd_oob(SB)
@@ -815228,7 +815307,7 @@ TEXT ·Fn970(SB), NOSPLIT, $0-56
 	JMP ·Fn970dotprod(SB)
 	JMP ·Fn970generic(SB)
 
-TEXT ·Fn970dotprod(SB), $464-56
+TEXT ·Fn970dotprod(SB), $288-56
 	NO_LOCAL_POINTERS
 	MOVD m+0(FP), R0
 	MOVW l0+8(FP), R1
@@ -815246,21 +815325,20 @@ TEXT ·Fn970dotprod(SB), $464-56
 	MOVD	R5, l4+40(FP)
 	MOVW	R6, l5+48(FP)
 	MOVW	R7, l6+52(FP)
-	MOVD	32(R0), R2
-	MOVD	R2, 448(RSP)
+	MOVB	(R0), R27
 	MOVD	R1, R0
 	MOVD	$32, R1
-	CBZW R1, gcasmdivs80
+	CBZW R1, gcasmdivs72
 	CMNW $1, R1
-	BEQ gcasmdivs80
+	BEQ gcasmdivs72
 	SDIVW R1, R0, R0
-	B gcasmdivd80
-gcasmdivs80:
+	B gcasmdivd72
+gcasmdivs72:
 	MOVW R0, 8(RSP)
 	MOVW R1, 12(RSP)
 	CALL ·gcasmFwdH_base_I32_div_s(SB)
 	MOVW 16(RSP), R0
-gcasmdivd80:
+gcasmdivd72:
 	NOP
 	MOVW	l5+48(FP), R2
 	CMPW	$4, R2
@@ -815269,732 +815347,88 @@ gcasmdivd80:
 	CMPW	$4, R4
 	CSET	LT, R5
 	ORR	R5, R3, R3
-	CBNZW	R3, pc212
+	CBNZW	R3, pc204
 	HINT	$0
 	HINT	$0
 	UBFX	$2, R4, $30, R7
-	MOVD	R7, 280(RSP)
+	MOVD	R7, 152(RSP)
 	UBFX	$2, R2, $30, R8
-	MOVD	R8, 264(RSP)
+	MOVD	R8, 144(RSP)
 	MOVW	l0+8(FP), R9
 	CMPW	$31, R9
-	BGT	pc184
+	BGT	pc176
 	MOVD	l2+24(FP), R5
 	LSL	$2, R5, R6
 	ADD	R6<<1, R6, R6
-	MOVD	R6, 440(RSP)
+	MOVD	R6, 272(RSP)
 	MOVD	m+0(FP), R0
 	MOVD	l1+16(FP), R2
 	MOVD	ZR, R1
-	JMP	pc1140
-pc184:
-	ADD	$1, R0, R9
-	MOVW	R9, 196(RSP)
+	JMP	pc724
+pc176:
+	ADD	$1, R0, R4
+	MOVW	R4, 124(RSP)
 	HINT	$0
-	MOVWU	R0, R10
-	MOVD	R10, 344(RSP)
+	MOVWU	R0, R9
+	MOVD	R9, 208(RSP)
 	MOVD	ZR, R0
-	JMP	pc240
-pc212:
+	JMP	pc236
+pc204:
 	RET	(R30)
-pc224:
-	MOVW	196(RSP), R9
-	MOVD	344(RSP), R10
+pc216:
+	MOVW	124(RSP), R4
+	MOVD	R9, R8
+	MOVD	208(RSP), R9
 	MOVD	R7, R0
-	MOVD	R6, R7
-pc240:
-	MOVD	R0, 336(RSP)
-	MUL	R10, R0, R11
-	LSL	$3, R11, R11
-	ADD	R11<<4, R11, R11
-	MOVD	l4+40(FP), R12
-	ADD	R11, R12, R11
-	MOVD	R11, 328(RSP)
-	LSL	$2, R0, R13
-	MOVD	R13, 320(RSP)
-	MOVD	ZR, R1
-	JMP	pc320
-pc284:
-	MOVD	336(RSP), R0
-	MOVD	R6, R7
-	MOVD	264(RSP), R8
-	MOVW	196(RSP), R9
-	MOVD	344(RSP), R10
-	MOVD	328(RSP), R11
-	MOVD	l4+40(FP), R12
-	MOVD	320(RSP), R13
-	MOVD	R5, R1
-pc320:
-	MOVD	R1, 312(RSP)
-	MUL	R10, R1, R14
-	LSL	$3, R14, R14
-	ADD	R14<<4, R14, R14
-	MOVD	l1+16(FP), R15
-	ADD	R1<<4, R15, R16
-	MOVD	R16, 304(RSP)
-	MOVD	l3+32(FP), R17
-	ADD	R14, R17, R3
-	MOVD	R3, 296(RSP)
-	MOVD	ZR, R2
-	MOVD	ZR, R4
-	MOVD	ZR, R5
-	JMP	pc404
-pc376:
-	MOVD	288(RSP), R8
-	ADD	$136, R8, R2
-	MOVD	296(RSP), R3
-	MOVD	328(RSP), R11
-	MOVD	R7, R9
-	MOVD	R1, R4
-	MOVD	R0, R5
-pc404:
-	MOVW	R9, 192(RSP)
-	MOVD	R2, 288(RSP)
-	ADD	R11, R2, R7
-	MOVD	448(RSP), R8
-	MOVHU	(R8)(R7), R8
-	UBFIZ	$2, R8, $16, R1
-	MOVD	m+0(FP), R0
-	MOVD	R4, R6
-	MOVD	R7, R4
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $120, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
-	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $104, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $104, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
-	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $88, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $88, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $72, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $72, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $56, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $56, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $40, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $40, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $24, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $24, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $8, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $8, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
-	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612812 // xtn v18.4h, v0.4s
-	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
-	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
-	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e33d400 // fadd v0.4s, v0.4s, v19.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	192(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc376
-	MOVD	320(RSP), R5
-	MOVD	l2+24(FP), R6
-	MUL	R6, R5, R5
-	MOVD	304(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	196(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc548
-pc524:
-	MOVD	272(RSP), R8
-	ADD	$136, R8, R8
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R8, R0
-	MOVD	R7, R1
-pc548:
-	MOVW	R1, 188(RSP)
-	MOVD	R0, 272(RSP)
-	MOVD	328(RSP), R7
-	ADD	R7, R0, R4
-	ADD	$2, R4, R7
-	MOVD	448(RSP), R8
-	MOVHU	(R8)(R7), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R3, R5
-	MOVD	R2, R6
-	MOVD	R0, R2
-	MOVD	296(RSP), R3
-	MOVD	m+0(FP), R0
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $124, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
-	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $104, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $108, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
-	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $88, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $92, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $72, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $76, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $56, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $60, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $40, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $44, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $24, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $28, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $8, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $12, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
-	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612812 // xtn v18.4h, v0.4s
-	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
-	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
-	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e33d400 // fadd v0.4s, v0.4s, v19.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	188(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc524
-	MOVD	320(RSP), R5
-	ORR	$1, R5, R5
-	MOVD	l2+24(FP), R6
-	MUL	R6, R5, R5
-	MOVD	304(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	196(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc712
-pc688:
-	MOVD	248(RSP), R6
-	ADD	$136, R6, R6
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R6, R0
-	MOVD	R5, R1
-pc712:
-	MOVW	R1, 184(RSP)
-	MOVD	R2, 232(RSP)
-	MOVD	R3, 240(RSP)
-	MOVD	R0, 248(RSP)
-	MOVD	328(RSP), R5
-	ADD	R5, R0, R4
-	MOVD	R4, 224(RSP)
-	ADD	$4, R4, R5
-	MOVD	448(RSP), R6
-	MOVHU	(R6)(R5), R5
-	MOVD	296(RSP), R3
-	ADD	R3, R0, R6
-	MOVD	R6, 216(RSP)
-	UBFIZ	$2, R5, $16, R1
-	MOVD	R0, R2
-	MOVD	m+0(FP), R0
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $128, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612800 // xtn v0.4h, v0.4s
-	WORD $0x0e217800 // fcvtl v0.4s, v0.4h
-	FMOVD F16, R0
-	VMOV V16.D[1], R1
-	FMOVD F0, R2
-	VMOV V0.D[1], R3
-	FMOVD F17, R4
-	VMOV V17.D[1], R5
-	FMOVD F18, R6
-	VMOV V18.D[1], R7
-	MOVD	224(RSP), R8
-	ADD	$64, R8, R9
-	MOVD	R0, R10
-	MOVD	R1, R11
-	MOVD	R2, R12
-	MOVD	R3, R13
-	MOVD	m+0(FP), R0
-	MOVD	216(RSP), R1
-	MOVD	R8, R2
-	MOVD	R9, R3
-	MOVD	240(RSP), R8
-	MOVD	232(RSP), R9
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	FMOVD R4, F1
-	VMOV R5, V1.D[1]
-	FMOVD R6, F2
-	VMOV R7, V2.D[1]
-	WORD $0x4f000410 // movi v16.4s, #0
-	WORD $0x4e829430 // sdot v16.4s, v1.16b, v2.16b
-	FMOVD R10, F0
-	VMOV R11, V0.D[1]
-	FMOVD R12, F1
-	VMOV R13, V1.D[1]
-	WORD $0x6e21dc11 // fmul v17.4s, v0.4s, v1.4s (renum)
-	ADD $104, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $112, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x4f000403 // movi v3.4s, #0
-	WORD $0x4e939643 // sdot v3.4s, v18.16b, v19.16b
-	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
-	ADD $88, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $96, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949650 // sdot v16.4s, v18.16b, v20.16b
-	ADD $72, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $80, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949653 // sdot v19.4s, v18.16b, v20.16b
-	ADD $56, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	MOVD R3, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949650 // sdot v16.4s, v18.16b, v20.16b
-	ADD $40, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $48, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949653 // sdot v19.4s, v18.16b, v20.16b
-	ADD $24, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $32, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949650 // sdot v16.4s, v18.16b, v20.16b
-	ADD $8, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a92 // ldr q18, [x20, x25]
-	ADD $16, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x4e949653 // sdot v19.4s, v18.16b, v20.16b
-	WORD $0x4eb38600 // add v0.4s, v16.4s, v19.4s (renum)
-	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
-	WORD $0x6e33de33 // fmul v19.4s, v17.4s, v19.4s (renum)
-	FMOVD R8, F0
-	VMOV R9, V0.D[1]
-	WORD $0x4e33d400 // fadd v0.4s, v0.4s, v19.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	184(RSP), R5
-	SUB	$1, R5, R5
-	CMPW	$1, R5
-	BGT	pc688
-	MOVD	320(RSP), R5
-	ORR	$2, R5, R5
-	MOVD	l2+24(FP), R6
-	MUL	R6, R5, R5
-	MOVD	304(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	196(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc940
-pc916:
-	MOVD	200(RSP), R8
-	ADD	$136, R8, R8
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R8, R0
-	MOVD	R7, R1
-pc940:
-	MOVW	R1, 180(RSP)
+	MOVD	152(RSP), R7
+pc236:
 	MOVD	R0, 200(RSP)
-	MOVD	328(RSP), R7
-	ADD	R7, R0, R4
-	ADD	$6, R4, R7
-	MOVD	448(RSP), R8
-	MOVHU	(R8)(R7), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R3, R5
-	MOVD	R2, R6
-	MOVD	R0, R2
-	MOVD	296(RSP), R3
+	MUL	R9, R0, R10
+	LSL	$3, R10, R10
+	ADD	R10<<4, R10, R10
+	MOVD	l4+40(FP), R11
+	ADD	R10, R11, R2
+	MOVD	R2, 192(RSP)
+	LSL	$2, R0, R10
+	MOVD	R10, 184(RSP)
+	MOVD	ZR, R1
+	JMP	pc296
+pc280:
+	MOVD	192(RSP), R2
+	MOVW	124(RSP), R4
+	MOVD	208(RSP), R9
+	MOVD	R7, R1
+pc296:
+	MOVD	R1, 176(RSP)
+	MOVD	l1+16(FP), R7
+	ADD	R1<<4, R7, R7
+	MOVD	R7, 168(RSP)
+	MUL	R9, R1, R7
+	LSL	$3, R7, R7
+	ADD	R7<<4, R7, R7
+	MOVD	l3+32(FP), R8
+	ADD	R7, R8, R3
+	MOVD	R3, 160(RSP)
 	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	ZR, R5
+	MOVD	ZR, R6
 	MOVD R0, R23
 	MOVD 1176(R23), R21
 	MOVD (R21), R21
 	MOVD 32(R23), R20
-	MOVD R1, R25
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl352:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
 	MOVD $8793760, R26
 	ADD R26, R25, R25
 	ADD $4, R25, R27
@@ -816002,7 +815436,7 @@ pc940:
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F16
 	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $120, R24, R24
 	MOVD R24, R25
@@ -816010,7 +815444,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $132, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -816019,7 +815456,7 @@ pc940:
 	WORD $0x4f000403 // movi v3.4s, #0
 	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
 	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $104, R24, R24
 	MOVD R24, R25
@@ -816027,7 +815464,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $116, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -816036,7 +815476,7 @@ pc940:
 	WORD $0x4f000403 // movi v3.4s, #0
 	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
 	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $88, R24, R24
 	MOVD R24, R25
@@ -816044,14 +815484,17 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $100, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $72, R24, R24
 	MOVD R24, R25
@@ -816059,14 +815502,17 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $84, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $56, R24, R24
 	MOVD R24, R25
@@ -816074,14 +815520,17 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $68, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $40, R24, R24
 	MOVD R24, R25
@@ -816089,14 +815538,17 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $52, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $24, R24, R24
 	MOVD R24, R25
@@ -816104,14 +815556,17 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $36, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F20
 	WORD $0x4e040694 // dup v20.4s, v20.s[0]
 	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $8, R24, R24
 	MOVD R24, R25
@@ -816119,7 +815574,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $20, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -816128,7 +815586,7 @@ pc940:
 	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
 	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
 	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	MOVD R24, R25
 	ADD $8, R25, R27
@@ -816140,26 +815598,26 @@ pc940:
 	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
 	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
 	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e33d400 // fadd v0.4s, v0.4s, v19.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	180(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc916
-	MOVD	320(RSP), R5
-	ORR	$3, R5, R5
-	MOVD	l2+24(FP), R6
-	MUL	R6, R5, R5
-	MOVD	304(RSP), R6
-	ADD	R5<<2, R6, R5
+	WORD $0x4e33d7c0 // fadd v0.4s, v30.4s, v19.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl352
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	184(RSP), R7
+	MOVD	l2+24(FP), R8
+	MUL	R8, R7, R7
+	MOVD	168(RSP), R8
+	ADD	R7<<2, R8, R7
 	MOVD	ZR, R2
 	MOVD	R0, R3
 	MOVD	R1, R4
 	MOVD	m+0(FP), R0
-	MOVD	R5, R1
+	MOVD	R7, R1
 	MOVD R1, R25
 	MOVD R2, R26
 	ADD R26, R25, R25
@@ -816171,45 +815629,720 @@ pc940:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	312(RSP), R5
-	ADD	$1, R5, R5
-	MOVD	280(RSP), R6
-	CMP	R5, R6
-	BNE	pc284
-	MOVD	336(RSP), R7
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	192(RSP), R2
+	MOVD	160(RSP), R3
+	MOVW	124(RSP), R4
+	MOVD	ZR, R5
+	MOVD	ZR, R6
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl428:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $2, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $124, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
+	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $108, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F19
+	WORD $0x4e040673 // dup v19.4s, v19.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
+	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $92, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $76, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $60, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $44, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $28, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $12, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
+	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612812 // xtn v18.4h, v0.4s
+	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
+	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
+	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
+	WORD $0x4e33d7c0 // fadd v0.4s, v30.4s, v19.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl428
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	184(RSP), R7
+	ORR	$1, R7, R7
+	MOVD	l2+24(FP), R8
+	MUL	R8, R7, R7
+	MOVD	168(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	192(RSP), R2
+	ADD	$64, R2, R4
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	160(RSP), R3
+	MOVW	124(RSP), R5
+	MOVD	ZR, R6
+	MOVD	ZR, R7
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R6, F30
+	VMOV R7, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl512:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $4, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $128, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
+	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $112, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F19
+	WORD $0x4e040673 // dup v19.4s, v19.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
+	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $96, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $80, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R4, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $48, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $32, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $16, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
+	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612812 // xtn v18.4h, v0.4s
+	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
+	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
+	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
+	WORD $0x4e33d7c0 // fadd v0.4s, v30.4s, v19.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	ADD $136, R4, R4
+	SUBW $1, R5, R5
+	CMPW $1, R5
+	BGT gcasmfxl512
+	MOVD R1, R2
+	MOVD R4, R3
+	MOVW R5, R4
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	184(RSP), R7
+	ORR	$2, R7, R7
+	MOVD	l2+24(FP), R8
+	MUL	R8, R7, R7
+	MOVD	168(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	192(RSP), R2
+	MOVD	160(RSP), R3
+	MOVW	124(RSP), R4
+	MOVD	ZR, R5
+	MOVD	ZR, R6
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl592:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $6, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $132, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e929623 // sdot v3.4s, v17.16b, v18.16b
+	WORD $0x4ea31c72 // mov v18.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $116, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F19
+	WORD $0x4e040673 // dup v19.4s, v19.s[0]
+	WORD $0x4f000403 // movi v3.4s, #0
+	WORD $0x4e939623 // sdot v3.4s, v17.16b, v19.16b
+	WORD $0x4ea31c73 // mov v19.16b, v3.16b (fuse)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $100, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $84, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $68, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $52, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $36, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949632 // sdot v18.4s, v17.16b, v20.16b
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $20, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x4e949633 // sdot v19.4s, v17.16b, v20.16b
+	WORD $0x4eb38640 // add v0.4s, v18.4s, v19.4s (renum)
+	WORD $0x4e21d813 // scvtf v19.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612812 // xtn v18.4h, v0.4s
+	WORD $0x0e217a52 // fcvtl v18.4s, v18.4h
+	WORD $0x6e32de00 // fmul v0.4s, v16.4s, v18.4s (renum)
+	WORD $0x6e33dc13 // fmul v19.4s, v0.4s, v19.4s (renum)
+	WORD $0x4e33d7c0 // fadd v0.4s, v30.4s, v19.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl592
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	184(RSP), R7
+	ORR	$3, R7, R7
+	MOVD	l2+24(FP), R8
+	MUL	R8, R7, R7
+	MOVD	168(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	176(RSP), R7
 	ADD	$1, R7, R7
-	MOVD	264(RSP), R8
+	MOVD	152(RSP), R8
 	CMP	R7, R8
-	BNE	pc224
-	JMP	pc212
-pc1104:
-	MOVD	256(RSP), R9
+	BNE	pc280
+	MOVD	200(RSP), R7
+	ADD	$1, R7, R7
+	MOVD	144(RSP), R9
+	CMP	R7, R9
+	BNE	pc216
+	JMP	pc204
+pc688:
+	MOVD	136(RSP), R9
 	MOVD	l2+24(FP), R10
 	ADD	R10<<4, R9, R2
 	MOVD	m+0(FP), R0
-	MOVD	440(RSP), R6
-	MOVD	280(RSP), R7
-	MOVD	264(RSP), R8
+	MOVD	272(RSP), R6
+	MOVD	152(RSP), R7
+	MOVD	144(RSP), R8
 	MOVD	R5, R1
 	MOVD	R10, R5
-pc1140:
-	MOVD	R2, 256(RSP)
-	MOVD	R1, 208(RSP)
-	CBZ	R7, pc1164
+pc724:
+	MOVD	R2, 136(RSP)
+	MOVD	R1, 128(RSP)
+	CBZ	R7, pc748
 	MOVD	R7, R3
 	MOVD	R2, R4
-	JMP	pc1876
-pc1164:
+	JMP	pc1448
+pc748:
 	MOVD	ZR, R3
-	JMP	pc1188
-pc1172:
+	JMP	pc772
+pc756:
 	SUB	$1, R5, R3
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	ADD	$16, R5, R2
 	MOVD	m+0(FP), R0
-pc1188:
-	MOVD	R3, 376(RSP)
-	MOVD	R2, 368(RSP)
+pc772:
+	MOVD	R3, 224(RSP)
+	MOVD	R2, 216(RSP)
 	MOVD	R2, R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
@@ -816225,7 +816358,7 @@ pc1188:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	MOVD	l2+24(FP), R6
 	ADD	R6<<2, R5, R1
 	MOVD	m+0(FP), R0
@@ -816243,7 +816376,7 @@ pc1188:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	MOVD	l2+24(FP), R6
 	ADD	R6<<3, R5, R1
 	MOVD	m+0(FP), R0
@@ -816261,8 +816394,8 @@ pc1188:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	440(RSP), R5
-	MOVD	368(RSP), R6
+	MOVD	272(RSP), R5
+	MOVD	216(RSP), R6
 	ADD	R6, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816279,19 +816412,19 @@ pc1188:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	376(RSP), R5
+	MOVD	224(RSP), R5
 	CMP	$1, R5
-	BNE	pc1172
-pc1324:
-	MOVD	208(RSP), R5
+	BNE	pc756
+pc908:
+	MOVD	128(RSP), R5
 	ADD	$1, R5, R5
-	MOVD	264(RSP), R6
+	MOVD	144(RSP), R6
 	CMP	R5, R6
-	BNE	pc1104
-	JMP	pc212
-pc1348:
-	MOVD	R2, 432(RSP)
-	MOVD	R7, 424(RSP)
+	BNE	pc688
+	JMP	pc204
+pc932:
+	MOVD	R2, 264(RSP)
+	MOVD	R7, 256(RSP)
 	MOVD	R2, R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
@@ -816307,23 +816440,10 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	440(RSP), R5
-	MOVD	432(RSP), R6
-	ADD	R6, R5, R5
-	MOVD	R5, 416(RSP)
-	ADD	$16, R6, R7
-	MOVD	R7, 360(RSP)
-	MOVD	l2+24(FP), R7
-	ADD	R7<<3, R6, R8
-	MOVD	R8, 408(RSP)
-	ADD	$16, R8, R8
-	MOVD	R8, 400(RSP)
-	ADD	$16, R5, R5
-	MOVD	R5, 392(RSP)
-	ADD	$32, R6, R5
-	MOVD	R5, 352(RSP)
-	ADD	R7<<2, R6, R1
-	MOVD	R1, 384(RSP)
+	MOVD	264(RSP), R5
+	MOVD	l2+24(FP), R6
+	ADD	R6<<2, R5, R1
+	MOVD	R1, 248(RSP)
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
 	MOVD	ZR, R3
@@ -816339,8 +816459,11 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	264(RSP), R5
+	MOVD	l2+24(FP), R6
+	ADD	R6<<3, R5, R1
+	MOVD	R1, 240(RSP)
 	MOVD	m+0(FP), R0
-	MOVD	408(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -816355,8 +816478,11 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	272(RSP), R5
+	MOVD	264(RSP), R6
+	ADD	R6, R5, R1
+	MOVD	R1, 232(RSP)
 	MOVD	m+0(FP), R0
-	MOVD	416(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -816371,23 +816497,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	m+0(FP), R0
-	MOVD	360(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	MOVD	ZR, R4
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	384(RSP), R5
+	MOVD	264(RSP), R5
 	ADD	$16, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816404,8 +816514,9 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	248(RSP), R5
+	ADD	$16, R5, R1
 	MOVD	m+0(FP), R0
-	MOVD	400(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -816420,8 +816531,9 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	240(RSP), R5
+	ADD	$16, R5, R1
 	MOVD	m+0(FP), R0
-	MOVD	392(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -816436,8 +816548,9 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	232(RSP), R5
+	ADD	$16, R5, R1
 	MOVD	m+0(FP), R0
-	MOVD	352(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -816452,7 +816565,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	384(RSP), R5
+	MOVD	264(RSP), R5
 	ADD	$32, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816469,7 +816582,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	408(RSP), R5
+	MOVD	248(RSP), R5
 	ADD	$32, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816486,7 +816599,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	416(RSP), R5
+	MOVD	240(RSP), R5
 	ADD	$32, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816503,7 +816616,24 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	432(RSP), R5
+	MOVD	232(RSP), R5
+	ADD	$32, R5, R1
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R2
+	MOVD	ZR, R3
+	MOVD	ZR, R4
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	264(RSP), R5
 	ADD	$48, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816520,7 +816650,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	384(RSP), R5
+	MOVD	248(RSP), R5
 	ADD	$48, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816537,7 +816667,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	408(RSP), R5
+	MOVD	240(RSP), R5
 	ADD	$48, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816554,7 +816684,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	416(RSP), R5
+	MOVD	232(RSP), R5
 	ADD	$48, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816571,30 +816701,30 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	424(RSP), R5
+	MOVD	256(RSP), R5
 	SUB	$4, R5, R7
-	MOVD	432(RSP), R5
+	MOVD	264(RSP), R5
 	ADD	$64, R5, R2
 	MOVD	m+0(FP), R0
-	MOVD	208(RSP), R1
-	MOVD	280(RSP), R3
-	MOVD	256(RSP), R4
+	MOVD	128(RSP), R1
+	MOVD	152(RSP), R3
+	MOVD	136(RSP), R4
 	MOVD	l2+24(FP), R5
-	MOVD	440(RSP), R6
-	MOVD	264(RSP), R8
-pc1876:
+	MOVD	272(RSP), R6
+	MOVD	144(RSP), R8
+pc1448:
 	CMP	$4, R7
-	BHS	pc1348
-	CBZ	R7, pc1324
-	JMP	pc1908
-pc1892:
+	BHS	pc932
+	CBZ	R7, pc908
+	JMP	pc1480
+pc1464:
 	SUB	$1, R5, R7
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	ADD	$16, R5, R2
 	MOVD	m+0(FP), R0
-pc1908:
-	MOVD	R7, 376(RSP)
-	MOVD	R2, 368(RSP)
+pc1480:
+	MOVD	R7, 224(RSP)
+	MOVD	R2, 216(RSP)
 	MOVD	R2, R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
@@ -816610,7 +816740,7 @@ pc1908:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	MOVD	l2+24(FP), R6
 	ADD	R6<<2, R5, R1
 	MOVD	m+0(FP), R0
@@ -816628,7 +816758,7 @@ pc1908:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	MOVD	l2+24(FP), R6
 	ADD	R6<<3, R5, R1
 	MOVD	m+0(FP), R0
@@ -816646,8 +816776,8 @@ pc1908:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	440(RSP), R5
-	MOVD	368(RSP), R6
+	MOVD	272(RSP), R5
+	MOVD	216(RSP), R6
 	ADD	R6, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -816664,22 +816794,22 @@ pc1908:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	376(RSP), R5
+	MOVD	224(RSP), R5
 	CMP	$1, R5
-	BNE	pc1892
+	BNE	pc1464
 	MOVD	m+0(FP), R0
-	MOVD	208(RSP), R1
-	MOVD	280(RSP), R3
-	MOVD	256(RSP), R4
+	MOVD	128(RSP), R1
+	MOVD	152(RSP), R3
+	MOVD	136(RSP), R4
 	MOVD	l2+24(FP), R5
-	MOVD	440(RSP), R6
-	MOVD	264(RSP), R8
-	JMP	pc1324
+	MOVD	272(RSP), R6
+	MOVD	144(RSP), R8
+	JMP	pc908
 gcasmsimdoob:
 	CALL ·gcasmFwdH_base_Wasm_trap_simd_oob(SB)
 	RET
 
-TEXT ·Fn970generic(SB), $464-56
+TEXT ·Fn970generic(SB), $288-56
 	NO_LOCAL_POINTERS
 	MOVD m+0(FP), R0
 	MOVW l0+8(FP), R1
@@ -816697,21 +816827,20 @@ TEXT ·Fn970generic(SB), $464-56
 	MOVD	R5, l4+40(FP)
 	MOVW	R6, l5+48(FP)
 	MOVW	R7, l6+52(FP)
-	MOVD	32(R0), R2
-	MOVD	R2, 448(RSP)
+	MOVB	(R0), R27
 	MOVD	R1, R0
 	MOVD	$32, R1
-	CBZW R1, gcasmdivs80
+	CBZW R1, gcasmdivs72
 	CMNW $1, R1
-	BEQ gcasmdivs80
+	BEQ gcasmdivs72
 	SDIVW R1, R0, R0
-	B gcasmdivd80
-gcasmdivs80:
+	B gcasmdivd72
+gcasmdivs72:
 	MOVW R0, 8(RSP)
 	MOVW R1, 12(RSP)
 	CALL ·gcasmFwdH_base_I32_div_s(SB)
 	MOVW 16(RSP), R0
-gcasmdivd80:
+gcasmdivd72:
 	NOP
 	MOVW	l5+48(FP), R2
 	CMPW	$4, R2
@@ -816720,839 +816849,88 @@ gcasmdivd80:
 	CMPW	$4, R4
 	CSET	LT, R5
 	ORR	R5, R3, R3
-	CBNZW	R3, pc212
+	CBNZW	R3, pc204
 	HINT	$0
 	HINT	$0
 	UBFX	$2, R4, $30, R7
-	MOVD	R7, 280(RSP)
+	MOVD	R7, 152(RSP)
 	UBFX	$2, R2, $30, R8
-	MOVD	R8, 264(RSP)
+	MOVD	R8, 144(RSP)
 	MOVW	l0+8(FP), R9
 	CMPW	$31, R9
-	BGT	pc184
+	BGT	pc176
 	MOVD	l2+24(FP), R5
 	LSL	$2, R5, R6
 	ADD	R6<<1, R6, R6
-	MOVD	R6, 440(RSP)
+	MOVD	R6, 272(RSP)
 	MOVD	m+0(FP), R0
 	MOVD	l1+16(FP), R2
 	MOVD	ZR, R1
-	JMP	pc1140
-pc184:
-	ADD	$1, R0, R9
-	MOVW	R9, 196(RSP)
+	JMP	pc724
+pc176:
+	ADD	$1, R0, R4
+	MOVW	R4, 124(RSP)
 	HINT	$0
-	MOVWU	R0, R10
-	MOVD	R10, 344(RSP)
+	MOVWU	R0, R9
+	MOVD	R9, 208(RSP)
 	MOVD	ZR, R0
-	JMP	pc240
-pc212:
+	JMP	pc236
+pc204:
 	RET	(R30)
-pc224:
-	MOVW	196(RSP), R9
-	MOVD	344(RSP), R10
+pc216:
+	MOVW	124(RSP), R4
+	MOVD	R9, R8
+	MOVD	208(RSP), R9
 	MOVD	R7, R0
-	MOVD	R6, R7
-pc240:
-	MOVD	R0, 336(RSP)
-	MUL	R10, R0, R11
-	LSL	$3, R11, R11
-	ADD	R11<<4, R11, R11
-	MOVD	l4+40(FP), R12
-	ADD	R11, R12, R11
-	MOVD	R11, 328(RSP)
-	LSL	$2, R0, R13
-	MOVD	R13, 320(RSP)
-	MOVD	ZR, R1
-	JMP	pc320
-pc284:
-	MOVD	336(RSP), R0
-	MOVD	R6, R7
-	MOVD	264(RSP), R8
-	MOVW	196(RSP), R9
-	MOVD	344(RSP), R10
-	MOVD	328(RSP), R11
-	MOVD	l4+40(FP), R12
-	MOVD	320(RSP), R13
-	MOVD	R5, R1
-pc320:
-	MOVD	R1, 312(RSP)
-	MUL	R10, R1, R14
-	LSL	$3, R14, R14
-	ADD	R14<<4, R14, R14
-	MOVD	l1+16(FP), R15
-	ADD	R1<<4, R15, R16
-	MOVD	R16, 304(RSP)
-	MOVD	l3+32(FP), R17
-	ADD	R14, R17, R3
-	MOVD	R3, 296(RSP)
-	MOVD	ZR, R2
-	MOVD	ZR, R4
-	MOVD	ZR, R5
-	JMP	pc404
-pc376:
-	MOVD	288(RSP), R8
-	ADD	$136, R8, R2
-	MOVD	296(RSP), R3
-	MOVD	328(RSP), R11
-	MOVD	R7, R9
-	MOVD	R1, R4
-	MOVD	R0, R5
-pc404:
-	MOVW	R9, 192(RSP)
-	MOVD	R2, 288(RSP)
-	ADD	R11, R2, R7
-	MOVD	448(RSP), R8
-	MOVHU	(R8)(R7), R8
-	UBFIZ	$2, R8, $16, R1
-	MOVD	m+0(FP), R0
-	MOVD	R4, R6
-	MOVD	R7, R4
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $120, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	WORD $0x0e32c233 // smull v19.8h, v17.8b, v18.8b
-	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
-	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
-	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $104, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $104, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $88, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $88, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $72, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $72, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $56, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $56, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $40, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $40, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $24, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $24, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $8, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $8, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
-	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
-	MOVD $0x0b0a090803020100, R22
-	FMOVD R22, F3
-	MOVD $0x1b1a191813121110, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
-	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
-	MOVD $0x0f0e0d0c07060504, R22
-	FMOVD R22, F3
-	MOVD $0x1f1e1d1c17161514, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
-	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612814 // xtn v20.4h, v0.4s
-	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
-	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
-	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e32d400 // fadd v0.4s, v0.4s, v18.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	192(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc376
-	MOVD	320(RSP), R5
-	MOVD	l2+24(FP), R6
-	MUL	R6, R5, R5
-	MOVD	304(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	196(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc548
-pc524:
-	MOVD	272(RSP), R8
-	ADD	$136, R8, R8
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R8, R0
-	MOVD	R7, R1
-pc548:
-	MOVW	R1, 188(RSP)
-	MOVD	R0, 272(RSP)
-	MOVD	328(RSP), R7
-	ADD	R7, R0, R4
-	ADD	$2, R4, R7
-	MOVD	448(RSP), R8
-	MOVHU	(R8)(R7), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R3, R5
-	MOVD	R2, R6
-	MOVD	R0, R2
-	MOVD	296(RSP), R3
-	MOVD	m+0(FP), R0
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $124, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	WORD $0x0e32c233 // smull v19.8h, v17.8b, v18.8b
-	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
-	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
-	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $104, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $108, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $88, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $92, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $72, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $76, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $56, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $60, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $40, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $44, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $24, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $28, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F17
-	WORD $0x4e040631 // dup v17.4s, v17.s[0]
-	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
-	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $8, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $12, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
-	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
-	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
-	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
-	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
-	MOVD $0x0b0a090803020100, R22
-	FMOVD R22, F3
-	MOVD $0x1b1a191813121110, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
-	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
-	MOVD $0x0f0e0d0c07060504, R22
-	FMOVD R22, F3
-	MOVD $0x1f1e1d1c17161514, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
-	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612814 // xtn v20.4h, v0.4s
-	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
-	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
-	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e32d400 // fadd v0.4s, v0.4s, v18.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	188(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc524
-	MOVD	320(RSP), R5
-	ORR	$1, R5, R5
-	MOVD	l2+24(FP), R6
-	MUL	R6, R5, R5
-	MOVD	304(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	196(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc712
-pc688:
-	MOVD	248(RSP), R6
-	ADD	$136, R6, R6
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R6, R0
-	MOVD	R5, R1
-pc712:
-	MOVW	R1, 184(RSP)
-	MOVD	R2, 232(RSP)
-	MOVD	R3, 240(RSP)
-	MOVD	R0, 248(RSP)
-	MOVD	328(RSP), R5
-	ADD	R5, R0, R4
-	MOVD	R4, 224(RSP)
-	ADD	$4, R4, R5
-	MOVD	448(RSP), R6
-	MOVHU	(R6)(R5), R5
-	MOVD	296(RSP), R3
-	ADD	R3, R0, R6
-	MOVD	R6, 216(RSP)
-	UBFIZ	$2, R5, $16, R1
-	MOVD	R0, R2
-	MOVD	m+0(FP), R0
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	MOVD R1, R25
-	MOVD $8793760, R26
-	ADD R26, R25, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F16
-	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	ADD $120, R24, R24
-	MOVD R24, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $128, R4, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F18
-	WORD $0x4e040652 // dup v18.4s, v18.s[0]
-	MOVD R2, R24
-	ADD R3, R24, R24
-	MOVD R24, R25
-	ADD $8, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVD (R20)(R25), F0
-	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
-	WORD $0x0e612800 // xtn v0.4h, v0.4s
-	WORD $0x0e217800 // fcvtl v0.4s, v0.4h
-	FMOVD F16, R0
-	VMOV V16.D[1], R1
-	FMOVD F0, R2
-	VMOV V0.D[1], R3
-	FMOVD F17, R4
-	VMOV V17.D[1], R5
-	FMOVD F18, R6
-	VMOV V18.D[1], R7
-	MOVD	224(RSP), R8
-	ADD	$64, R8, R9
-	MOVD	R0, R10
-	MOVD	R1, R11
-	MOVD	R2, R12
-	MOVD	R3, R13
-	MOVD	m+0(FP), R0
-	MOVD	216(RSP), R1
-	MOVD	R8, R2
-	MOVD	R9, R3
-	MOVD	240(RSP), R8
-	MOVD	232(RSP), R9
-	MOVD R0, R23
-	MOVD 1176(R23), R21
-	MOVD (R21), R21
-	MOVD 32(R23), R20
-	FMOVD R4, F1
-	VMOV R5, V1.D[1]
-	FMOVD R6, F2
-	VMOV R7, V2.D[1]
-	WORD $0x0e22c030 // smull v16.8h, v1.8b, v2.8b
-	WORD $0x4e602a10 // saddlp v16.4s, v16.8h
-	FMOVD R4, F1
-	VMOV R5, V1.D[1]
-	FMOVD R6, F2
-	VMOV R7, V2.D[1]
-	WORD $0x4e22c031 // smull2 v17.8h, v1.16b, v2.16b
-	WORD $0x4e602a31 // saddlp v17.4s, v17.8h
-	FMOVD R10, F0
-	VMOV R11, V0.D[1]
-	FMOVD R12, F1
-	VMOV R13, V1.D[1]
-	WORD $0x6e21dc12 // fmul v18.4s, v0.4s, v1.4s (renum)
-	ADD $104, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a93 // ldr q19, [x20, x25]
-	ADD $112, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c275 // smull v21.8h, v19.8b, v20.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e34c274 // smull2 v20.8h, v19.16b, v20.16b
-	WORD $0x4e606a91 // sadalp v17.4s, v20.8h
-	ADD $88, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $96, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x0e33c295 // smull v21.8h, v20.8b, v19.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e33c293 // smull2 v19.8h, v20.16b, v19.16b
-	WORD $0x4e606a71 // sadalp v17.4s, v19.8h
-	ADD $72, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a93 // ldr q19, [x20, x25]
-	ADD $80, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c275 // smull v21.8h, v19.8b, v20.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e34c274 // smull2 v20.8h, v19.16b, v20.16b
-	WORD $0x4e606a91 // sadalp v17.4s, v20.8h
-	ADD $56, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	MOVD R3, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x0e33c295 // smull v21.8h, v20.8b, v19.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e33c293 // smull2 v19.8h, v20.16b, v19.16b
-	WORD $0x4e606a71 // sadalp v17.4s, v19.8h
-	ADD $40, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a93 // ldr q19, [x20, x25]
-	ADD $48, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c275 // smull v21.8h, v19.8b, v20.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e34c274 // smull2 v20.8h, v19.16b, v20.16b
-	WORD $0x4e606a91 // sadalp v17.4s, v20.8h
-	ADD $24, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $32, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F19
-	WORD $0x4e040673 // dup v19.4s, v19.s[0]
-	WORD $0x0e33c295 // smull v21.8h, v20.8b, v19.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e33c293 // smull2 v19.8h, v20.16b, v19.16b
-	WORD $0x4e606a71 // sadalp v17.4s, v19.8h
-	ADD $8, R1, R25
-	ADD $16, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	WORD $0x3cf96a93 // ldr q19, [x20, x25]
-	ADD $16, R2, R25
-	ADD $4, R25, R27
-	CMP R27, R21
-	BLO gcasmsimdoob
-	FMOVS (R20)(R25), F20
-	WORD $0x4e040694 // dup v20.4s, v20.s[0]
-	WORD $0x0e34c275 // smull v21.8h, v19.8b, v20.8b
-	WORD $0x4e606ab0 // sadalp v16.4s, v21.8h
-	WORD $0x4e34c274 // smull2 v20.8h, v19.16b, v20.16b
-	WORD $0x4e606a91 // sadalp v17.4s, v20.8h
-	WORD $0x4eb01e01 // mov v1.16b, v16.16b (fuse)
-	WORD $0x4eb11e22 // mov v2.16b, v17.16b (fuse)
-	MOVD $0x0b0a090803020100, R22
-	FMOVD R22, F3
-	MOVD $0x1b1a191813121110, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb01e01 // mov v1.16b, v16.16b (fuse)
-	WORD $0x4eb11e22 // mov v2.16b, v17.16b (fuse)
-	MOVD $0x0f0e0d0c07060504, R22
-	FMOVD R22, F3
-	MOVD $0x1f1e1d1c17161514, R22
-	VMOV R22, V3.D[1]
-	WORD $0x4e032031 // tbl v17.16b, {v1.16b, v2.16b}, v3.16b
-	WORD $0x4eb18680 // add v0.4s, v20.4s, v17.4s (renum)
-	WORD $0x4e21d811 // scvtf v17.4s, v0.4s (renum)
-	WORD $0x6e31de51 // fmul v17.4s, v18.4s, v17.4s (renum)
-	FMOVD R8, F0
-	VMOV R9, V0.D[1]
-	WORD $0x4e31d400 // fadd v0.4s, v0.4s, v17.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	184(RSP), R5
-	SUB	$1, R5, R5
-	CMPW	$1, R5
-	BGT	pc688
-	MOVD	320(RSP), R5
-	ORR	$2, R5, R5
-	MOVD	l2+24(FP), R6
-	MUL	R6, R5, R5
-	MOVD	304(RSP), R6
-	ADD	R5<<2, R6, R5
-	MOVD	ZR, R2
-	MOVD	R0, R3
-	MOVD	R1, R4
-	MOVD	m+0(FP), R0
-	MOVD	R5, R1
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	ZR, R0
-	MOVW	196(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	JMP	pc940
-pc916:
-	MOVD	200(RSP), R8
-	ADD	$136, R8, R8
-	MOVD	R1, R2
-	MOVD	R0, R3
-	MOVD	R8, R0
-	MOVD	R7, R1
-pc940:
-	MOVW	R1, 180(RSP)
+	MOVD	152(RSP), R7
+pc236:
 	MOVD	R0, 200(RSP)
-	MOVD	328(RSP), R7
-	ADD	R7, R0, R4
-	ADD	$6, R4, R7
-	MOVD	448(RSP), R8
-	MOVHU	(R8)(R7), R7
-	UBFIZ	$2, R7, $16, R1
-	MOVD	R3, R5
-	MOVD	R2, R6
-	MOVD	R0, R2
-	MOVD	296(RSP), R3
+	MUL	R9, R0, R10
+	LSL	$3, R10, R10
+	ADD	R10<<4, R10, R10
+	MOVD	l4+40(FP), R11
+	ADD	R10, R11, R2
+	MOVD	R2, 192(RSP)
+	LSL	$2, R0, R10
+	MOVD	R10, 184(RSP)
+	MOVD	ZR, R1
+	JMP	pc296
+pc280:
+	MOVD	192(RSP), R2
+	MOVW	124(RSP), R4
+	MOVD	208(RSP), R9
+	MOVD	R7, R1
+pc296:
+	MOVD	R1, 176(RSP)
+	MOVD	l1+16(FP), R7
+	ADD	R1<<4, R7, R7
+	MOVD	R7, 168(RSP)
+	MUL	R9, R1, R7
+	LSL	$3, R7, R7
+	ADD	R7<<4, R7, R7
+	MOVD	l3+32(FP), R8
+	ADD	R7, R8, R3
+	MOVD	R3, 160(RSP)
 	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	ZR, R5
+	MOVD	ZR, R6
 	MOVD R0, R23
 	MOVD 1176(R23), R21
 	MOVD (R21), R21
 	MOVD 32(R23), R20
-	MOVD R1, R25
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl352:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
 	MOVD $8793760, R26
 	ADD R26, R25, R25
 	ADD $4, R25, R27
@@ -817560,7 +816938,7 @@ pc940:
 	BLO gcasmsimdoob
 	FMOVS (R20)(R25), F16
 	WORD $0x4e040610 // dup v16.4s, v16.s[0]
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $120, R24, R24
 	MOVD R24, R25
@@ -817568,7 +816946,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $132, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -817578,7 +816959,7 @@ pc940:
 	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
 	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
 	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $104, R24, R24
 	MOVD R24, R25
@@ -817586,7 +816967,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $116, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -817596,7 +816980,7 @@ pc940:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $88, R24, R24
 	MOVD R24, R25
@@ -817604,7 +816988,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $100, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -817614,7 +817001,7 @@ pc940:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $72, R24, R24
 	MOVD R24, R25
@@ -817622,7 +817009,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $84, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -817632,7 +817022,7 @@ pc940:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $56, R24, R24
 	MOVD R24, R25
@@ -817640,7 +817030,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $68, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -817650,7 +817043,7 @@ pc940:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $40, R24, R24
 	MOVD R24, R25
@@ -817658,7 +817051,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $52, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -817668,7 +817064,7 @@ pc940:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
 	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $24, R24, R24
 	MOVD R24, R25
@@ -817676,7 +817072,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a94 // ldr q20, [x20, x25]
-	ADD $36, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -817686,7 +817085,7 @@ pc940:
 	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
 	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
 	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	ADD $8, R24, R24
 	MOVD R24, R25
@@ -817694,7 +817093,10 @@ pc940:
 	CMP R27, R21
 	BLO gcasmsimdoob
 	WORD $0x3cf96a91 // ldr q17, [x20, x25]
-	ADD $20, R4, R25
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
 	ADD $4, R25, R27
 	CMP R27, R21
 	BLO gcasmsimdoob
@@ -817720,7 +817122,7 @@ pc940:
 	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
 	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
 	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
-	MOVD R2, R24
+	MOVD R1, R24
 	ADD R3, R24, R24
 	MOVD R24, R25
 	ADD $8, R25, R27
@@ -817732,26 +817134,26 @@ pc940:
 	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
 	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
 	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
-	FMOVD R5, F0
-	VMOV R6, V0.D[1]
-	WORD $0x4e32d400 // fadd v0.4s, v0.4s, v18.4s (renum)
-	FMOVD F0, R0
-	VMOV V0.D[1], R1
-	MOVW	180(RSP), R7
-	SUB	$1, R7, R7
-	CMPW	$1, R7
-	BGT	pc916
-	MOVD	320(RSP), R5
-	ORR	$3, R5, R5
-	MOVD	l2+24(FP), R6
-	MUL	R6, R5, R5
-	MOVD	304(RSP), R6
-	ADD	R5<<2, R6, R5
+	WORD $0x4e32d7c0 // fadd v0.4s, v30.4s, v18.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl352
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	184(RSP), R7
+	MOVD	l2+24(FP), R8
+	MUL	R8, R7, R7
+	MOVD	168(RSP), R8
+	ADD	R7<<2, R8, R7
 	MOVD	ZR, R2
 	MOVD	R0, R3
 	MOVD	R1, R4
 	MOVD	m+0(FP), R0
-	MOVD	R5, R1
+	MOVD	R7, R1
 	MOVD R1, R25
 	MOVD R2, R26
 	ADD R26, R25, R25
@@ -817763,45 +817165,822 @@ pc940:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	312(RSP), R5
-	ADD	$1, R5, R5
-	MOVD	280(RSP), R6
-	CMP	R5, R6
-	BNE	pc284
-	MOVD	336(RSP), R7
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	192(RSP), R2
+	MOVD	160(RSP), R3
+	MOVW	124(RSP), R4
+	MOVD	ZR, R5
+	MOVD	ZR, R6
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl428:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $2, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $124, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x0e32c233 // smull v19.8h, v17.8b, v18.8b
+	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
+	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
+	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $108, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $92, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $76, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $60, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $44, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $28, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $12, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0b0a090803020100, R22
+	FMOVD R22, F3
+	MOVD $0x1b1a191813121110, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0f0e0d0c07060504, R22
+	FMOVD R22, F3
+	MOVD $0x1f1e1d1c17161514, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
+	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612814 // xtn v20.4h, v0.4s
+	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
+	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
+	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
+	WORD $0x4e32d7c0 // fadd v0.4s, v30.4s, v18.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl428
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	184(RSP), R7
+	ORR	$1, R7, R7
+	MOVD	l2+24(FP), R8
+	MUL	R8, R7, R7
+	MOVD	168(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	192(RSP), R2
+	ADD	$64, R2, R4
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	160(RSP), R3
+	MOVW	124(RSP), R5
+	MOVD	ZR, R6
+	MOVD	ZR, R7
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R6, F30
+	VMOV R7, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl512:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $4, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $128, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x0e32c233 // smull v19.8h, v17.8b, v18.8b
+	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
+	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
+	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $112, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $96, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $80, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R4, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $48, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $32, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $16, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0b0a090803020100, R22
+	FMOVD R22, F3
+	MOVD $0x1b1a191813121110, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0f0e0d0c07060504, R22
+	FMOVD R22, F3
+	MOVD $0x1f1e1d1c17161514, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
+	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612814 // xtn v20.4h, v0.4s
+	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
+	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
+	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
+	WORD $0x4e32d7c0 // fadd v0.4s, v30.4s, v18.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	ADD $136, R4, R4
+	SUBW $1, R5, R5
+	CMPW $1, R5
+	BGT gcasmfxl512
+	MOVD R1, R2
+	MOVD R4, R3
+	MOVW R5, R4
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	184(RSP), R7
+	ORR	$2, R7, R7
+	MOVD	l2+24(FP), R8
+	MUL	R8, R7, R7
+	MOVD	168(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R1
+	MOVD	192(RSP), R2
+	MOVD	160(RSP), R3
+	MOVW	124(RSP), R4
+	MOVD	ZR, R5
+	MOVD	ZR, R6
+	MOVD R0, R23
+	MOVD 1176(R23), R21
+	MOVD (R21), R21
+	MOVD 32(R23), R20
+	FMOVD R5, F30
+	VMOV R6, V30.D[1]
+	MOVD R2, R19
+	ADD R20, R19, R19
+	MOVD R3, R17
+	ADD R20, R17, R17
+gcasmfxl592:
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $6, R24, R24
+	MOVHU (R20)(R24), R24
+	LSL $2, R24, R24
+	MOVD R24, R25
+	MOVD $8793760, R26
+	ADD R26, R25, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F16
+	WORD $0x4e040610 // dup v16.4s, v16.s[0]
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $120, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $132, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F18
+	WORD $0x4e040652 // dup v18.4s, v18.s[0]
+	WORD $0x0e32c233 // smull v19.8h, v17.8b, v18.8b
+	WORD $0x4e602a73 // saddlp v19.4s, v19.8h
+	WORD $0x4e32c232 // smull2 v18.8h, v17.16b, v18.16b
+	WORD $0x4e602a52 // saddlp v18.4s, v18.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $104, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $116, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $88, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $100, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $72, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $84, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $56, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $68, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $40, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $52, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $24, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a94 // ldr q20, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $36, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F17
+	WORD $0x4e040631 // dup v17.4s, v17.s[0]
+	WORD $0x0e31c295 // smull v21.8h, v20.8b, v17.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e31c291 // smull2 v17.8h, v20.16b, v17.16b
+	WORD $0x4e606a32 // sadalp v18.4s, v17.8h
+	MOVD R1, R24
+	ADD R3, R24, R24
+	ADD $8, R24, R24
+	MOVD R24, R25
+	ADD $16, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	WORD $0x3cf96a91 // ldr q17, [x20, x25]
+	MOVD R1, R24
+	ADD R2, R24, R24
+	ADD $20, R24, R24
+	MOVD R24, R25
+	ADD $4, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVS (R20)(R25), F20
+	WORD $0x4e040694 // dup v20.4s, v20.s[0]
+	WORD $0x0e34c235 // smull v21.8h, v17.8b, v20.8b
+	WORD $0x4e606ab3 // sadalp v19.4s, v21.8h
+	WORD $0x4e34c234 // smull2 v20.8h, v17.16b, v20.16b
+	WORD $0x4e606a92 // sadalp v18.4s, v20.8h
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0b0a090803020100, R22
+	FMOVD R22, F3
+	MOVD $0x1b1a191813121110, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032034 // tbl v20.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb31e61 // mov v1.16b, v19.16b (fuse)
+	WORD $0x4eb21e42 // mov v2.16b, v18.16b (fuse)
+	MOVD $0x0f0e0d0c07060504, R22
+	FMOVD R22, F3
+	MOVD $0x1f1e1d1c17161514, R22
+	VMOV R22, V3.D[1]
+	WORD $0x4e032032 // tbl v18.16b, {v1.16b, v2.16b}, v3.16b
+	WORD $0x4eb28680 // add v0.4s, v20.4s, v18.4s (renum)
+	WORD $0x4e21d812 // scvtf v18.4s, v0.4s (renum)
+	MOVD R1, R24
+	ADD R3, R24, R24
+	MOVD R24, R25
+	ADD $8, R25, R27
+	CMP R27, R21
+	BLO gcasmsimdoob
+	FMOVD (R20)(R25), F0
+	WORD $0x2f10a400 // ushll v0.4s, v0.4h, #0
+	WORD $0x0e612814 // xtn v20.4h, v0.4s
+	WORD $0x0e217a94 // fcvtl v20.4s, v20.4h
+	WORD $0x6e34de00 // fmul v0.4s, v16.4s, v20.4s (renum)
+	WORD $0x6e32dc12 // fmul v18.4s, v0.4s, v18.4s (renum)
+	WORD $0x4e32d7c0 // fadd v0.4s, v30.4s, v18.4s (renum)
+	WORD $0x4ea01c1e // mov v30.16b, v0.16b (fuse)
+	ADD $136, R1, R1
+	SUBW $1, R4, R4
+	CMPW $1, R4
+	BGT gcasmfxl592
+	MOVD R1, R2
+	MOVW R4, R3
+	FMOVD F30, R0
+	VMOV V30.D[1], R1
+	MOVD	184(RSP), R7
+	ORR	$3, R7, R7
+	MOVD	l2+24(FP), R8
+	MUL	R8, R7, R7
+	MOVD	168(RSP), R8
+	ADD	R7<<2, R8, R7
+	MOVD	ZR, R2
+	MOVD	R0, R3
+	MOVD	R1, R4
+	MOVD	m+0(FP), R0
+	MOVD	R7, R1
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	176(RSP), R7
 	ADD	$1, R7, R7
-	MOVD	264(RSP), R8
+	MOVD	152(RSP), R8
 	CMP	R7, R8
-	BNE	pc224
-	JMP	pc212
-pc1104:
-	MOVD	256(RSP), R9
+	BNE	pc280
+	MOVD	200(RSP), R7
+	ADD	$1, R7, R7
+	MOVD	144(RSP), R9
+	CMP	R7, R9
+	BNE	pc216
+	JMP	pc204
+pc688:
+	MOVD	136(RSP), R9
 	MOVD	l2+24(FP), R10
 	ADD	R10<<4, R9, R2
 	MOVD	m+0(FP), R0
-	MOVD	440(RSP), R6
-	MOVD	280(RSP), R7
-	MOVD	264(RSP), R8
+	MOVD	272(RSP), R6
+	MOVD	152(RSP), R7
+	MOVD	144(RSP), R8
 	MOVD	R5, R1
 	MOVD	R10, R5
-pc1140:
-	MOVD	R2, 256(RSP)
-	MOVD	R1, 208(RSP)
-	CBZ	R7, pc1164
+pc724:
+	MOVD	R2, 136(RSP)
+	MOVD	R1, 128(RSP)
+	CBZ	R7, pc748
 	MOVD	R7, R3
 	MOVD	R2, R4
-	JMP	pc1876
-pc1164:
+	JMP	pc1448
+pc748:
 	MOVD	ZR, R3
-	JMP	pc1188
-pc1172:
+	JMP	pc772
+pc756:
 	SUB	$1, R5, R3
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	ADD	$16, R5, R2
 	MOVD	m+0(FP), R0
-pc1188:
-	MOVD	R3, 376(RSP)
-	MOVD	R2, 368(RSP)
+pc772:
+	MOVD	R3, 224(RSP)
+	MOVD	R2, 216(RSP)
 	MOVD	R2, R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
@@ -817817,7 +817996,7 @@ pc1188:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	MOVD	l2+24(FP), R6
 	ADD	R6<<2, R5, R1
 	MOVD	m+0(FP), R0
@@ -817835,7 +818014,7 @@ pc1188:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	MOVD	l2+24(FP), R6
 	ADD	R6<<3, R5, R1
 	MOVD	m+0(FP), R0
@@ -817853,8 +818032,8 @@ pc1188:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	440(RSP), R5
-	MOVD	368(RSP), R6
+	MOVD	272(RSP), R5
+	MOVD	216(RSP), R6
 	ADD	R6, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -817871,19 +818050,19 @@ pc1188:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	376(RSP), R5
+	MOVD	224(RSP), R5
 	CMP	$1, R5
-	BNE	pc1172
-pc1324:
-	MOVD	208(RSP), R5
+	BNE	pc756
+pc908:
+	MOVD	128(RSP), R5
 	ADD	$1, R5, R5
-	MOVD	264(RSP), R6
+	MOVD	144(RSP), R6
 	CMP	R5, R6
-	BNE	pc1104
-	JMP	pc212
-pc1348:
-	MOVD	R2, 432(RSP)
-	MOVD	R7, 424(RSP)
+	BNE	pc688
+	JMP	pc204
+pc932:
+	MOVD	R2, 264(RSP)
+	MOVD	R7, 256(RSP)
 	MOVD	R2, R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
@@ -817899,23 +818078,10 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	440(RSP), R5
-	MOVD	432(RSP), R6
-	ADD	R6, R5, R5
-	MOVD	R5, 416(RSP)
-	ADD	$16, R6, R7
-	MOVD	R7, 360(RSP)
-	MOVD	l2+24(FP), R7
-	ADD	R7<<3, R6, R8
-	MOVD	R8, 408(RSP)
-	ADD	$16, R8, R8
-	MOVD	R8, 400(RSP)
-	ADD	$16, R5, R5
-	MOVD	R5, 392(RSP)
-	ADD	$32, R6, R5
-	MOVD	R5, 352(RSP)
-	ADD	R7<<2, R6, R1
-	MOVD	R1, 384(RSP)
+	MOVD	264(RSP), R5
+	MOVD	l2+24(FP), R6
+	ADD	R6<<2, R5, R1
+	MOVD	R1, 248(RSP)
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
 	MOVD	ZR, R3
@@ -817931,8 +818097,11 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	264(RSP), R5
+	MOVD	l2+24(FP), R6
+	ADD	R6<<3, R5, R1
+	MOVD	R1, 240(RSP)
 	MOVD	m+0(FP), R0
-	MOVD	408(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -817947,8 +818116,11 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	272(RSP), R5
+	MOVD	264(RSP), R6
+	ADD	R6, R5, R1
+	MOVD	R1, 232(RSP)
 	MOVD	m+0(FP), R0
-	MOVD	416(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -817963,23 +818135,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	m+0(FP), R0
-	MOVD	360(RSP), R1
-	MOVD	ZR, R2
-	MOVD	ZR, R3
-	MOVD	ZR, R4
-	MOVD R1, R25
-	MOVD R2, R26
-	ADD R26, R25, R25
-	MOVD 1176(R0), R26
-	MOVD (R26), R26
-	ADD $16, R25, R27
-	CMP R27, R26
-	BLO gcasmsimdoob
-	MOVD 32(R0), R26
-	ADD R25, R26, R27
-	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	384(RSP), R5
+	MOVD	264(RSP), R5
 	ADD	$16, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -817996,8 +818152,9 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	248(RSP), R5
+	ADD	$16, R5, R1
 	MOVD	m+0(FP), R0
-	MOVD	400(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -818012,8 +818169,9 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	240(RSP), R5
+	ADD	$16, R5, R1
 	MOVD	m+0(FP), R0
-	MOVD	392(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -818028,8 +818186,9 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	232(RSP), R5
+	ADD	$16, R5, R1
 	MOVD	m+0(FP), R0
-	MOVD	352(RSP), R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
 	MOVD	ZR, R4
@@ -818044,7 +818203,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	384(RSP), R5
+	MOVD	264(RSP), R5
 	ADD	$32, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -818061,7 +818220,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	408(RSP), R5
+	MOVD	248(RSP), R5
 	ADD	$32, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -818078,7 +818237,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	416(RSP), R5
+	MOVD	240(RSP), R5
 	ADD	$32, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -818095,7 +818254,24 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	432(RSP), R5
+	MOVD	232(RSP), R5
+	ADD	$32, R5, R1
+	MOVD	m+0(FP), R0
+	MOVD	ZR, R2
+	MOVD	ZR, R3
+	MOVD	ZR, R4
+	MOVD R1, R25
+	MOVD R2, R26
+	ADD R26, R25, R25
+	MOVD 1176(R0), R26
+	MOVD (R26), R26
+	ADD $16, R25, R27
+	CMP R27, R26
+	BLO gcasmsimdoob
+	MOVD 32(R0), R26
+	ADD R25, R26, R27
+	WORD $0xa9001363 // stp x3, x4, [x27]
+	MOVD	264(RSP), R5
 	ADD	$48, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -818112,7 +818288,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	384(RSP), R5
+	MOVD	248(RSP), R5
 	ADD	$48, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -818129,7 +818305,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	408(RSP), R5
+	MOVD	240(RSP), R5
 	ADD	$48, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -818146,7 +818322,7 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	416(RSP), R5
+	MOVD	232(RSP), R5
 	ADD	$48, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -818163,30 +818339,30 @@ pc1348:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	424(RSP), R5
+	MOVD	256(RSP), R5
 	SUB	$4, R5, R7
-	MOVD	432(RSP), R5
+	MOVD	264(RSP), R5
 	ADD	$64, R5, R2
 	MOVD	m+0(FP), R0
-	MOVD	208(RSP), R1
-	MOVD	280(RSP), R3
-	MOVD	256(RSP), R4
+	MOVD	128(RSP), R1
+	MOVD	152(RSP), R3
+	MOVD	136(RSP), R4
 	MOVD	l2+24(FP), R5
-	MOVD	440(RSP), R6
-	MOVD	264(RSP), R8
-pc1876:
+	MOVD	272(RSP), R6
+	MOVD	144(RSP), R8
+pc1448:
 	CMP	$4, R7
-	BHS	pc1348
-	CBZ	R7, pc1324
-	JMP	pc1908
-pc1892:
+	BHS	pc932
+	CBZ	R7, pc908
+	JMP	pc1480
+pc1464:
 	SUB	$1, R5, R7
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	ADD	$16, R5, R2
 	MOVD	m+0(FP), R0
-pc1908:
-	MOVD	R7, 376(RSP)
-	MOVD	R2, 368(RSP)
+pc1480:
+	MOVD	R7, 224(RSP)
+	MOVD	R2, 216(RSP)
 	MOVD	R2, R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
@@ -818202,7 +818378,7 @@ pc1908:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	MOVD	l2+24(FP), R6
 	ADD	R6<<2, R5, R1
 	MOVD	m+0(FP), R0
@@ -818220,7 +818396,7 @@ pc1908:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
+	MOVD	216(RSP), R5
 	MOVD	l2+24(FP), R6
 	ADD	R6<<3, R5, R1
 	MOVD	m+0(FP), R0
@@ -818238,8 +818414,8 @@ pc1908:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	440(RSP), R5
-	MOVD	368(RSP), R6
+	MOVD	272(RSP), R5
+	MOVD	216(RSP), R6
 	ADD	R6, R5, R1
 	MOVD	m+0(FP), R0
 	MOVD	ZR, R2
@@ -818256,17 +818432,17 @@ pc1908:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	376(RSP), R5
+	MOVD	224(RSP), R5
 	CMP	$1, R5
-	BNE	pc1892
+	BNE	pc1464
 	MOVD	m+0(FP), R0
-	MOVD	208(RSP), R1
-	MOVD	280(RSP), R3
-	MOVD	256(RSP), R4
+	MOVD	128(RSP), R1
+	MOVD	152(RSP), R3
+	MOVD	136(RSP), R4
 	MOVD	l2+24(FP), R5
-	MOVD	440(RSP), R6
-	MOVD	264(RSP), R8
-	JMP	pc1324
+	MOVD	272(RSP), R6
+	MOVD	144(RSP), R8
+	JMP	pc908
 gcasmsimdoob:
 	CALL ·gcasmFwdH_base_Wasm_trap_simd_oob(SB)
 	RET
