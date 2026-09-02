@@ -1,5 +1,5 @@
 LLAMA_WASM_REPO     ?= goccy/llama-wasm
-LLAMA_WASM_VERSION  ?= v0.3.0
+LLAMA_WASM_VERSION  ?= v0.3.1
 # llama-wasm emits its release attestations from release.yml (the v* tag
 # workflow), NOT build.yml — releasing lives only in release.yml there.
 LLAMA_WASM_WORKFLOW ?= goccy/llama-wasm/.github/workflows/release.yml

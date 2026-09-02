@@ -164,7 +164,11 @@ func Inv_0_0(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn292(m, l0, l1)
@@ -178,7 +182,11 @@ func Inv_0_1(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn295(m, l0, l1)
@@ -192,7 +200,11 @@ func Inv_0_2(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn296(m, l0, l1)
@@ -206,7 +218,11 @@ func Inv_0_3(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn297(m, l0, l1)
@@ -220,7 +236,11 @@ func Inv_0_4(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn298(m, l0, l1)
@@ -234,7 +254,11 @@ func Inv_0_5(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn299(m, l0, l1)
@@ -248,7 +272,11 @@ func Inv_0_6(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn300(m, l0, l1)
@@ -262,7 +290,11 @@ func Inv_0_7(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn302(m, l0, l1)
@@ -276,7 +308,11 @@ func Inv_0_8(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn303(m, l0, l1)
@@ -290,7 +326,11 @@ func Inv_0_9(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn305(m, l0, l1)
@@ -304,7 +344,11 @@ func Inv_0_10(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn306(m, l0, l1)
@@ -318,7 +362,11 @@ func Inv_0_11(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn307(m, l0, l1)
@@ -332,7 +380,11 @@ func Inv_0_12(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn308(m, l0, l1)
@@ -346,7 +398,11 @@ func Inv_0_13(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn309(m, l0, l1)
@@ -360,7 +416,11 @@ func Inv_0_14(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn310(m, l0, l1)
@@ -374,7 +434,11 @@ func Inv_0_15(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn311(m, l0, l1)
@@ -388,7 +452,11 @@ func Inv_0_16(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn312(m, l0, l1)
@@ -402,7 +470,11 @@ func Inv_0_17(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn313(m, l0, l1)
@@ -416,7 +488,11 @@ func Inv_0_18(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn314(m, l0, l1)
@@ -430,7 +506,11 @@ func Inv_0_19(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn315(m, l0, l1)
@@ -444,7 +524,11 @@ func Inv_0_20(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn316(m, l0, l1)
@@ -458,7 +542,11 @@ func Inv_0_21(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn317(m, l0, l1)
@@ -472,7 +560,11 @@ func Inv_0_22(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn318(m, l0, l1)
@@ -486,7 +578,11 @@ func Inv_0_23(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn319(m, l0, l1)
@@ -500,7 +596,11 @@ func Inv_0_24(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn320(m, l0, l1)
@@ -514,7 +614,11 @@ func Inv_0_25(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn321(m, l0, l1)
@@ -528,7 +632,11 @@ func Inv_0_26(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn322(m, l0, l1)
@@ -542,7 +650,11 @@ func Inv_0_27(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn323(m, l0, l1)
@@ -556,7 +668,11 @@ func Inv_0_28(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn324(m, l0, l1)
@@ -570,7 +686,11 @@ func Inv_1_0(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn325(m, l0, l1)
@@ -584,7 +704,11 @@ func Inv_1_1(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn327(m, l0, l1)
@@ -598,7 +722,11 @@ func Inv_1_2(m *base.Module, l0, l1 int64) (packed int64, err error) {
 		if r != nil {
 			m.G0 = savedG0
 			m.G1 = savedG1
-			err = fmt.Errorf("wasm trap: %v", r)
+			if trapErr, trapIsErr := r.(error); trapIsErr {
+				err = fmt.Errorf("wasm trap: %w", trapErr)
+			} else {
+				err = fmt.Errorf("wasm trap: %v", r)
+			}
 		}
 	}()
 	packed = Fn328(m, l0, l1)
