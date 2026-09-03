@@ -91347,7 +91347,7 @@ pc1281:
 	MOVQ	SI, CX
 	JMP	pc49
 
-TEXT ·Fn1439(SB), $400-64
+TEXT ·Fn1439(SB), $392-64
 	NO_LOCAL_POINTERS
 	MOVQ m+0(FP), AX
 	MOVQ l0+8(FP), BX
@@ -91390,8 +91390,8 @@ TEXT ·Fn1439(SB), $400-64
 	MOVL	l3+24(FP), R8
 	NOP
 	TESTL	R8, R8
-	JEQ	pc1362
-	MOVQ	DX, 368(SP)
+	JEQ	pc1360
+	MOVQ	DX, 360(SP)
 	MOVL	l1+16(FP), AX
 	MOVL	l2+20(FP), BX
 	NOP
@@ -91402,11 +91402,11 @@ TEXT ·Fn1439(SB), $400-64
 	TESTL	AX, AX
 	JNE	pc293
 	MOVQ	m+0(FP), AX
-	MOVQ	368(SP), DX
+	MOVQ	360(SP), DX
 	MOVL	l1+16(FP), CX
 	JMP	pc493
 pc293:
-	MOVQ	368(SP), CX
+	MOVQ	360(SP), CX
 	MOVL	l3+24(FP), DX
 	MOVQ	296(SP), SI
 	MOVL	DX, -30176(SI)(CX*1)
@@ -91426,7 +91426,7 @@ pc293:
 	SUBL	AX, CX
 	DECL	CX
 	MOVL	CX, 124(SP)
-	MOVQ	368(SP), DX
+	MOVQ	360(SP), DX
 	MOVQ	296(SP), DI
 	MOVL	CX, -30184(DI)(DX*1)
 	ADDQ	$-30192, DI
@@ -91459,10 +91459,7 @@ pc493:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn616(SB)
 	MOVQ	m+0(FP), AX
 	CMPL	1064(AX), $0
-	JEQ	pc542
-	XORL	CX, CX
-	JMP	pc1592
-pc542:
+	JNE	pc697
 	MOVQ	32(AX), CX
 	MOVQ	l0+8(FP), DX
 	MOVQ	784(DX)(CX*1), BX
@@ -91471,10 +91468,7 @@ pc542:
 	CALL ·Fn1533(SB)
 	MOVQ	m+0(FP), AX
 	CMPL	1064(AX), $0
-	JEQ	pc591
-	XORL	CX, CX
-	JMP	pc1592
-pc591:
+	JNE	pc697
 	MOVQ	32(AX), DX
 	MOVQ	296(SP), BX
 	ADDQ	$-424, BX
@@ -91491,6 +91485,7 @@ pc591:
 	MOVL	$1, CX
 	MOVL	$4, DX
 	CMOVLEQ	DX, CX
+	NOP
 	MOVQ AX, 0(SP)
 	MOVQ BX, 8(SP)
 	MOVL CX, 16(SP)
@@ -91498,11 +91493,15 @@ pc591:
 	MOVQ 24(SP), AX
 	MOVQ	m+0(FP), DX
 	CMPL	1064(DX), $0
-	JEQ	pc709
+	JEQ	pc723
 	MOVQ	DX, AX
-	XORL	CX, CX
-	JMP	pc1592
-pc709:
+pc697:
+	MOVQ	AX, DX
+	MOVQ	296(SP), BX
+	MOVQ	272(SP), DI
+	XORL	AX, AX
+	JMP	pc1466
+pc723:
 	MOVQ	AX, 160(SP)
 	MOVL	120(SP), AX
 	MOVL	l2+20(FP), BX
@@ -91512,7 +91511,7 @@ pc709:
 	MOVLQSX 8(SP), AX
 	MOVQ	296(SP), BX
 	ADDQ	$-528, BX
-	MOVQ	BX, 360(SP)
+	MOVQ	BX, 352(SP)
 	MOVQ	160(SP), CX
 	MOVL	AX, DI
 	MOVL	l2+20(FP), SI
@@ -91525,18 +91524,16 @@ pc709:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn1410(SB)
 	MOVQ	m+0(FP), AX
 	CMPL	1064(AX), $0
-	JEQ	pc807
+	JEQ	pc821
 	MOVQ	160(SP), CX
 	JMP	pc1592
-pc807:
-	MOVQ	·_consts+5504(SB), DX
-	MOVQ	296(SP), R8
-	ADDQ	R8, DX
-	ADDQ	$-552, R8
-	MOVQ	R8, 352(SP)
-	MOVQ	32(AX), R8
-	MOVQ	R8, 368(SP)
-	MOVQ	$0, -30240(DX)(R8*1)
+pc821:
+	MOVQ	32(AX), DX
+	MOVQ	DX, 360(SP)
+	MOVQ	·_consts+5504(SB), R8
+	MOVQ	296(SP), R9
+	ADDQ	R9, R8
+	MOVQ	$0, -30240(R8)(DX*1)
 	MOVQ	272(SP), BX
 	MOVL	$29688, CX
 	XORL	DI, DI
@@ -91553,10 +91550,10 @@ pc807:
 	ADDQ R10, R11
 	MOVQ DI, (R11)
 	MOVQ SI, 8(R11)
-	MOVQ	368(SP), DX
+	MOVQ	360(SP), DX
 	MOVQ	296(SP), R8
 	MOVB	$0, -30120(R8)(DX*1)
-	MOVQ	352(SP), R9
+	LEAQ	-552(R8), R9
 	MOVQ	R9, -30128(R8)(DX*1)
 	MOVL	l2+20(FP), DX
 	MOVL	DX, BX
@@ -91574,7 +91571,7 @@ pc807:
 	MOVQ	m+0(FP), DX
 	MOVQ	32(DX), R8
 	CMPL	1064(DX), $0
-	JNE	pc1182
+	JNE	pc1180
 	MOVQ	·_consts+5496(SB), R10
 	MOVQ	296(SP), BX
 	ADDQ	BX, R10
@@ -91589,9 +91586,9 @@ pc807:
 	SETEQ	R12B
 	MOVBLZX	R12B, R12
 	TESTL	R12, R12
-	JNE	pc1151
+	JNE	pc1149
 	MOVQ	R11, 320(SP)
-	MOVQ	R8, 368(SP)
+	MOVQ	R8, 360(SP)
 	MOVQ	AX, BX
 	XORL	CX, CX
 	MOVQ	DX, AX
@@ -91602,10 +91599,10 @@ pc807:
 	CALL ·gcasmFwdH_base_MemoryFill64(SB)
 	MOVQ	m+0(FP), DX
 	MOVQ	296(SP), BX
-	MOVQ	368(SP), R8
+	MOVQ	360(SP), R8
 	MOVQ	336(SP), R10
 	MOVQ	320(SP), R11
-pc1151:
+pc1149:
 	MOVQ	·_consts+5520(SB), R12
 	ADDQ	BX, R12
 	MOVQ	R11, -30240(R12)(R8*1)
@@ -91614,7 +91611,7 @@ pc1151:
 	XORL	SI, SI
 	XORL	DI, DI
 	JMP	pc1729
-pc1182:
+pc1180:
 	MOVL	1068(DX), CX
 	MOVQ	1072(DX), SI
 	MOVL	$0, 1064(DX)
@@ -91623,11 +91620,11 @@ pc1182:
 	MOVQ	296(SP), BX
 	MOVBLZX	-30120(BX)(R8*1), R9
 	TESTL	R9, R9
-	JNE	pc1332
+	JNE	pc1330
 	MOVQ	-30128(R8)(BX*1), R9
 	MOVQ	(R9)(R8*1), R10
 	TESTQ	R10, R10
-	JEQ	pc1332
+	JEQ	pc1330
 	MOVL	CX, 128(SP)
 	MOVQ	SI, 344(SP)
 	MOVQ	R10, 8(R9)(R8*1)
@@ -91642,13 +91639,13 @@ pc1182:
 	MOVQ	296(SP), BX
 	MOVQ	344(SP), SI
 	MOVQ	272(SP), DI
-pc1332:
+pc1330:
 	MOVL	CX, 1068(DX)
 	MOVQ	SI, 1072(DX)
 	MOVL	$1, 1064(DX)
 	MOVQ	160(SP), AX
 	JMP	pc1466
-pc1362:
+pc1360:
 	MOVQ	296(SP), R8
 	MOVQ	$8452861, -30240(R8)(DX*1)
 	MOVL	$8407823, BX
@@ -91772,7 +91769,7 @@ pc1913:
 	ADDQ	$-30128, BX
 	MOVQ	BX, 288(SP)
 	MOVQ	DX, AX
-	MOVQ	360(SP), SI
+	MOVQ	352(SP), SI
 	MOVQ	l4+32(FP), R8
 	MOVL	R10, R9
 	MOVQ AX, 0(SP)
@@ -91844,7 +91841,7 @@ pc1989:
 	MOVBLZX	(R8)(BX*1), R10
 	TESTL	R10, R10
 	JNE	pc2618
-	MOVQ	R8, 384(SP)
+	MOVQ	R8, 376(SP)
 	MOVQ	272(R8)(BX*1), DI
 	ADDQ	$31, DI
 	SHRQ	$3, DI
@@ -91867,7 +91864,7 @@ pc1989:
 	MOVQ	m+0(FP), DX
 	MOVQ	264(SP), BX
 	MOVQ	256(SP), SI
-	MOVQ	384(SP), R8
+	MOVQ	376(SP), R8
 	MOVQ	l6+48(FP), R9
 pc2383:
 	MOVQ	272(R8)(BX*1), DI
@@ -91890,7 +91887,7 @@ pc2383:
 	MOVQ	m+0(FP), DX
 	MOVQ	264(SP), BX
 	MOVQ	256(SP), SI
-	MOVQ	384(SP), R8
+	MOVQ	376(SP), R8
 	MOVQ	l6+48(FP), R9
 pc2485:
 	LEAQ	(R8)(BX*1), R10
@@ -91921,7 +91918,7 @@ pc2485:
 	MOVQ	m+0(FP), DX
 	MOVQ	264(SP), BX
 	MOVQ	256(SP), SI
-	MOVQ	384(SP), R8
+	MOVQ	376(SP), R8
 	MOVQ	l6+48(FP), R9
 pc2613:
 	MOVB	$1, (R8)(BX*1)
@@ -92244,7 +92241,7 @@ pc3793:
 	TESTL	R10, R10
 	JNE	pc4238
 	MOVL	AX, 116(SP)
-	MOVQ	R8, 384(SP)
+	MOVQ	R8, 376(SP)
 	MOVQ	272(R8)(R9*1), DI
 	ADDQ	$31, DI
 	SHRQ	$3, DI
@@ -92265,7 +92262,7 @@ pc3793:
 	CALL ·gcasmFwdH_base_MemoryFill64(SB)
 	MOVL	116(SP), AX
 	MOVQ	m+0(FP), DX
-	MOVQ	384(SP), R8
+	MOVQ	376(SP), R8
 	MOVQ	208(SP), R9
 pc4037:
 	MOVQ	272(R8)(R9*1), DI
@@ -92286,7 +92283,7 @@ pc4037:
 	CALL ·gcasmFwdH_base_MemoryFill64(SB)
 	MOVL	116(SP), AX
 	MOVQ	m+0(FP), DX
-	MOVQ	384(SP), R8
+	MOVQ	376(SP), R8
 	MOVQ	208(SP), R9
 pc4118:
 	LEAQ	(R8)(R9*1), R10
@@ -92318,7 +92315,7 @@ pc4183:
 	MOVL	116(SP), DX
 	TESTL	DX, DX
 	MOVQ	m+0(FP), DX
-	MOVQ	384(SP), R8
+	MOVQ	376(SP), R8
 	MOVQ	208(SP), R9
 pc4231:
 	MOVB	$1, (R8)(R9*1)
@@ -92456,7 +92453,7 @@ pc4765:
 	TESTQ	DX, DX
 	JEQ	pc5038
 	MOVQ	DX, 152(SP)
-	MOVQ	SI, 376(SP)
+	MOVQ	SI, 368(SP)
 	MOVQ	DX, BX
 	MOVL	$8, CX
 	MOVQ	$-1, DI
@@ -92471,12 +92468,12 @@ pc4765:
 	MOVQ	m+0(FP), AX
 	MOVQ	176(SP), CX
 	MOVQ	296(SP), BX
-	MOVQ	376(SP), SI
+	MOVQ	368(SP), SI
 	NOP
 	JMP	pc5038
 pc4869:
 	MOVQ	152(SP), BX
-	MOVQ	376(SP), SI
+	MOVQ	368(SP), SI
 	MOVQ	(SI)(BX*1), DI
 	MOVQ	16(SI)(DI*1), AX
 	MOVQ	m+0(FP), SI
@@ -92558,7 +92555,7 @@ pc5190:
 	TESTQ	DX, DX
 	JEQ	pc5428
 	MOVQ	DX, 144(SP)
-	MOVQ	SI, 368(SP)
+	MOVQ	SI, 360(SP)
 	MOVQ	DX, BX
 	MOVL	$8, CX
 	MOVQ	$-1, DI
@@ -92574,7 +92571,7 @@ pc5190:
 	JMP	pc5428
 pc5276:
 	MOVQ	144(SP), BX
-	MOVQ	368(SP), SI
+	MOVQ	360(SP), SI
 	MOVQ	(SI)(BX*1), DI
 	MOVQ	16(SI)(DI*1), AX
 	MOVQ	m+0(FP), SI
@@ -841449,6 +841446,339 @@ TEXT ·gcasmABI0Keep(SB), NOSPLIT, $0-0
 	JMP ·Fn2583(SB)
 	JMP ·Fn2700(SB)
 	JMP ·Fn784(SB)
+
+// Cross-chunk trampolines: local ABI0 entry points the fallback
+// bodies' Go calls bind to; each tail-jumps to the remote fn's spelled
+// symbol (no //go:linkname pull of an asm-referenced symbol).
+TEXT ·Fn1235(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1235(SB)
+
+TEXT ·Fn1364(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1364(SB)
+
+TEXT ·Fn1392(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1392(SB)
+
+TEXT ·Fn1538(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1538(SB)
+
+TEXT ·Fn1539(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1539(SB)
+
+TEXT ·Fn1542(SB), NOSPLIT, $0-36
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1542(SB)
+
+TEXT ·Fn1544(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1544(SB)
+
+TEXT ·Fn1545(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1545(SB)
+
+TEXT ·Fn1546(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1546(SB)
+
+TEXT ·Fn1630(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1630(SB)
+
+TEXT ·Fn1635(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1635(SB)
+
+TEXT ·Fn1652(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1652(SB)
+
+TEXT ·Fn1654(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1654(SB)
+
+TEXT ·Fn1655(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1655(SB)
+
+TEXT ·Fn1656(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1656(SB)
+
+TEXT ·Fn1660(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1660(SB)
+
+TEXT ·Fn1661(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1661(SB)
+
+TEXT ·Fn1665(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1665(SB)
+
+TEXT ·Fn1669(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1669(SB)
+
+TEXT ·Fn1751(SB), NOSPLIT, $0-112
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1751(SB)
+
+TEXT ·Fn1805(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1805(SB)
+
+TEXT ·Fn1822(SB), NOSPLIT, $0-120
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1822(SB)
+
+TEXT ·Fn1823(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1823(SB)
+
+TEXT ·Fn1824(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1824(SB)
+
+TEXT ·Fn1999(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1999(SB)
+
+TEXT ·Fn2004(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2004(SB)
+
+TEXT ·Fn2192(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2192(SB)
+
+TEXT ·Fn242(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn242(SB)
+
+TEXT ·Fn244(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn244(SB)
+
+TEXT ·Fn251(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn251(SB)
+
+TEXT ·Fn252(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn252(SB)
+
+TEXT ·Fn254(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn254(SB)
+
+TEXT ·Fn264(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn264(SB)
+
+TEXT ·Fn273(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn273(SB)
+
+TEXT ·Fn2980(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2980(SB)
+
+TEXT ·Fn3016(SB), NOSPLIT, $0-44
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn3016(SB)
+
+TEXT ·Fn3036(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn3036(SB)
+
+TEXT ·Fn3059(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p0·Fn3059(SB)
+
+TEXT ·Fn387(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn387(SB)
+
+TEXT ·Fn408(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
+
+TEXT ·Fn442(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn442(SB)
+
+TEXT ·Fn452(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn452(SB)
+
+TEXT ·Fn454(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn454(SB)
+
+TEXT ·Fn457(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn457(SB)
+
+TEXT ·Fn458(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn458(SB)
+
+TEXT ·Fn461(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn461(SB)
+
+TEXT ·Fn462(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn462(SB)
+
+TEXT ·Fn463(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn463(SB)
+
+TEXT ·Fn464(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn464(SB)
+
+TEXT ·Fn465(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn465(SB)
+
+TEXT ·Fn466(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn466(SB)
+
+TEXT ·Fn468(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn468(SB)
+
+TEXT ·Fn470(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn470(SB)
+
+TEXT ·Fn471(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn471(SB)
+
+TEXT ·Fn473(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn473(SB)
+
+TEXT ·Fn474(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn474(SB)
+
+TEXT ·Fn475(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn475(SB)
+
+TEXT ·Fn476(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn476(SB)
+
+TEXT ·Fn478(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn478(SB)
+
+TEXT ·Fn479(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn479(SB)
+
+TEXT ·Fn480(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn480(SB)
+
+TEXT ·Fn481(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn481(SB)
+
+TEXT ·Fn482(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn482(SB)
+
+TEXT ·Fn483(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn483(SB)
+
+TEXT ·Fn485(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn485(SB)
+
+TEXT ·Fn486(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn486(SB)
+
+TEXT ·Fn487(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn487(SB)
+
+TEXT ·Fn488(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn488(SB)
+
+TEXT ·Fn492(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn492(SB)
+
+TEXT ·Fn493(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn493(SB)
+
+TEXT ·Fn496(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn496(SB)
+
+TEXT ·Fn497(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn497(SB)
+
+TEXT ·Fn498(SB), NOSPLIT, $0-80
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn498(SB)
+
+TEXT ·Fn500(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn500(SB)
+
+TEXT ·Fn501(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn501(SB)
+
+TEXT ·Fn502(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn502(SB)
+
+TEXT ·Fn503(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn503(SB)
+
+TEXT ·Fn506(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn506(SB)
+
+TEXT ·Fn507(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn507(SB)
+
+TEXT ·Fn508(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn508(SB)
+
+TEXT ·Fn509(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn509(SB)
+
+TEXT ·Fn510(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn510(SB)
+
+TEXT ·Fn511(SB), NOSPLIT, $0-80
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn511(SB)
+
+TEXT ·Fn512(SB), NOSPLIT, $0-96
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn512(SB)
+
+TEXT ·Fn513(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn513(SB)
+
+TEXT ·Fn514(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn514(SB)
+
+TEXT ·Fn515(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn515(SB)
+
+TEXT ·Fn516(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn516(SB)
+
+TEXT ·Fn517(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn517(SB)
+
+TEXT ·Fn519(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn519(SB)
+
+TEXT ·Fn523(SB), NOSPLIT, $0-88
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn523(SB)
+
+TEXT ·Fn525(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn525(SB)
+
+TEXT ·Fn529(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn529(SB)
+
+TEXT ·Fn530(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn530(SB)
+
+TEXT ·Fn531(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn531(SB)
+
+TEXT ·Fn532(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn532(SB)
+
+TEXT ·Fn535(SB), NOSPLIT, $0-72
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn535(SB)
+
+TEXT ·Fn536(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn536(SB)
+
+TEXT ·Fn547(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn547(SB)
+
+TEXT ·Fn55(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn55(SB)
+
+TEXT ·Fn56(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn56(SB)
+
+TEXT ·Fn573(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn573(SB)
+
+TEXT ·Fn576(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn576(SB)
+
+TEXT ·Fn578(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn578(SB)
+
+TEXT ·Fn58(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn58(SB)
+
+TEXT ·Fn584(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn584(SB)
+
+TEXT ·Fn599(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn599(SB)
+
+TEXT ·Fn622(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn622(SB)
+
+TEXT ·Fn987(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn987(SB)
+
+TEXT ·Fn988(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn988(SB)
 
 DATA ·gcb16_08090a0b0c0d0e0f0001020300010203+0(SB)/8, $0x0f0e0d0c0b0a0908
 DATA ·gcb16_08090a0b0c0d0e0f0001020300010203+8(SB)/8, $0x0302010003020100

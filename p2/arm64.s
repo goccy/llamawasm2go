@@ -670151,6 +670151,30 @@ TEXT ·gcasmABI0Keep(SB), NOSPLIT, $0-0
 	JMP ·Fn512(SB)
 	JMP ·Fn521(SB)
 
+// Cross-chunk trampolines: local ABI0 entry points the fallback
+// bodies' Go calls bind to; each tail-jumps to the remote fn's spelled
+// symbol (no //go:linkname pull of an asm-referenced symbol).
+TEXT ·Fn1550(SB), NOSPLIT, $0-192
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn1550(SB)
+
+TEXT ·Fn1561(SB), NOSPLIT, $0-88
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn1561(SB)
+
+TEXT ·Fn1659(SB), NOSPLIT, $0-112
+	JMP github·com∕goccy∕llamawasm2go∕p0·Fn1659(SB)
+
+TEXT ·Fn2700(SB), NOSPLIT, $0-76
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn2700(SB)
+
+TEXT ·Fn3060(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn3060(SB)
+
+TEXT ·Fn448(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn448(SB)
+
+TEXT ·Fn540(SB), NOSPLIT, $0-80
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn540(SB)
+
 DATA ·gcf32_42c80000+0(SB)/4, $0x42c80000
 GLOBL ·gcf32_42c80000(SB), RODATA|NOPTR, $4
 DATA ·gcf32_4f800000+0(SB)/4, $0x4f800000

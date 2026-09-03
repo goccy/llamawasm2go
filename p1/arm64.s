@@ -89201,7 +89201,7 @@ pc1552:
 	MOVD	R4, R2
 	JMP	pc44
 
-TEXT ·Fn1439(SB), $432-64
+TEXT ·Fn1439(SB), $416-64
 	NO_LOCAL_POINTERS
 	MOVD m+0(FP), R0
 	MOVD l0+8(FP), R1
@@ -89249,11 +89249,11 @@ TEXT ·Fn1439(SB), $432-64
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn1652(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R4
-	CBNZW	R4, pc1368
+	CBNZW	R4, pc1348
 	MOVD	32(R0), R5
 	MOVW	l3+24(FP), R1
-	CBZW	R1, pc1136
-	MOVD	R5, 400(RSP)
+	CBZW	R1, pc1116
+	MOVD	R5, 384(RSP)
 	MOVW	l1+16(FP), R0
 	MOVW	l2+20(FP), R1
 	MOVW R0, 8(RSP)
@@ -89262,7 +89262,7 @@ TEXT ·Fn1439(SB), $432-64
 	MOVW 16(RSP), R0
 	CBNZW	R0, pc228
 	MOVD	m+0(FP), R0
-	MOVD	400(RSP), R5
+	MOVD	384(RSP), R5
 	MOVW	l1+16(FP), R1
 	JMP	pc420
 pc228:
@@ -89270,7 +89270,7 @@ pc228:
 	MOVD	$30176, R3
 	SUB	R3, R2, R3
 	MOVW	l3+24(FP), R4
-	MOVD	400(RSP), R5
+	MOVD	384(RSP), R5
 	MOVW	R4, (R5)(R3)
 	MOVD	$30180, R3
 	SUB	R3, R2, R3
@@ -89281,7 +89281,7 @@ pc228:
 	SUB	$1, R4, R0
 	MOVD	$30184, R4
 	SUB	R4, R2, R4
-	MOVD	R4, 392(RSP)
+	MOVD	R4, 376(RSP)
 	MOVD	$30192, R4
 	SUB	R4, R2, R2
 	MOVD	$8424542, R4
@@ -89295,8 +89295,8 @@ pc228:
 	SUB	R0, R2, R2
 	SUB	$1, R2, R2
 	MOVW	R2, 140(RSP)
-	MOVD	392(RSP), R3
-	MOVD	400(RSP), R4
+	MOVD	376(RSP), R3
+	MOVD	384(RSP), R4
 	MOVW	R2, (R4)(R3)
 	MOVD	304(RSP), R2
 	MOVD	$30192, R3
@@ -89316,7 +89316,7 @@ pc228:
 	MOVD	R0, R5
 	MOVD	304(RSP), R8
 	MOVD	ZR, R0
-	JMP	pc1212
+	JMP	pc1192
 pc412:
 	MOVD	32(R0), R5
 	MOVW	140(RSP), R1
@@ -89324,17 +89324,14 @@ pc420:
 	MOVW	R1, 136(RSP)
 	MOVD	l0+8(FP), R2
 	ADD	$600, R2, R2
-	MOVD	R2, 392(RSP)
+	MOVD	R2, 376(RSP)
 	MOVD	(R5)(R2), R1
 	MOVD R0, 8(RSP)
 	MOVD R1, 16(RSP)
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn616(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBZW	R2, pc464
-	MOVD	ZR, R1
-	JMP	pc1300
-pc464:
+	CBNZW	R2, pc592
 	MOVD	32(R0), R2
 	MOVD	l0+8(FP), R3
 	ADD	$784, R3, R3
@@ -89344,14 +89341,11 @@ pc464:
 	CALL ·Fn1533(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBZW	R2, pc504
-	MOVD	ZR, R1
-	JMP	pc1300
-pc504:
+	CBNZW	R2, pc592
 	MOVD	32(R0), R3
 	MOVD	l0+8(FP), R4
 	ADD	$544, R4, R5
-	MOVD	R5, 384(RSP)
+	MOVD	R5, 368(RSP)
 	MOVD	304(RSP), R6
 	SUB	$424, R6, R1
 	MOVW	(R3)(R5), R6
@@ -89375,11 +89369,15 @@ pc504:
 	MOVD 32(RSP), R0
 	MOVD	m+0(FP), R3
 	MOVW	1064(R3), R4
-	CBZW	R4, pc616
+	CBZW	R4, pc612
 	MOVD	R3, R0
-	MOVD	ZR, R1
-	JMP	pc1300
-pc616:
+pc592:
+	MOVD	280(RSP), R4
+	MOVD	R0, R5
+	MOVD	304(RSP), R8
+	MOVD	ZR, R0
+	JMP	pc1192
+pc612:
 	MOVD	R0, 176(RSP)
 	MOVW	136(RSP), R0
 	MOVW	l2+20(FP), R1
@@ -89389,7 +89387,7 @@ pc616:
 	MOVW 16(RSP), R0
 	MOVD	304(RSP), R2
 	SUB	$528, R2, R1
-	MOVD	R1, 376(RSP)
+	MOVD	R1, 360(RSP)
 	MOVD	176(RSP), R2
 	MOVD	R0, R3
 	MOVW	l2+20(FP), R4
@@ -89402,26 +89400,18 @@ pc616:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn1410(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBZW	R2, pc684
+	CBZW	R2, pc680
 	MOVD	176(RSP), R1
-	JMP	pc1300
-pc684:
-	MOVD	·_consts+5504(SB), R5
-	MOVD	304(RSP), R6
-	ADD	R6, R5, R5
+	JMP	pc1280
+pc680:
+	MOVD	32(R0), R5
+	MOVD	R5, 384(RSP)
+	MOVD	·_consts+5504(SB), R6
+	MOVD	304(RSP), R7
+	ADD	R7, R6, R6
 	MOVD	$30240, R7
-	SUB	R7, R5, R5
-	MOVD	$30120, R7
-	SUB	R7, R6, R7
-	MOVD	R7, 368(RSP)
-	MOVD	$30128, R7
-	SUB	R7, R6, R7
-	MOVD	R7, 360(RSP)
-	SUB	$552, R6, R6
-	MOVD	R6, 352(RSP)
-	MOVD	32(R0), R6
-	MOVD	R6, 400(RSP)
-	MOVD	ZR, (R6)(R5)
+	SUB	R7, R6, R6
+	MOVD	ZR, (R5)(R6)
 	MOVD	280(RSP), R1
 	MOVD	$29688, R2
 	MOVD	ZR, R3
@@ -89437,12 +89427,16 @@ pc684:
 	MOVD 32(R0), R26
 	ADD R25, R26, R27
 	WORD $0xa9001363 // stp x3, x4, [x27]
-	MOVD	368(RSP), R5
-	MOVD	400(RSP), R6
-	MOVB	ZR, (R6)(R5)
-	MOVD	360(RSP), R5
-	MOVD	352(RSP), R7
-	MOVD	R7, (R6)(R5)
+	MOVD	304(RSP), R5
+	MOVD	$30120, R6
+	SUB	R6, R5, R6
+	MOVD	R6, 352(RSP)
+	MOVD	384(RSP), R7
+	MOVB	ZR, (R7)(R6)
+	MOVD	$30128, R6
+	SUB	R6, R5, R6
+	SUB	$552, R5, R5
+	MOVD	R5, (R7)(R6)
 	MOVW	l2+20(FP), R5
 	UBFIZ	$2, R5, $32, R1
 	MOVD	R1, 336(RSP)
@@ -89455,7 +89449,7 @@ pc684:
 	MOVD	m+0(FP), R5
 	MOVD	32(R5), R6
 	MOVW	1064(R5), R7
-	CBNZW	R7, pc1004
+	CBNZW	R7, pc984
 	MOVD	·_consts+5496(SB), R7
 	MOVD	304(RSP), R8
 	ADD	R8, R7, R7
@@ -89472,10 +89466,10 @@ pc684:
 	MOVD	336(RSP), R3
 	CMP	$0, R3
 	CSET	EQ, R7
-	CBNZW	R7, pc964
+	CBNZW	R7, pc944
 	MOVD	R11, 328(RSP)
 	MOVD	R10, 344(RSP)
-	MOVD	R6, 400(RSP)
+	MOVD	R6, 384(RSP)
 	MOVD	R0, R1
 	MOVD	ZR, R2
 	MOVD	R5, R0
@@ -89485,12 +89479,12 @@ pc684:
 	MOVD R3, 32(RSP)
 	CALL ·gcasmFwdH_base_MemoryFill64(SB)
 	MOVD	m+0(FP), R5
-	MOVD	400(RSP), R6
+	MOVD	384(RSP), R6
 	MOVD	304(RSP), R8
 	MOVD	$30240, R9
 	MOVD	344(RSP), R10
 	MOVD	328(RSP), R11
-pc964:
+pc944:
 	MOVD	·_consts+5520(SB), R7
 	ADD	R8, R7, R7
 	SUB	R9, R7, R7
@@ -89499,24 +89493,24 @@ pc964:
 	MOVD	ZR, R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
-	JMP	pc1408
-pc1004:
+	JMP	pc1388
+pc984:
 	MOVWU	1068(R5), R2
 	MOVD	1072(R5), R3
 	MOVW	ZR, 1064(R5)
 	MOVD	280(RSP), R4
 	MOVD	R4, 1104(R5)
-	MOVD	368(RSP), R7
+	MOVD	352(RSP), R7
 	MOVBU	(R6)(R7), R7
 	MOVD	304(RSP), R8
 	MOVD	$30128, R9
 	SUB	R9, R8, R9
-	CBNZW	R7, pc1112
+	CBNZW	R7, pc1092
 	MOVD	(R6)(R9), R7
 	MOVD	(R6)(R7), R10
-	CBZ	R10, pc1112
+	CBZ	R10, pc1092
 	MOVW	R2, 144(RSP)
-	MOVD	R3, 392(RSP)
+	MOVD	R3, 376(RSP)
 	ADD	$8, R7, R2
 	MOVD	R10, (R6)(R2)
 	MOVD	(R6)(R9), R2
@@ -89526,17 +89520,17 @@ pc1004:
 	MOVD R1, 16(RSP)
 	CALL ·Fn3060(SB)
 	MOVWU	144(RSP), R2
-	MOVD	392(RSP), R3
+	MOVD	376(RSP), R3
 	MOVD	280(RSP), R4
 	MOVD	m+0(FP), R5
 	MOVD	304(RSP), R8
-pc1112:
+pc1092:
 	MOVD	R3, 1072(R5)
 	MOVD	$1, R3
 	STPW	(R3, R2), 1064(R5)
 	MOVD	176(RSP), R0
-	JMP	pc1212
-pc1136:
+	JMP	pc1192
+pc1116:
 	MOVD	280(RSP), R4
 	MOVD	$8452861, R6
 	MOVD	R6, (R5)(R4)
@@ -89551,21 +89545,21 @@ pc1136:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc1196
+	CBNZW	R5, pc1176
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-	JMP	pc1384
-pc1196:
+	JMP	pc1364
+pc1176:
 	MOVD	280(RSP), R4
 	MOVD	R0, R5
 	MOVD	304(RSP), R8
 	MOVD	ZR, R0
-pc1212:
+pc1192:
 	MOVD	R0, 152(RSP)
 	SUB	$528, R8, R1
 	MOVWU	1068(R5), R2
 	MOVW	R2, 144(RSP)
 	MOVD	1072(R5), R2
-	MOVD	R2, 392(RSP)
+	MOVD	R2, 376(RSP)
 	MOVW	ZR, 1064(R5)
 	MOVD	R4, 1104(R5)
 	MOVD	R5, R0
@@ -89574,21 +89568,21 @@ pc1212:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn1408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBZW	R2, pc1272
+	CBZW	R2, pc1252
 	MOVD	152(RSP), R1
-	JMP	pc1300
-pc1272:
-	MOVD	392(RSP), R2
+	JMP	pc1280
+pc1252:
+	MOVD	376(RSP), R2
 	MOVD	R2, 1072(R0)
 	MOVD	$1, R2
 	MOVWU	144(RSP), R3
 	STPW	(R2, R3), 1064(R0)
 	MOVD	152(RSP), R1
-pc1300:
+pc1280:
 	MOVWU	1068(R0), R2
 	MOVW	R2, 144(RSP)
 	MOVD	1072(R0), R2
-	MOVD	R2, 392(RSP)
+	MOVD	R2, 376(RSP)
 	MOVW	ZR, 1064(R0)
 	MOVD	280(RSP), R2
 	MOVD	R2, 1104(R0)
@@ -89598,25 +89592,25 @@ pc1300:
 	MOVD 24(RSP), R0
 	MOVD	m+0(FP), R2
 	MOVW	1064(R2), R3
-	CBNZW	R3, pc1368
-	MOVD	392(RSP), R1
+	CBNZW	R3, pc1348
+	MOVD	376(RSP), R1
 	MOVD	R1, 1072(R2)
 	MOVD	$1, R1
 	MOVWU	144(RSP), R3
 	STPW	(R1, R3), 1064(R2)
-pc1368:
+pc1348:
 	MOVD	ZR, R0
 	MOVD R0, r0+56(FP)
 	RET	(R30)
-pc1384:
+pc1364:
 	HINT	$0
-	JMP	pc1384
-pc1392:
+	JMP	pc1364
+pc1372:
 	ADD	$1, R1, R1
 	ADD	$8, R2, R2
 	ADD	$4, R0, R0
 	MOVD	R7, R3
-pc1408:
+pc1388:
 	MOVD	·_consts+5496(SB), R7
 	ADD	R8, R7, R7
 	SUB	R9, R7, R7
@@ -89650,23 +89644,23 @@ pc1408:
 	MOVB	R12, (R6)(R7)
 	ADD	$1, R3, R7
 	CMP	R7, R10
-	BNE	pc1392
+	BNE	pc1372
 	MOVD	l0+8(FP), R2
 	ADD	$792, R2, R7
 	ADD	$128, R2, R10
 	MOVD	(R6)(R7), R3
 	MOVW	(R6)(R10), R7
-	CBZW	R7, pc1600
+	CBZW	R7, pc1580
 	CMPW	$1, R7
-	BNE	pc2628
+	BNE	pc2608
 	MOVD	$3, R7
-pc1600:
+pc1580:
 	MOVD	R3, 320(RSP)
 	MOVD	$30128, R9
 	SUB	R9, R8, R1
 	MOVD	R1, 296(RSP)
 	MOVD	R5, R0
-	MOVD	376(RSP), R4
+	MOVD	360(RSP), R4
 	MOVD	l4+32(FP), R5
 	MOVD	R7, R6
 	MOVD R0, 8(RSP)
@@ -89679,17 +89673,17 @@ pc1600:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn1445(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R7
-	CBZW	R7, pc1656
+	CBZW	R7, pc1636
 	MOVD	32(R0), R2
-	JMP	pc2828
-pc1656:
+	JMP	pc2808
+pc1636:
 	MOVD	320(RSP), R1
 	MOVD R0, 8(RSP)
 	MOVD R1, 16(RSP)
 	CALL ·Fn1533(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBNZW	R2, pc2988
+	CBNZW	R2, pc2968
 	MOVD	32(R0), R3
 	MOVD	l0+8(FP), R4
 	MOVD	(R3)(R4), R1
@@ -89701,26 +89695,26 @@ pc1656:
 	MOVD 32(RSP), R0
 	MOVD	m+0(FP), R3
 	MOVW	1064(R3), R4
-	CBNZW	R4, pc2620
+	CBNZW	R4, pc2600
 	MOVD	R0, 288(RSP)
 	MOVD	32(R3), R5
-	MOVD	384(RSP), R6
+	MOVD	368(RSP), R6
 	MOVW	128(RSP), R7
 	MOVW	R7, (R5)(R6)
 	MOVW	l5+40(FP), R1
-	CBZW	R1, pc2380
-	MOVD	392(RSP), R6
+	CBZW	R1, pc2360
+	MOVD	376(RSP), R6
 	MOVD	(R5)(R6), R1
 	MOVD	l6+48(FP), R6
 	CMP	$0, R6
 	CSET	EQ, R7
-	CBNZW	R7, pc2344
+	CBNZW	R7, pc2324
 	MOVD	1104(R3), R7
 	SUB	$64, R7, R4
 	MOVD	R4, 1104(R3)
 	CMP	$0, R1
 	CSET	EQ, R8
-	CBNZW	R8, pc2284
+	CBNZW	R8, pc2264
 	ADD	$272, R1, R8
 	MOVW	(R5)(R8), R9
 	ADD	$8, R0, R10
@@ -89729,14 +89723,14 @@ pc1656:
 	MOVW	(R5)(R11), R11
 	ADD	R10, R11, R10
 	CMPW	R10, R9
-	BLT	pc2216
-	CBZ	R6, pc2148
+	BLT	pc2196
+	CBZ	R6, pc2128
 	MOVD	R1, 272(RSP)
 	MOVD	R7, 264(RSP)
 	MOVBU	(R5)(R1), R9
-	CBNZW	R9, pc2104
-	MOVD	R5, 416(RSP)
-	MOVD	R8, 392(RSP)
+	CBNZW	R9, pc2084
+	MOVD	R5, 400(RSP)
+	MOVD	R8, 376(RSP)
 	ADD	$272, R1, R9
 	MOVD	(R5)(R9), R9
 	ADD	$31, R9, R9
@@ -89744,7 +89738,7 @@ pc1656:
 	AND	$2305843009213693948, R9, R9
 	CMP	$0, R9
 	CSET	EQ, R10
-	CBNZW	R10, pc1932
+	CBNZW	R10, pc1912
 	ADD	$280, R1, R4
 	MOVD	(R5)(R4), R1
 	MOVD	R3, R0
@@ -89758,16 +89752,16 @@ pc1656:
 	MOVD	288(RSP), R0
 	MOVD	272(RSP), R1
 	MOVD	m+0(FP), R3
-	MOVD	416(RSP), R5
+	MOVD	400(RSP), R5
 	MOVD	l6+48(FP), R6
 	MOVD	264(RSP), R7
-	MOVD	392(RSP), R8
-pc1932:
+	MOVD	376(RSP), R8
+pc1912:
 	MOVD	(R5)(R8), R9
 	LSL	$2, R9, R9
 	CMP	$0, R9
 	CSET	EQ, R10
-	CBNZW	R10, pc2004
+	CBNZW	R10, pc1984
 	ADD	$296, R1, R4
 	MOVD	(R5)(R4), R1
 	MOVD	R3, R0
@@ -89781,11 +89775,11 @@ pc1932:
 	MOVD	288(RSP), R0
 	MOVD	272(RSP), R1
 	MOVD	m+0(FP), R3
-	MOVD	416(RSP), R5
+	MOVD	400(RSP), R5
 	MOVD	l6+48(FP), R6
 	MOVD	264(RSP), R7
-	MOVD	392(RSP), R8
-pc2004:
+	MOVD	376(RSP), R8
+pc1984:
 	ADD	$456, R1, R9
 	MOVW	(R5)(R9), R9
 	MOVD	(R5)(R8), R8
@@ -89796,7 +89790,7 @@ pc2004:
 	LSL	$3, R8, R8
 	CMP	$0, R8
 	CSET	EQ, R9
-	CBNZW	R9, pc2096
+	CBNZW	R9, pc2076
 	ADD	$304, R1, R4
 	MOVD	(R5)(R4), R1
 	MOVD	R3, R0
@@ -89810,25 +89804,25 @@ pc2004:
 	MOVD	288(RSP), R0
 	MOVD	272(RSP), R1
 	MOVD	m+0(FP), R3
-	MOVD	416(RSP), R5
+	MOVD	400(RSP), R5
 	MOVD	l6+48(FP), R6
 	MOVD	264(RSP), R7
-pc2096:
+pc2076:
 	MOVD	$1, R8
 	MOVB	R8, (R5)(R1)
-pc2104:
+pc2084:
 	ADD	$1, R1, R8
 	MOVB	ZR, (R5)(R8)
 	ADD	$4, R1, R9
 	MOVW	(R5)(R9), R10
 	CMPW	$0, R10
-	BLE	pc4960
-	MOVD	R8, 392(RSP)
-	MOVD	R9, 384(RSP)
+	BLE	pc4940
+	MOVD	R8, 376(RSP)
+	MOVD	R9, 368(RSP)
 	ADD	$8, R1, R11
 	MOVD	ZR, R2
-	JMP	pc5384
-pc2148:
+	JMP	pc5364
+pc2128:
 	SUB	$32, R7, R6
 	MOVD	$8402506, R8
 	MOVD	R8, (R5)(R6)
@@ -89845,10 +89839,10 @@ pc2148:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc2988
+	CBNZW	R5, pc2968
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-	JMP	pc4952
-pc2216:
+	JMP	pc4932
+pc2196:
 	SUB	$48, R7, R6
 	MOVD	$8402367, R8
 	MOVD	R8, (R5)(R6)
@@ -89865,10 +89859,10 @@ pc2216:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc2988
+	CBNZW	R5, pc2968
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-	JMP	pc4944
-pc2284:
+	JMP	pc4924
+pc2264:
 	MOVD	$8432788, R6
 	MOVD	R6, (R5)(R4)
 	MOVD	R3, R0
@@ -89883,10 +89877,10 @@ pc2284:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc2988
+	CBNZW	R5, pc2968
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-	JMP	pc4936
-pc2344:
+	JMP	pc4916
+pc2324:
 	MOVD	R0, R2
 	MOVD	R3, R0
 	MOVD R0, 8(RSP)
@@ -89895,19 +89889,19 @@ pc2344:
 	CALL github·com∕goccy∕llamawasm2go∕p0·Fn611(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R3
-	CBNZW	R3, pc2988
+	CBNZW	R3, pc2968
 	MOVD	32(R0), R4
 	MOVD	288(RSP), R1
-	JMP	pc3636
-pc2380:
-	MOVD	392(RSP), R6
+	JMP	pc3616
+pc2360:
+	MOVD	376(RSP), R6
 	MOVD	(R5)(R6), R1
 	MOVD	1104(R3), R6
 	SUB	$48, R6, R4
 	MOVD	R4, 1104(R3)
 	CMP	$0, R1
 	CSET	EQ, R7
-	CBNZW	R7, pc2560
+	CBNZW	R7, pc2540
 	ADD	$272, R1, R7
 	MOVW	(R5)(R7), R8
 	ADD	$8, R0, R9
@@ -89916,19 +89910,19 @@ pc2380:
 	MOVW	(R5)(R10), R10
 	ADD	R9, R10, R9
 	CMPW	R9, R8
-	BLT	pc2492
+	BLT	pc2472
 	MOVD	R1, 224(RSP)
 	MOVD	R6, 216(RSP)
-	MOVD	R7, 392(RSP)
+	MOVD	R7, 376(RSP)
 	ADD	$4, R1, R8
-	MOVD	R8, 384(RSP)
+	MOVD	R8, 368(RSP)
 	MOVW	(R5)(R8), R9
 	CMPW	$0, R9
-	BLE	pc3084
+	BLE	pc3064
 	ADD	$8, R1, R10
 	MOVD	ZR, R2
-	JMP	pc4664
-pc2492:
+	JMP	pc4644
+pc2472:
 	SUB	$32, R6, R7
 	MOVD	$8402367, R8
 	MOVD	R8, (R5)(R7)
@@ -89945,10 +89939,10 @@ pc2492:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc2988
+	CBNZW	R5, pc2968
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-	JMP	pc3076
-pc2560:
+	JMP	pc3056
+pc2540:
 	MOVD	$8432788, R6
 	MOVD	R6, (R5)(R4)
 	MOVD	R3, R0
@@ -89963,13 +89957,13 @@ pc2560:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc2988
+	CBNZW	R5, pc2968
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-	JMP	pc3068
-pc2620:
+	JMP	pc3048
+pc2600:
 	MOVD	R3, R0
-	JMP	pc2988
-pc2628:
+	JMP	pc2968
+pc2608:
 	MOVD	R5, R0
 	MOVD	$16, R1
 	MOVD R0, 8(RSP)
@@ -89978,10 +89972,10 @@ pc2628:
 	MOVD 24(RSP), R0
 	MOVD	m+0(FP), R2
 	MOVW	1064(R2), R3
-	CBZW	R3, pc2660
+	CBZW	R3, pc2640
 	MOVD	l0+8(FP), R0
-	JMP	pc2704
-pc2660:
+	JMP	pc2684
+pc2640:
 	MOVD	R0, 312(RSP)
 	MOVD	R0, R1
 	MOVD	R2, R0
@@ -89993,14 +89987,14 @@ pc2660:
 	MOVD 32(RSP), R0
 	MOVD	m+0(FP), R3
 	MOVW	1064(R3), R4
-	CBZW	R4, pc2788
+	CBZW	R4, pc2768
 	MOVD	R3, R2
 	MOVD	312(RSP), R0
-pc2704:
+pc2684:
 	MOVWU	1068(R2), R3
 	MOVW	R3, 144(RSP)
 	MOVD	1072(R2), R3
-	MOVD	R3, 392(RSP)
+	MOVD	R3, 376(RSP)
 	MOVW	ZR, 1064(R2)
 	MOVD	280(RSP), R3
 	MOVD	R3, 1104(R2)
@@ -90012,14 +90006,14 @@ pc2704:
 	MOVD	m+0(FP), R0
 	MOVD	32(R0), R2
 	MOVW	1064(R0), R3
-	CBNZW	R3, pc2828
-	MOVD	392(RSP), R3
+	CBNZW	R3, pc2808
+	MOVD	376(RSP), R3
 	MOVD	R3, 1072(R0)
 	MOVD	$1, R3
 	MOVWU	144(RSP), R4
 	STPW	(R3, R4), 1064(R0)
-	JMP	pc2828
-pc2788:
+	JMP	pc2808
+pc2768:
 	MOVD	R0, R1
 	MOVD	$8528888, R2
 	MOVD	R3, R0
@@ -90031,9 +90025,9 @@ pc2788:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn58(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R4
-	CBZW	R4, pc2976
+	CBZW	R4, pc2956
 	MOVD	32(R0), R2
-pc2828:
+pc2808:
 	MOVWU	1068(R0), R3
 	MOVD	1072(R0), R4
 	MOVW	ZR, 1064(R0)
@@ -90047,9 +90041,9 @@ pc2828:
 	MOVD	(R2)(R6), R1
 	CMP	$0, R1
 	CSET	EQ, R6
-	CBNZW	R6, pc2940
+	CBNZW	R6, pc2920
 	MOVW	R3, 144(RSP)
-	MOVD	R4, 392(RSP)
+	MOVD	R4, 376(RSP)
 	MOVD	·_consts+5520(SB), R3
 	ADD	R7, R3, R3
 	SUB	R8, R3, R3
@@ -90059,10 +90053,10 @@ pc2828:
 	CALL ·Fn3060(SB)
 	MOVD	m+0(FP), R0
 	MOVWU	144(RSP), R3
-	MOVD	392(RSP), R4
+	MOVD	376(RSP), R4
 	MOVD	280(RSP), R5
 	MOVD	304(RSP), R7
-pc2940:
+pc2920:
 	MOVD	R4, 1072(R0)
 	MOVD	$1, R2
 	STPW	(R2, R3), 1064(R0)
@@ -90070,17 +90064,17 @@ pc2940:
 	MOVD	R0, R5
 	MOVD	R7, R8
 	MOVD	176(RSP), R0
-	JMP	pc1212
-pc2976:
+	JMP	pc1192
+pc2956:
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-pc2980:
+pc2960:
 	HINT	$0
-	JMP	pc2980
-pc2988:
+	JMP	pc2960
+pc2968:
 	MOVWU	1068(R0), R2
 	MOVW	R2, 144(RSP)
 	MOVD	1072(R0), R2
-	MOVD	R2, 392(RSP)
+	MOVD	R2, 376(RSP)
 	MOVW	ZR, 1064(R0)
 	MOVD	280(RSP), R2
 	MOVD	R2, 1104(R0)
@@ -90091,27 +90085,27 @@ pc2988:
 	MOVD	m+0(FP), R0
 	MOVD	32(R0), R2
 	MOVW	1064(R0), R3
-	CBNZW	R3, pc2828
-	MOVD	392(RSP), R3
+	CBNZW	R3, pc2808
+	MOVD	376(RSP), R3
 	MOVD	R3, 1072(R0)
 	MOVD	$1, R3
 	MOVWU	144(RSP), R4
 	STPW	(R3, R4), 1064(R0)
-	JMP	pc2828
-pc3068:
+	JMP	pc2808
+pc3048:
 	HINT	$0
-	JMP	pc3068
-pc3076:
+	JMP	pc3048
+pc3056:
 	HINT	$0
-	JMP	pc3076
-pc3084:
+	JMP	pc3056
+pc3064:
 	ADD	$1, R1, R4
-	MOVD	R4, 368(RSP)
+	MOVD	R4, 352(RSP)
 	MOVBU	(R5)(R4), R9
-	CBNZW	R9, pc3108
+	CBNZW	R9, pc3088
 	ADD	$464, R1, R9
 	MOVW	ZR, (R5)(R9)
-pc3108:
+pc3088:
 	MOVD	R0, R2
 	MOVD	R3, R0
 	MOVD R0, 8(RSP)
@@ -90120,7 +90114,7 @@ pc3108:
 	CALL github·com∕goccy∕llamawasm2go∕p0·Fn611(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R3
-	CBNZW	R3, pc2988
+	CBNZW	R3, pc2968
 	MOVD	32(R0), R5
 	MOVD	224(RSP), R6
 	ADD	$264, R6, R7
@@ -90139,14 +90133,14 @@ pc3108:
 	MOVW 48(RSP), R0
 	MOVD	m+0(FP), R5
 	MOVW	1064(R5), R6
-	CBNZW	R6, pc3628
+	CBNZW	R6, pc3608
 	MOVD	32(R5), R6
-	CBZW	R0, pc3440
+	CBZW	R0, pc3420
 	MOVD	224(RSP), R7
 	MOVBU	(R6)(R7), R8
-	CBNZW	R8, pc3432
+	CBNZW	R8, pc3412
 	MOVW	R0, 132(RSP)
-	MOVD	R6, 416(RSP)
+	MOVD	R6, 400(RSP)
 	ADD	$272, R7, R8
 	MOVD	(R6)(R8), R8
 	ADD	$31, R8, R8
@@ -90154,7 +90148,7 @@ pc3108:
 	AND	$2305843009213693948, R8, R3
 	CMP	$0, R3
 	CSET	EQ, R8
-	CBNZW	R8, pc3280
+	CBNZW	R8, pc3260
 	ADD	$280, R7, R4
 	MOVD	(R6)(R4), R1
 	MOVD	R5, R0
@@ -90166,15 +90160,15 @@ pc3108:
 	CALL ·gcasmFwdH_base_MemoryFill64(SB)
 	MOVW	132(RSP), R0
 	MOVD	m+0(FP), R5
-	MOVD	416(RSP), R6
+	MOVD	400(RSP), R6
 	MOVD	224(RSP), R7
-pc3280:
-	MOVD	392(RSP), R8
+pc3260:
+	MOVD	376(RSP), R8
 	MOVD	(R6)(R8), R9
 	LSL	$2, R9, R3
 	CMP	$0, R3
 	CSET	EQ, R9
-	CBNZW	R9, pc3344
+	CBNZW	R9, pc3324
 	ADD	$296, R7, R4
 	MOVD	(R6)(R4), R1
 	MOVD	R5, R0
@@ -90186,21 +90180,21 @@ pc3280:
 	CALL ·gcasmFwdH_base_MemoryFill64(SB)
 	MOVW	132(RSP), R0
 	MOVD	m+0(FP), R5
-	MOVD	416(RSP), R6
+	MOVD	400(RSP), R6
 	MOVD	224(RSP), R7
-	MOVD	392(RSP), R8
-pc3344:
+	MOVD	376(RSP), R8
+pc3324:
 	ADD	$456, R7, R9
 	MOVW	(R6)(R9), R9
 	MOVD	(R6)(R8), R8
-	MOVD	384(RSP), R10
+	MOVD	368(RSP), R10
 	MOVW	(R6)(R10), R10
 	MUL	R8, R10, R8
 	MUL	R8, R9, R8
 	LSL	$3, R8, R3
 	CMP	$0, R3
 	CSET	EQ, R8
-	CBNZW	R8, pc3424
+	CBNZW	R8, pc3404
 	ADD	$304, R7, R4
 	MOVD	(R6)(R4), R1
 	MOVD	R5, R0
@@ -90212,27 +90206,27 @@ pc3344:
 	CALL ·gcasmFwdH_base_MemoryFill64(SB)
 	MOVW	132(RSP), R0
 	MOVD	m+0(FP), R5
-	MOVD	416(RSP), R6
+	MOVD	400(RSP), R6
 	MOVD	224(RSP), R7
-pc3424:
+pc3404:
 	MOVD	$1, R8
 	MOVB	R8, (R6)(R7)
-pc3432:
-	MOVD	368(RSP), R7
+pc3412:
+	MOVD	352(RSP), R7
 	MOVB	ZR, (R6)(R7)
-pc3440:
+pc3420:
 	MOVD	216(RSP), R7
 	MOVD	R7, 1104(R5)
-	CBZW	R0, pc3468
+	CBZW	R0, pc3448
 	MOVD	R5, R0
 	MOVD	R6, R4
 	MOVD	288(RSP), R1
-	JMP	pc3636
-pc3468:
+	JMP	pc3616
+pc3448:
 	MOVD	l6+48(FP), R7
 	CMP	$0, R7
 	CSET	EQ, R7
-	CBNZW	R7, pc3556
+	CBNZW	R7, pc3536
 	MOVD	304(RSP), R7
 	MOVD	$30208, R8
 	SUB	R8, R7, R9
@@ -90251,9 +90245,9 @@ pc3468:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBZW	R5, pc2976
-	JMP	pc2988
-pc3556:
+	CBZW	R5, pc2956
+	JMP	pc2968
+pc3536:
 	MOVD	304(RSP), R4
 	MOVD	$30224, R7
 	SUB	R7, R4, R8
@@ -90270,14 +90264,14 @@ pc3556:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn1652(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R4
-	CBNZW	R4, pc2988
+	CBNZW	R4, pc2968
 	MOVD	32(R0), R4
 	MOVD	ZR, R1
-	JMP	pc3636
-pc3628:
+	JMP	pc3616
+pc3608:
 	MOVD	R5, R0
-	JMP	pc2988
-pc3636:
+	JMP	pc2968
+pc3616:
 	MOVD	R1, 192(RSP)
 	MOVD	·_consts+5480(SB), R5
 	MOVD	304(RSP), R6
@@ -90289,30 +90283,30 @@ pc3636:
 	MOVD	(R4)(R5), R5
 	CMP	$0, R5
 	CSET	EQ, R8
-	CBNZW	R8, pc3788
+	CBNZW	R8, pc3768
 	MOVD	·_consts+5568(SB), R3
 	ADD	R6, R3, R3
 	SUB	R7, R3, R3
 	LDP	1080(R0), (R8, R9)
 	MOVD	(R4)(R3), R3
 	CMP	R9, R5
-	BHS	pc4644
+	BHS	pc4624
 	ADD	R5<<4, R8, R4
 	LDP	(R4), (R4, R26)
 	MOVD	·gcasmType10(SB), R5
 	CMP	R5, R4
-	BNE	pc4624
+	BNE	pc4604
 	MOVD	(R26), R2
 	MOVD	R3, R1
 	CALL	(R2)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBNZW	R2, pc3844
+	CBNZW	R2, pc3824
 	MOVD	32(R0), R4
 	MOVD	192(RSP), R1
 	MOVD	304(RSP), R6
 	MOVD	$30240, R7
-pc3788:
+pc3768:
 	LDP	·_consts+5552(SB), (R5, R8)
 	ADD	R5, R6, R5
 	SUB	R7, R5, R5
@@ -90323,9 +90317,9 @@ pc3788:
 	MOVD	R9, (R4)(R8)
 	CMP	$0, R5
 	CSET	EQ, R8
-	CBZW	R8, pc4544
-	JMP	pc3896
-pc3844:
+	CBZW	R8, pc4524
+	JMP	pc3876
+pc3824:
 	MOVW	ZR, 1064(R0)
 	MOVD	280(RSP), R1
 	MOVD	R1, 1104(R0)
@@ -90333,23 +90327,23 @@ pc3844:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn242(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R1
-	CBNZW	R1, pc3880
+	CBNZW	R1, pc3860
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-	JMP	pc3888
-pc3880:
+	JMP	pc3868
+pc3860:
 	MOVD	32(R0), R2
-	JMP	pc2828
-pc3888:
+	JMP	pc2808
+pc3868:
 	HINT	$0
-	JMP	pc3888
-pc3896:
+	JMP	pc3868
+pc3876:
 	MOVD	·_consts+5576(SB), R5
 	ADD	R6, R5, R5
 	SUB	R7, R5, R5
 	MOVD	(R4)(R5), R5
-	CBZ	R5, pc4108
+	CBZ	R5, pc4088
 	MOVD	R5, 168(RSP)
-	MOVD	R4, 408(RSP)
+	MOVD	R4, 392(RSP)
 	MOVD	R5, R1
 	MOVD	$8, R2
 	MOVD	$-1, R3
@@ -90359,37 +90353,37 @@ pc3896:
 	MOVD R3, 32(RSP)
 	CALL ·gcasmFwdH_base_AtomicRmwAdd64_m64(SB)
 	MOVD 40(RSP), R0
-	CBZ	R0, pc3972
+	CBZ	R0, pc3952
 	MOVD	m+0(FP), R0
 	MOVD	192(RSP), R1
 	MOVD	304(RSP), R6
 	MOVD	$30240, R7
-	MOVD	408(RSP), R4
-	JMP	pc4108
-pc3972:
+	MOVD	392(RSP), R4
+	JMP	pc4088
+pc3952:
 	MOVD	168(RSP), R1
-	MOVD	408(RSP), R3
+	MOVD	392(RSP), R3
 	MOVD	(R3)(R1), R4
 	ADD	$16, R4, R4
 	MOVD	(R3)(R4), R0
 	MOVD	m+0(FP), R3
 	LDP	1080(R3), (R4, R5)
 	CMP	R5, R0
-	BHS	pc4524
+	BHS	pc4504
 	ADD	R0<<4, R4, R4
 	LDP	(R4), (R0, R26)
 	MOVD	·gcasmType10(SB), R4
 	CMP	R4, R0
-	BNE	pc4508
+	BNE	pc4488
 	MOVD	(R26), R2
 	MOVD	R3, R0
 	CALL	(R2)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBZW	R2, pc4068
+	CBZW	R2, pc4048
 	MOVD	32(R0), R2
-	JMP	pc2828
-pc4068:
+	JMP	pc2808
+pc4048:
 	MOVD	168(RSP), R1
 	MOVD R0, 8(RSP)
 	MOVD R1, 16(RSP)
@@ -90397,19 +90391,19 @@ pc4068:
 	MOVD	m+0(FP), R0
 	MOVD	32(R0), R2
 	MOVW	1064(R0), R3
-	CBNZW	R3, pc2828
+	CBNZW	R3, pc2808
 	MOVD	192(RSP), R1
 	MOVD	304(RSP), R6
 	MOVD	$30240, R7
 	MOVD	R2, R4
-pc4108:
+pc4088:
 	MOVD	·_consts+5584(SB), R5
 	ADD	R6, R5, R5
 	SUB	R7, R5, R5
 	MOVD	(R4)(R5), R5
 	CMP	$0, R5
 	CSET	EQ, R8
-	CBNZW	R8, pc4168
+	CBNZW	R8, pc4148
 	MOVD	R5, R1
 	MOVD R0, 8(RSP)
 	MOVD R1, 16(RSP)
@@ -90419,14 +90413,14 @@ pc4108:
 	MOVD	192(RSP), R1
 	MOVD	304(RSP), R6
 	MOVD	$30240, R7
-pc4168:
+pc4148:
 	MOVD	·_consts+5496(SB), R5
 	ADD	R6, R5, R5
 	SUB	R7, R5, R5
 	MOVD	(R4)(R5), R5
 	CMP	$0, R5
 	CSET	EQ, R8
-	CBNZW	R8, pc4248
+	CBNZW	R8, pc4228
 	MOVD	·_consts+5520(SB), R2
 	ADD	R6, R2, R2
 	SUB	R7, R2, R2
@@ -90440,14 +90434,14 @@ pc4168:
 	MOVD	192(RSP), R1
 	MOVD	304(RSP), R6
 	MOVD	$30240, R7
-pc4248:
+pc4228:
 	MOVD	·_consts+5592(SB), R5
 	ADD	R6, R5, R5
 	SUB	R7, R5, R5
 	MOVD	(R4)(R5), R5
-	CBZ	R5, pc4432
+	CBZ	R5, pc4412
 	MOVD	R5, 160(RSP)
-	MOVD	R4, 400(RSP)
+	MOVD	R4, 384(RSP)
 	MOVD	R5, R1
 	MOVD	$8, R2
 	MOVD	$-1, R3
@@ -90457,43 +90451,43 @@ pc4248:
 	MOVD R3, 32(RSP)
 	CALL ·gcasmFwdH_base_AtomicRmwAdd64_m64(SB)
 	MOVD 40(RSP), R0
-	CBZ	R0, pc4308
+	CBZ	R0, pc4288
 	MOVD	m+0(FP), R0
-	JMP	pc4432
-pc4308:
+	JMP	pc4412
+pc4288:
 	MOVD	160(RSP), R1
-	MOVD	400(RSP), R3
+	MOVD	384(RSP), R3
 	MOVD	(R3)(R1), R4
 	ADD	$16, R4, R4
 	MOVD	(R3)(R4), R0
 	MOVD	m+0(FP), R3
 	LDP	1080(R3), (R4, R5)
 	CMP	R5, R0
-	BHS	pc4500
+	BHS	pc4480
 	ADD	R0<<4, R4, R4
 	LDP	(R4), (R0, R26)
 	MOVD	·gcasmType10(SB), R4
 	CMP	R4, R0
-	BNE	pc4484
+	BNE	pc4464
 	MOVD	(R26), R2
 	MOVD	R3, R0
 	CALL	(R2)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBZW	R2, pc4404
+	CBZW	R2, pc4384
 	MOVD	32(R0), R2
-	JMP	pc2828
-pc4404:
+	JMP	pc2808
+pc4384:
 	MOVD	160(RSP), R1
 	MOVD R0, 8(RSP)
 	MOVD R1, 16(RSP)
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn709(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBZW	R2, pc4432
+	CBZW	R2, pc4412
 	MOVD	32(R0), R2
-	JMP	pc2828
-pc4432:
+	JMP	pc2808
+pc4412:
 	MOVD	176(RSP), R1
 	MOVD R0, 8(RSP)
 	MOVD R1, 16(RSP)
@@ -90501,34 +90495,34 @@ pc4432:
 	MOVD 24(RSP), R0
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBZW	R2, pc4460
+	CBZW	R2, pc4440
 	MOVD	32(R0), R2
-	JMP	pc2828
-pc4460:
+	JMP	pc2808
+pc4440:
 	MOVD	304(RSP), R1
 	MOVD	R1, 1104(R0)
 	MOVD	192(RSP), R0
 	MOVD R0, r0+56(FP)
 	RET	(R30)
-pc4484:
+pc4464:
 	MOVD	R4, R1
 	MOVD	·gcasmType2(SB), R2
 	CALL	·gcasmTrapIndirectSig(SB)
-pc4500:
+pc4480:
 	MOVD	R5, R1
 	CALL	·gcasmTrapBounds(SB)
-pc4508:
+pc4488:
 	MOVD	R4, R1
 	MOVD	·gcasmType2(SB), R2
 	CALL	·gcasmTrapIndirectSig(SB)
-pc4524:
+pc4504:
 	MOVD	R5, R1
 	CALL	·gcasmTrapBounds(SB)
-pc4532:
+pc4512:
 	MOVD	304(RSP), R6
 	MOVD	R3, R4
 	MOVD	R1, R5
-pc4544:
+pc4524:
 	MOVD	R5, 184(RSP)
 	MOVD	(R4)(R5), R2
 	SUB	$8, R6, R1
@@ -90548,40 +90542,40 @@ pc4544:
 	MOVD	m+0(FP), R0
 	MOVD	32(R0), R3
 	MOVD	184(RSP), R1
-	CBNZ	R1, pc4532
+	CBNZ	R1, pc4512
 	MOVD	192(RSP), R1
 	MOVD	304(RSP), R6
 	MOVD	$30240, R7
 	MOVD	R3, R4
-	JMP	pc3896
-pc4624:
+	JMP	pc3876
+pc4604:
 	MOVD	R4, R0
 	MOVD	R5, R1
 	MOVD	·gcasmType2(SB), R2
 	CALL	·gcasmTrapIndirectSig(SB)
-pc4644:
+pc4624:
 	MOVD	R5, R0
 	MOVD	R9, R1
 	CALL	·gcasmTrapBounds(SB)
-pc4656:
+pc4636:
 	ADD	$8, R10, R10
 	MOVD	R11, R2
-pc4664:
+pc4644:
 	MOVD	(R5)(R10), R11
-	CBZ	R11, pc4832
+	CBZ	R11, pc4812
 	ADD	$64, R11, R12
 	MOVD	(R5)(R12), R12
 	CMP	$0, R12
 	CSET	EQ, R13
-	CBNZW	R13, pc4812
+	CBNZW	R13, pc4792
 	LDP	1080(R3), (R4, R5)
 	CMP	R5, R12
-	BHS	pc4924
+	BHS	pc4904
 	ADD	R12<<4, R4, R4
 	LDP	(R4), (R4, R26)
 	MOVD	·gcasmType10(SB), R5
 	CMP	R5, R4
-	BNE	pc4904
+	BNE	pc4884
 	MOVD	R10, 208(RSP)
 	MOVD	R2, 200(RSP)
 	MOVD	(R26), R2
@@ -90590,26 +90584,26 @@ pc4664:
 	CALL	(R2)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBNZW	R2, pc2988
+	CBNZW	R2, pc2968
 	MOVD	32(R0), R5
-	MOVD	384(RSP), R6
+	MOVD	368(RSP), R6
 	MOVW	(R5)(R6), R9
 	MOVD	288(RSP), R0
 	MOVD	224(RSP), R1
 	MOVD	200(RSP), R2
 	MOVD	m+0(FP), R3
 	MOVD	216(RSP), R6
-	MOVD	392(RSP), R7
-	MOVD	384(RSP), R8
+	MOVD	376(RSP), R7
+	MOVD	368(RSP), R8
 	MOVD	208(RSP), R10
-pc4812:
+pc4792:
 	ADD	$1, R2, R11
 	MOVW	R9, R12
 	NOP
 	CMP	R11, R12
-	BGT	pc4656
-	JMP	pc3084
-pc4832:
+	BGT	pc4636
+	JMP	pc3064
+pc4812:
 	SUB	$16, R6, R7
 	MOVD	$8429359, R8
 	MOVD	R8, (R5)(R7)
@@ -90626,33 +90620,33 @@ pc4832:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc2988
+	CBNZW	R5, pc2968
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-pc4896:
+pc4876:
 	HINT	$0
-	JMP	pc4896
-pc4904:
+	JMP	pc4876
+pc4884:
 	MOVD	R4, R0
 	MOVD	R5, R1
 	MOVD	·gcasmType2(SB), R2
 	CALL	·gcasmTrapIndirectSig(SB)
-pc4924:
+pc4904:
 	MOVD	R12, R0
 	MOVD	R5, R1
 	CALL	·gcasmTrapBounds(SB)
-pc4936:
+pc4916:
 	HINT	$0
-	JMP	pc4936
-pc4944:
+	JMP	pc4916
+pc4924:
 	HINT	$0
-	JMP	pc4944
-pc4952:
+	JMP	pc4924
+pc4932:
 	HINT	$0
-	JMP	pc4952
-pc4960:
+	JMP	pc4932
+pc4940:
 	ADD	$464, R1, R4
 	MOVW	ZR, (R5)(R4)
-pc4968:
+pc4948:
 	MOVD	R0, R2
 	MOVD	R3, R0
 	MOVD R0, 8(RSP)
@@ -90661,7 +90655,7 @@ pc4968:
 	CALL github·com∕goccy∕llamawasm2go∕p0·Fn611(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R3
-	CBNZW	R3, pc2988
+	CBNZW	R3, pc2968
 	MOVD	32(R0), R6
 	MOVD	272(RSP), R7
 	ADD	$264, R7, R8
@@ -90687,18 +90681,18 @@ pc4968:
 	MOVW 56(RSP), R0
 	MOVD	m+0(FP), R6
 	MOVW	1064(R6), R7
-	CBNZW	R7, pc5172
+	CBNZW	R7, pc5152
 	MOVD	32(R6), R5
-	CBZW	R0, pc5108
+	CBZW	R0, pc5088
 	MOVD	240(RSP), R4
 	ADD	$24, R4, R7
 	MOVW	(R5)(R7), R8
 	CMPW	$0, R8
-	BLE	pc5188
+	BLE	pc5168
 	MOVD	l6+48(FP), R8
 	MOVD	ZR, R0
-	JMP	pc5216
-pc5108:
+	JMP	pc5196
+pc5088:
 	MOVD	232(RSP), R4
 	MOVD	$8466557, R7
 	MOVD	R7, (R5)(R4)
@@ -90714,25 +90708,25 @@ pc5108:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc2988
+	CBNZW	R5, pc2968
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-	JMP	pc5180
-pc5172:
+	JMP	pc5160
+pc5152:
 	MOVD	R6, R0
-	JMP	pc2988
-pc5180:
+	JMP	pc2968
+pc5160:
 	HINT	$0
-	JMP	pc5180
-pc5188:
+	JMP	pc5160
+pc5168:
 	MOVD	264(RSP), R7
 	MOVD	R7, 1104(R6)
 	MOVD	R6, R0
 	MOVD	R5, R4
 	MOVD	288(RSP), R1
-	JMP	pc3636
-pc5212:
+	JMP	pc3616
+pc5192:
 	MOVD	R9, R0
-pc5216:
+pc5196:
 	ADD	R0<<3, R8, R9
 	MOVD	ZR, (R5)(R9)
 	ADD	$16, R4, R10
@@ -90742,23 +90736,23 @@ pc5216:
 	ADD	$144, R11, R12
 	MOVW	(R5)(R12), R12
 	CMPW	$0, R12
-	BLE	pc5272
+	BLE	pc5252
 	MOVD	$16, R1
 	MOVD	ZR, R2
 	MOVD	ZR, R3
-	JMP	pc5308
-pc5272:
+	JMP	pc5288
+pc5252:
 	ADD	$1, R0, R9
 	MOVW	(R5)(R7), R10
 	CMP	R9, R10
-	BGT	pc5212
-	JMP	pc5188
-pc5292:
+	BGT	pc5192
+	JMP	pc5168
+pc5272:
 	ADD	$8, R1, R1
 	MOVD	R11, R2
 	MOVD	R12, R3
 	MOVD	R13, R11
-pc5308:
+pc5288:
 	ADD	R11, R1, R11
 	MOVD	(R5)(R11), R11
 	MOVD	·_consts+1512(SB), R12
@@ -90773,27 +90767,27 @@ pc5308:
 	ADD	$144, R13, R14
 	MOVW	(R5)(R14), R14
 	CMP	R12, R14
-	BGT	pc5292
-	JMP	pc5272
-pc5376:
+	BGT	pc5272
+	JMP	pc5252
+pc5356:
 	ADD	$8, R11, R11
 	MOVD	R12, R2
-pc5384:
+pc5364:
 	MOVD	(R5)(R11), R12
-	CBZ	R12, pc5564
+	CBZ	R12, pc5544
 	ADD	$64, R12, R13
 	MOVD	(R5)(R13), R13
 	CMP	$0, R13
 	CSET	EQ, R14
-	CBNZW	R14, pc5536
+	CBNZW	R14, pc5516
 	LDP	1080(R3), (R4, R5)
 	CMP	R5, R13
-	BHS	pc5656
+	BHS	pc5636
 	ADD	R13<<4, R4, R4
 	LDP	(R4), (R4, R26)
 	MOVD	·gcasmType10(SB), R5
 	CMP	R5, R4
-	BNE	pc5636
+	BNE	pc5616
 	MOVD	R11, 256(RSP)
 	MOVD	R2, 248(RSP)
 	MOVD	(R26), R2
@@ -90802,9 +90796,9 @@ pc5384:
 	CALL	(R2)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R2
-	CBNZW	R2, pc2988
+	CBNZW	R2, pc2968
 	MOVD	32(R0), R5
-	MOVD	384(RSP), R6
+	MOVD	368(RSP), R6
 	MOVW	(R5)(R6), R10
 	MOVD	288(RSP), R0
 	MOVD	272(RSP), R1
@@ -90812,19 +90806,19 @@ pc5384:
 	MOVD	m+0(FP), R3
 	MOVD	l6+48(FP), R6
 	MOVD	264(RSP), R7
-	MOVD	392(RSP), R8
-	MOVD	384(RSP), R9
+	MOVD	376(RSP), R8
+	MOVD	368(RSP), R9
 	MOVD	256(RSP), R11
-pc5536:
+pc5516:
 	ADD	$1, R2, R12
 	MOVW	R10, R13
 	NOP
 	CMP	R12, R13
-	BGT	pc5376
+	BGT	pc5356
 	MOVBU	(R5)(R8), R4
-	CBNZW	R4, pc4968
-	JMP	pc4960
-pc5564:
+	CBNZW	R4, pc4948
+	JMP	pc4940
+pc5544:
 	SUB	$16, R7, R6
 	MOVD	$8429359, R8
 	MOVD	R8, (R5)(R6)
@@ -90841,17 +90835,17 @@ pc5564:
 	CALL github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
 	MOVD	m+0(FP), R0
 	MOVW	1064(R0), R5
-	CBNZW	R5, pc2988
+	CBNZW	R5, pc2968
 	CALL ·gcasmFwdH_base_Wasm_trap_unreachable(SB)
-pc5628:
+pc5608:
 	HINT	$0
-	JMP	pc5628
-pc5636:
+	JMP	pc5608
+pc5616:
 	MOVD	R4, R0
 	MOVD	R5, R1
 	MOVD	·gcasmType2(SB), R2
 	CALL	·gcasmTrapIndirectSig(SB)
-pc5656:
+pc5636:
 	MOVD	R13, R0
 	MOVD	R5, R1
 	CALL	·gcasmTrapBounds(SB)
@@ -825557,6 +825551,339 @@ TEXT ·gcasmABI0Keep(SB), NOSPLIT, $0-0
 	JMP ·Fn2583(SB)
 	JMP ·Fn2700(SB)
 	JMP ·Fn784(SB)
+
+// Cross-chunk trampolines: local ABI0 entry points the fallback
+// bodies' Go calls bind to; each tail-jumps to the remote fn's spelled
+// symbol (no //go:linkname pull of an asm-referenced symbol).
+TEXT ·Fn1235(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1235(SB)
+
+TEXT ·Fn1364(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1364(SB)
+
+TEXT ·Fn1392(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1392(SB)
+
+TEXT ·Fn1538(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1538(SB)
+
+TEXT ·Fn1539(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1539(SB)
+
+TEXT ·Fn1542(SB), NOSPLIT, $0-36
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1542(SB)
+
+TEXT ·Fn1544(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1544(SB)
+
+TEXT ·Fn1545(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1545(SB)
+
+TEXT ·Fn1546(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1546(SB)
+
+TEXT ·Fn1630(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1630(SB)
+
+TEXT ·Fn1635(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1635(SB)
+
+TEXT ·Fn1652(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1652(SB)
+
+TEXT ·Fn1654(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1654(SB)
+
+TEXT ·Fn1655(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1655(SB)
+
+TEXT ·Fn1656(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1656(SB)
+
+TEXT ·Fn1660(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1660(SB)
+
+TEXT ·Fn1661(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1661(SB)
+
+TEXT ·Fn1665(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1665(SB)
+
+TEXT ·Fn1669(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1669(SB)
+
+TEXT ·Fn1751(SB), NOSPLIT, $0-112
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1751(SB)
+
+TEXT ·Fn1805(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1805(SB)
+
+TEXT ·Fn1822(SB), NOSPLIT, $0-120
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1822(SB)
+
+TEXT ·Fn1823(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1823(SB)
+
+TEXT ·Fn1824(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1824(SB)
+
+TEXT ·Fn1999(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1999(SB)
+
+TEXT ·Fn2004(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2004(SB)
+
+TEXT ·Fn2192(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2192(SB)
+
+TEXT ·Fn242(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn242(SB)
+
+TEXT ·Fn244(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn244(SB)
+
+TEXT ·Fn251(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn251(SB)
+
+TEXT ·Fn252(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn252(SB)
+
+TEXT ·Fn254(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn254(SB)
+
+TEXT ·Fn264(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn264(SB)
+
+TEXT ·Fn273(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn273(SB)
+
+TEXT ·Fn2980(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2980(SB)
+
+TEXT ·Fn3016(SB), NOSPLIT, $0-44
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn3016(SB)
+
+TEXT ·Fn3036(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn3036(SB)
+
+TEXT ·Fn3059(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p0·Fn3059(SB)
+
+TEXT ·Fn387(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn387(SB)
+
+TEXT ·Fn408(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
+
+TEXT ·Fn442(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn442(SB)
+
+TEXT ·Fn452(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn452(SB)
+
+TEXT ·Fn454(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn454(SB)
+
+TEXT ·Fn457(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn457(SB)
+
+TEXT ·Fn458(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn458(SB)
+
+TEXT ·Fn461(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn461(SB)
+
+TEXT ·Fn462(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn462(SB)
+
+TEXT ·Fn463(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn463(SB)
+
+TEXT ·Fn464(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn464(SB)
+
+TEXT ·Fn465(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn465(SB)
+
+TEXT ·Fn466(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn466(SB)
+
+TEXT ·Fn468(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn468(SB)
+
+TEXT ·Fn470(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn470(SB)
+
+TEXT ·Fn471(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn471(SB)
+
+TEXT ·Fn473(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn473(SB)
+
+TEXT ·Fn474(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn474(SB)
+
+TEXT ·Fn475(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn475(SB)
+
+TEXT ·Fn476(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn476(SB)
+
+TEXT ·Fn478(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn478(SB)
+
+TEXT ·Fn479(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn479(SB)
+
+TEXT ·Fn480(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn480(SB)
+
+TEXT ·Fn481(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn481(SB)
+
+TEXT ·Fn482(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn482(SB)
+
+TEXT ·Fn483(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn483(SB)
+
+TEXT ·Fn485(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn485(SB)
+
+TEXT ·Fn486(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn486(SB)
+
+TEXT ·Fn487(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn487(SB)
+
+TEXT ·Fn488(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn488(SB)
+
+TEXT ·Fn492(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn492(SB)
+
+TEXT ·Fn493(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn493(SB)
+
+TEXT ·Fn496(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn496(SB)
+
+TEXT ·Fn497(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn497(SB)
+
+TEXT ·Fn498(SB), NOSPLIT, $0-80
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn498(SB)
+
+TEXT ·Fn500(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn500(SB)
+
+TEXT ·Fn501(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn501(SB)
+
+TEXT ·Fn502(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn502(SB)
+
+TEXT ·Fn503(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn503(SB)
+
+TEXT ·Fn506(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn506(SB)
+
+TEXT ·Fn507(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn507(SB)
+
+TEXT ·Fn508(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn508(SB)
+
+TEXT ·Fn509(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn509(SB)
+
+TEXT ·Fn510(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn510(SB)
+
+TEXT ·Fn511(SB), NOSPLIT, $0-80
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn511(SB)
+
+TEXT ·Fn512(SB), NOSPLIT, $0-96
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn512(SB)
+
+TEXT ·Fn513(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn513(SB)
+
+TEXT ·Fn514(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn514(SB)
+
+TEXT ·Fn515(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn515(SB)
+
+TEXT ·Fn516(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn516(SB)
+
+TEXT ·Fn517(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn517(SB)
+
+TEXT ·Fn519(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn519(SB)
+
+TEXT ·Fn523(SB), NOSPLIT, $0-88
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn523(SB)
+
+TEXT ·Fn525(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn525(SB)
+
+TEXT ·Fn529(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn529(SB)
+
+TEXT ·Fn530(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn530(SB)
+
+TEXT ·Fn531(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn531(SB)
+
+TEXT ·Fn532(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn532(SB)
+
+TEXT ·Fn535(SB), NOSPLIT, $0-72
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn535(SB)
+
+TEXT ·Fn536(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn536(SB)
+
+TEXT ·Fn547(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn547(SB)
+
+TEXT ·Fn55(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn55(SB)
+
+TEXT ·Fn56(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn56(SB)
+
+TEXT ·Fn573(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn573(SB)
+
+TEXT ·Fn576(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn576(SB)
+
+TEXT ·Fn578(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn578(SB)
+
+TEXT ·Fn58(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn58(SB)
+
+TEXT ·Fn584(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn584(SB)
+
+TEXT ·Fn599(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn599(SB)
+
+TEXT ·Fn622(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn622(SB)
+
+TEXT ·Fn987(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn987(SB)
+
+TEXT ·Fn988(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn988(SB)
 
 DATA ·gcf64_3eb0000000000000+0(SB)/8, $0x3eb0000000000000
 GLOBL ·gcf64_3eb0000000000000(SB), RODATA|NOPTR, $8

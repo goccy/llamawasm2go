@@ -946038,6 +946038,399 @@ TEXT ·gcasmABI0Keep(SB), NOSPLIT, $0-0
 	JMP ·Fn1995(SB)
 	JMP ·Fn392(SB)
 
+// Cross-chunk trampolines: local ABI0 entry points the fallback
+// bodies' Go calls bind to; each tail-jumps to the remote fn's spelled
+// symbol (no //go:linkname pull of an asm-referenced symbol).
+TEXT ·Fn1235(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1235(SB)
+
+TEXT ·Fn1283(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1283(SB)
+
+TEXT ·Fn1303(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1303(SB)
+
+TEXT ·Fn1306(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1306(SB)
+
+TEXT ·Fn1307(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1307(SB)
+
+TEXT ·Fn1308(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1308(SB)
+
+TEXT ·Fn1311(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1311(SB)
+
+TEXT ·Fn1313(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1313(SB)
+
+TEXT ·Fn1359(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1359(SB)
+
+TEXT ·Fn1360(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1360(SB)
+
+TEXT ·Fn1361(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn1361(SB)
+
+TEXT ·Fn1374(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1374(SB)
+
+TEXT ·Fn1379(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1379(SB)
+
+TEXT ·Fn1390(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1390(SB)
+
+TEXT ·Fn1394(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1394(SB)
+
+TEXT ·Fn1399(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1399(SB)
+
+TEXT ·Fn1473(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1473(SB)
+
+TEXT ·Fn1474(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1474(SB)
+
+TEXT ·Fn1476(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1476(SB)
+
+TEXT ·Fn1631(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1631(SB)
+
+TEXT ·Fn1635(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1635(SB)
+
+TEXT ·Fn1636(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1636(SB)
+
+TEXT ·Fn1637(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1637(SB)
+
+TEXT ·Fn1638(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1638(SB)
+
+TEXT ·Fn1639(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1639(SB)
+
+TEXT ·Fn1652(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1652(SB)
+
+TEXT ·Fn1653(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1653(SB)
+
+TEXT ·Fn1654(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1654(SB)
+
+TEXT ·Fn1656(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1656(SB)
+
+TEXT ·Fn1657(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn1657(SB)
+
+TEXT ·Fn1660(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1660(SB)
+
+TEXT ·Fn1661(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1661(SB)
+
+TEXT ·Fn1662(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1662(SB)
+
+TEXT ·Fn1663(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1663(SB)
+
+TEXT ·Fn1664(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1664(SB)
+
+TEXT ·Fn1665(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1665(SB)
+
+TEXT ·Fn1666(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1666(SB)
+
+TEXT ·Fn1669(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1669(SB)
+
+TEXT ·Fn1673(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1673(SB)
+
+TEXT ·Fn1747(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1747(SB)
+
+TEXT ·Fn1956(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1956(SB)
+
+TEXT ·Fn1959(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1959(SB)
+
+TEXT ·Fn1983(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1983(SB)
+
+TEXT ·Fn1987(SB), NOSPLIT, $0-44
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1987(SB)
+
+TEXT ·Fn1989(SB), NOSPLIT, $0-44
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1989(SB)
+
+TEXT ·Fn1992(SB), NOSPLIT, $0-44
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1992(SB)
+
+TEXT ·Fn1996(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1996(SB)
+
+TEXT ·Fn1997(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1997(SB)
+
+TEXT ·Fn1998(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn1998(SB)
+
+TEXT ·Fn2000(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2000(SB)
+
+TEXT ·Fn2192(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2192(SB)
+
+TEXT ·Fn2257(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2257(SB)
+
+TEXT ·Fn2258(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2258(SB)
+
+TEXT ·Fn2259(SB), NOSPLIT, $0-36
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn2259(SB)
+
+TEXT ·Fn2261(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2261(SB)
+
+TEXT ·Fn2263(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2263(SB)
+
+TEXT ·Fn242(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn242(SB)
+
+TEXT ·Fn244(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn244(SB)
+
+TEXT ·Fn251(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn251(SB)
+
+TEXT ·Fn252(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn252(SB)
+
+TEXT ·Fn254(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn254(SB)
+
+TEXT ·Fn261(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn261(SB)
+
+TEXT ·Fn262(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn262(SB)
+
+TEXT ·Fn264(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn264(SB)
+
+TEXT ·Fn265(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn265(SB)
+
+TEXT ·Fn268(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn268(SB)
+
+TEXT ·Fn273(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn273(SB)
+
+TEXT ·Fn274(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn274(SB)
+
+TEXT ·Fn2926(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2926(SB)
+
+TEXT ·Fn2985(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn2985(SB)
+
+TEXT ·Fn3016(SB), NOSPLIT, $0-44
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn3016(SB)
+
+TEXT ·Fn3017(SB), NOSPLIT, $0-36
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn3017(SB)
+
+TEXT ·Fn3025(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn3025(SB)
+
+TEXT ·Fn3033(SB), NOSPLIT, $0-36
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn3033(SB)
+
+TEXT ·Fn3036(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn3036(SB)
+
+TEXT ·Fn3060(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn3060(SB)
+
+TEXT ·Fn3062(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn3062(SB)
+
+TEXT ·Fn353(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn353(SB)
+
+TEXT ·Fn355(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn355(SB)
+
+TEXT ·Fn356(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn356(SB)
+
+TEXT ·Fn360(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn360(SB)
+
+TEXT ·Fn361(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn361(SB)
+
+TEXT ·Fn365(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn365(SB)
+
+TEXT ·Fn370(SB), NOSPLIT, $0-52
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn370(SB)
+
+TEXT ·Fn371(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn371(SB)
+
+TEXT ·Fn377(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn377(SB)
+
+TEXT ·Fn378(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn378(SB)
+
+TEXT ·Fn380(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn380(SB)
+
+TEXT ·Fn387(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn387(SB)
+
+TEXT ·Fn393(SB), NOSPLIT, $0-28
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn393(SB)
+
+TEXT ·Fn394(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn394(SB)
+
+TEXT ·Fn397(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn397(SB)
+
+TEXT ·Fn408(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn408(SB)
+
+TEXT ·Fn442(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn442(SB)
+
+TEXT ·Fn451(SB), NOSPLIT, $0-48
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn451(SB)
+
+TEXT ·Fn452(SB), NOSPLIT, $0-56
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn452(SB)
+
+TEXT ·Fn457(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn457(SB)
+
+TEXT ·Fn49(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn49(SB)
+
+TEXT ·Fn510(SB), NOSPLIT, $0-64
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn510(SB)
+
+TEXT ·Fn55(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn55(SB)
+
+TEXT ·Fn56(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn56(SB)
+
+TEXT ·Fn563(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn563(SB)
+
+TEXT ·Fn566(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn566(SB)
+
+TEXT ·Fn573(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn573(SB)
+
+TEXT ·Fn576(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn576(SB)
+
+TEXT ·Fn578(SB), NOSPLIT, $0-20
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn578(SB)
+
+TEXT ·Fn58(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn58(SB)
+
+TEXT ·Fn584(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn584(SB)
+
+TEXT ·Fn59(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn59(SB)
+
+TEXT ·Fn599(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn599(SB)
+
+TEXT ·Fn60(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn60(SB)
+
+TEXT ·Fn654(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn654(SB)
+
+TEXT ·Fn674(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn674(SB)
+
+TEXT ·Fn698(SB), NOSPLIT, $0-24
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn698(SB)
+
+TEXT ·Fn708(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn708(SB)
+
+TEXT ·Fn728(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn728(SB)
+
+TEXT ·Fn729(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn729(SB)
+
+TEXT ·Fn737(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn737(SB)
+
+TEXT ·Fn739(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn739(SB)
+
+TEXT ·Fn740(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn740(SB)
+
+TEXT ·Fn754(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn754(SB)
+
+TEXT ·Fn756(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn756(SB)
+
+TEXT ·Fn760(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn760(SB)
+
+TEXT ·Fn761(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn761(SB)
+
+TEXT ·Fn776(SB), NOSPLIT, $0-12
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn776(SB)
+
+TEXT ·Fn783(SB), NOSPLIT, $0-68
+	JMP github·com∕goccy∕llamawasm2go∕p1·Fn783(SB)
+
+TEXT ·Fn786(SB), NOSPLIT, $0-40
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn786(SB)
+
+TEXT ·Fn982(SB), NOSPLIT, $0-16
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn982(SB)
+
+TEXT ·Fn987(SB), NOSPLIT, $0-32
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn987(SB)
+
+TEXT ·Fn988(SB), NOSPLIT, $0-8
+	JMP github·com∕goccy∕llamawasm2go∕p2·Fn988(SB)
+
 DATA ·gcf64_3f50000000000000+0(SB)/8, $0x3f50000000000000
 GLOBL ·gcf64_3f50000000000000(SB), RODATA|NOPTR, $8
 DATA ·gcf64_4020000000000000+0(SB)/8, $0x4020000000000000
