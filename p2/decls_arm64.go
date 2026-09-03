@@ -3468,28 +3468,21 @@ var (
 	_ = gcasmTrapUnreachable
 )
 
-// Remote pure-fallback functions referenced from local fallback
-// bodies (Go-to-Go via linkname; chunk import graphs are cyclic).
+// Remote functions referenced from local fallback bodies, reached
+// through the tail-JMP trampolines in the asm file.
 
-//go:linkname Fn1550 github.com/goccy/llamawasm2go/p1.Fn1550
 func Fn1550(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int64, l8 int64, l9 int64, l10 int64, l11 int64, l12 int64, l13 int32, l14 int32, l15 float32, l16 int32, l17 int32, l18 int64, l19 int64, l20 int64, l21 int64, l22 int64, l23 int64) (r0 int64)
 
-//go:linkname Fn1561 github.com/goccy/llamawasm2go/p1.Fn1561
 func Fn1561(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int64, l8 float32, l9 int32) (r0 int64)
 
-//go:linkname Fn1659 github.com/goccy/llamawasm2go/p0.Fn1659
 func Fn1659(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int32, l4 int32, l5 int32, l6 int32, l7 int32, l8 int32, l9 int32, l10 int32, l11 int32, l12 int32, l13 int64, l14 int64, l15 int64, l16 int64) (r0 int64)
 
-//go:linkname Fn2700 github.com/goccy/llamawasm2go/p1.Fn2700
 func Fn2700(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int64, l8 int32)
 
-//go:linkname Fn3060 github.com/goccy/llamawasm2go/p1.Fn3060
 func Fn3060(m *base.Module, l0 int64)
 
-//go:linkname Fn448 github.com/goccy/llamawasm2go/p1.Fn448
 func Fn448(m *base.Module, l0 int64, l1 int32, l2 int32, l3 int64, l4 int64, l5 int64) (r0 int64)
 
-//go:linkname Fn540 github.com/goccy/llamawasm2go/p1.Fn540
 func Fn540(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int64) (r0 int64)
 
 // Per-function pure fallbacks (signatures ABIInternal cannot
