@@ -730,6 +730,9 @@ func Fn764(m *base.Module, l0 int64, l1 int64, l2 int64)
 //go:linkname Fn798 github.com/goccy/llamawasm2go/p1.Fn798
 func Fn798(m *base.Module, l0 int64, l1 int64, l2 int64)
 
+//go:linkname Fn800 github.com/goccy/llamawasm2go/p2.Fn800
+func Fn800(m *base.Module, l0 int64, l1 int64, l2 int64)
+
 //go:linkname Fn859 github.com/goccy/llamawasm2go/p2.Fn859
 func Fn859(m *base.Module) int64
 

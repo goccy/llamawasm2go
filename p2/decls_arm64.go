@@ -2217,6 +2217,7 @@ func Fn794(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 
 func Fn796(m *base.Module, l0 int64, l1 int64, l2 int64)
 func Fn797(m *base.Module, l0 int64, l1 int64, l2 int64)
 func Fn799(m *base.Module, l0 int64, l1 int64, l2 int64)
+func Fn800ovrneon(m *base.Module, l0 int64, l1 int64, l2 int64)
 func Fn800(m *base.Module, l0 int64, l1 int64, l2 int64)
 func Fn801(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int32)
 func Fn811(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int32)

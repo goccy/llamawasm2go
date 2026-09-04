@@ -122,6 +122,9 @@ func Fn326(m *base.Module) int32
 //go:linkname Fn327 github.com/goccy/llamawasm2go/p2.Fn327
 func Fn327(m *base.Module)
 
+//go:linkname Fn800 github.com/goccy/llamawasm2go/p2.Fn800
+func Fn800(m *base.Module, l0 int64, l1 int64, l2 int64)
+
 //go:linkname Fn805 github.com/goccy/llamawasm2go/p1.Fn805
 func Fn805(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
 

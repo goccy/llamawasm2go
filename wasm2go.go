@@ -156,6 +156,9 @@ func DbgVecDotQ4KQ8K(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 
 func DbgVecDotQ6KQ8K(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32) {
 	Fn927(m, l0, l1, l2, l3, l4, l5, l6, l7)
 }
+func DbgQuantizeMatQ8K4x8(m *base.Module, l0 int64, l1 int64, l2 int64) {
+	Fn800(m, l0, l1, l2)
+}
 func DbgGemvQ4K8x8(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32) {
 	Fn805(m, l0, l1, l2, l3, l4, l5, l6)
 }
