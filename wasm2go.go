@@ -27,7 +27,7 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	m.MemShared = true
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = 8589934592
-	m.T0 = make([]any, 2238)
+	m.T0 = make([]any, 2243)
 	m.G0 = int64(8388608)
 	m.G1 = int64(0)
 	InitElemSeg_0_0(m)
@@ -40,8 +40,8 @@ func NewWithWASIReserve(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Import
 	InitElemSeg_2_5(m)
 	InitElemSeg_2_6(m)
 	InitElemSeg_2_7(m)
-	m.DataSegs = [][]byte{wasm2goData_data_bin[0:127632], wasm2goData_data_bin[127632:147625], wasm2goData_data_bin[147625:147906], wasm2goData_data_bin[147906:148077], wasm2goData_data_bin[148077:148080], wasm2goData_data_bin[148080:149113], wasm2goData_data_bin[149113:149138], wasm2goData_data_bin[149138:149163], wasm2goData_data_bin[149163:149188], wasm2goData_data_bin[149188:149213], wasm2goData_data_bin[149213:149328], wasm2goData_data_bin[149328:149331], wasm2goData_data_bin[149331:149334], wasm2goData_data_bin[149334:149449], wasm2goData_data_bin[149449:149452], wasm2goData_data_bin[149452:149455], wasm2goData_data_bin[149455:149729], wasm2goData_data_bin[149729:150003], wasm2goData_data_bin[150003:150093], wasm2goData_data_bin[150093:150135], wasm2goData_data_bin[150135:150137], wasm2goData_data_bin[150137:150139], wasm2goData_data_bin[150139:193996], wasm2goData_data_bin[193996:194286], wasm2goData_data_bin[194286:194527], wasm2goData_data_bin[194527:194529], wasm2goData_data_bin[194529:194578], wasm2goData_data_bin[194578:194635], wasm2goData_data_bin[194635:231397], wasm2goData_data_bin[231397:231431], wasm2goData_data_bin[231431:231513], wasm2goData_data_bin[231513:237418], wasm2goData_data_bin[237418:262519], wasm2goData_data_bin[262519:263127], wasm2goData_data_bin[263127:265697], wasm2goData_data_bin[265697:266870], wasm2goData_data_bin[266870:267036], wasm2goData_data_bin[267036:267969], wasm2goData_data_bin[267969:268098], wasm2goData_data_bin[268098:268227], wasm2goData_data_bin[268227:268680], wasm2goData_data_bin[268680:268822], wasm2goData_data_bin[268822:269296], wasm2goData_data_bin[269296:269428], wasm2goData_data_bin[269428:276833], wasm2goData_data_bin[276833:276891], wasm2goData_data_bin[276891:276950], wasm2goData_data_bin[276950:277009], wasm2goData_data_bin[277009:277068], wasm2goData_data_bin[277068:277127], wasm2goData_data_bin[277127:277186], wasm2goData_data_bin[277186:277245], wasm2goData_data_bin[277245:277346], wasm2goData_data_bin[277346:277447], wasm2goData_data_bin[277447:277548], wasm2goData_data_bin[277548:277649], wasm2goData_data_bin[277649:277750], wasm2goData_data_bin[277750:277851], wasm2goData_data_bin[277851:277952], wasm2goData_data_bin[277952:278053], wasm2goData_data_bin[278053:278154], wasm2goData_data_bin[278154:278255], wasm2goData_data_bin[278255:278357], wasm2goData_data_bin[278357:278459], wasm2goData_data_bin[278459:358456], wasm2goData_data_bin[358456:382403], wasm2goData_data_bin[382403:382523], wasm2goData_data_bin[382523:382964], wasm2goData_data_bin[382964:382967], wasm2goData_data_bin[382967:397839], wasm2goData_data_bin[397839:397841], wasm2goData_data_bin[397841:400414], wasm2goData_data_bin[400414:400447], wasm2goData_data_bin[400447:400480], wasm2goData_data_bin[400480:400522], wasm2goData_data_bin[400522:400536], wasm2goData_data_bin[400536:400569], wasm2goData_data_bin[400569:400668], wasm2goData_data_bin[400668:400830], wasm2goData_data_bin[400830:401688], wasm2goData_data_bin[401688:401810], wasm2goData_data_bin[401810:401852], wasm2goData_data_bin[401852:401894], wasm2goData_data_bin[401894:402096], wasm2goData_data_bin[402096:402162], wasm2goData_data_bin[402162:402181], wasm2goData_data_bin[402181:402209], wasm2goData_data_bin[402209:402243], wasm2goData_data_bin[402243:402316], wasm2goData_data_bin[402316:402324]}
-	m.ThreadStart64 = Fn2849
+	m.DataSegs = [][]byte{wasm2goData_data_bin[0:127704], wasm2goData_data_bin[127704:147689], wasm2goData_data_bin[147689:147970], wasm2goData_data_bin[147970:148141], wasm2goData_data_bin[148141:148144], wasm2goData_data_bin[148144:149177], wasm2goData_data_bin[149177:149202], wasm2goData_data_bin[149202:149227], wasm2goData_data_bin[149227:149252], wasm2goData_data_bin[149252:149277], wasm2goData_data_bin[149277:149392], wasm2goData_data_bin[149392:149395], wasm2goData_data_bin[149395:149398], wasm2goData_data_bin[149398:149513], wasm2goData_data_bin[149513:149516], wasm2goData_data_bin[149516:149519], wasm2goData_data_bin[149519:149793], wasm2goData_data_bin[149793:150067], wasm2goData_data_bin[150067:150157], wasm2goData_data_bin[150157:150199], wasm2goData_data_bin[150199:150201], wasm2goData_data_bin[150201:150203], wasm2goData_data_bin[150203:194060], wasm2goData_data_bin[194060:194350], wasm2goData_data_bin[194350:194591], wasm2goData_data_bin[194591:194593], wasm2goData_data_bin[194593:194642], wasm2goData_data_bin[194642:194699], wasm2goData_data_bin[194699:231613], wasm2goData_data_bin[231613:231647], wasm2goData_data_bin[231647:231729], wasm2goData_data_bin[231729:237626], wasm2goData_data_bin[237626:262727], wasm2goData_data_bin[262727:263335], wasm2goData_data_bin[263335:265905], wasm2goData_data_bin[265905:267078], wasm2goData_data_bin[267078:267244], wasm2goData_data_bin[267244:268177], wasm2goData_data_bin[268177:268306], wasm2goData_data_bin[268306:268435], wasm2goData_data_bin[268435:268888], wasm2goData_data_bin[268888:269030], wasm2goData_data_bin[269030:269504], wasm2goData_data_bin[269504:269636], wasm2goData_data_bin[269636:277041], wasm2goData_data_bin[277041:277100], wasm2goData_data_bin[277100:277159], wasm2goData_data_bin[277159:277218], wasm2goData_data_bin[277218:277277], wasm2goData_data_bin[277277:277336], wasm2goData_data_bin[277336:277395], wasm2goData_data_bin[277395:277454], wasm2goData_data_bin[277454:277555], wasm2goData_data_bin[277555:277656], wasm2goData_data_bin[277656:277757], wasm2goData_data_bin[277757:277858], wasm2goData_data_bin[277858:277959], wasm2goData_data_bin[277959:278060], wasm2goData_data_bin[278060:278161], wasm2goData_data_bin[278161:278262], wasm2goData_data_bin[278262:278363], wasm2goData_data_bin[278363:278464], wasm2goData_data_bin[278464:278566], wasm2goData_data_bin[278566:278668], wasm2goData_data_bin[278668:358665], wasm2goData_data_bin[358665:382612], wasm2goData_data_bin[382612:382732], wasm2goData_data_bin[382732:383173], wasm2goData_data_bin[383173:383176], wasm2goData_data_bin[383176:398048], wasm2goData_data_bin[398048:398050], wasm2goData_data_bin[398050:400623], wasm2goData_data_bin[400623:400656], wasm2goData_data_bin[400656:400689], wasm2goData_data_bin[400689:400731], wasm2goData_data_bin[400731:400745], wasm2goData_data_bin[400745:400778], wasm2goData_data_bin[400778:400877], wasm2goData_data_bin[400877:401039], wasm2goData_data_bin[401039:401897], wasm2goData_data_bin[401897:402019], wasm2goData_data_bin[402019:402061], wasm2goData_data_bin[402061:402103], wasm2goData_data_bin[402103:402305], wasm2goData_data_bin[402305:402371], wasm2goData_data_bin[402371:402390], wasm2goData_data_bin[402390:402418], wasm2goData_data_bin[402418:402452], wasm2goData_data_bin[402452:402525], wasm2goData_data_bin[402525:402533]}
+	m.ThreadStart64 = Fn2853
 	Fn19(m)
 	return m
 }
@@ -77,7 +77,7 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	m.MemShared = true
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 2238)
+	m.T0 = make([]any, 2243)
 	m.G0 = int64(8388608)
 	m.G1 = int64(0)
 	InitElemSeg_0_0(m)
@@ -90,8 +90,8 @@ func NewWithMemory(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, en
 	InitElemSeg_2_5(m)
 	InitElemSeg_2_6(m)
 	InitElemSeg_2_7(m)
-	m.DataSegs = [][]byte{wasm2goData_data_bin[0:127632], wasm2goData_data_bin[127632:147625], wasm2goData_data_bin[147625:147906], wasm2goData_data_bin[147906:148077], wasm2goData_data_bin[148077:148080], wasm2goData_data_bin[148080:149113], wasm2goData_data_bin[149113:149138], wasm2goData_data_bin[149138:149163], wasm2goData_data_bin[149163:149188], wasm2goData_data_bin[149188:149213], wasm2goData_data_bin[149213:149328], wasm2goData_data_bin[149328:149331], wasm2goData_data_bin[149331:149334], wasm2goData_data_bin[149334:149449], wasm2goData_data_bin[149449:149452], wasm2goData_data_bin[149452:149455], wasm2goData_data_bin[149455:149729], wasm2goData_data_bin[149729:150003], wasm2goData_data_bin[150003:150093], wasm2goData_data_bin[150093:150135], wasm2goData_data_bin[150135:150137], wasm2goData_data_bin[150137:150139], wasm2goData_data_bin[150139:193996], wasm2goData_data_bin[193996:194286], wasm2goData_data_bin[194286:194527], wasm2goData_data_bin[194527:194529], wasm2goData_data_bin[194529:194578], wasm2goData_data_bin[194578:194635], wasm2goData_data_bin[194635:231397], wasm2goData_data_bin[231397:231431], wasm2goData_data_bin[231431:231513], wasm2goData_data_bin[231513:237418], wasm2goData_data_bin[237418:262519], wasm2goData_data_bin[262519:263127], wasm2goData_data_bin[263127:265697], wasm2goData_data_bin[265697:266870], wasm2goData_data_bin[266870:267036], wasm2goData_data_bin[267036:267969], wasm2goData_data_bin[267969:268098], wasm2goData_data_bin[268098:268227], wasm2goData_data_bin[268227:268680], wasm2goData_data_bin[268680:268822], wasm2goData_data_bin[268822:269296], wasm2goData_data_bin[269296:269428], wasm2goData_data_bin[269428:276833], wasm2goData_data_bin[276833:276891], wasm2goData_data_bin[276891:276950], wasm2goData_data_bin[276950:277009], wasm2goData_data_bin[277009:277068], wasm2goData_data_bin[277068:277127], wasm2goData_data_bin[277127:277186], wasm2goData_data_bin[277186:277245], wasm2goData_data_bin[277245:277346], wasm2goData_data_bin[277346:277447], wasm2goData_data_bin[277447:277548], wasm2goData_data_bin[277548:277649], wasm2goData_data_bin[277649:277750], wasm2goData_data_bin[277750:277851], wasm2goData_data_bin[277851:277952], wasm2goData_data_bin[277952:278053], wasm2goData_data_bin[278053:278154], wasm2goData_data_bin[278154:278255], wasm2goData_data_bin[278255:278357], wasm2goData_data_bin[278357:278459], wasm2goData_data_bin[278459:358456], wasm2goData_data_bin[358456:382403], wasm2goData_data_bin[382403:382523], wasm2goData_data_bin[382523:382964], wasm2goData_data_bin[382964:382967], wasm2goData_data_bin[382967:397839], wasm2goData_data_bin[397839:397841], wasm2goData_data_bin[397841:400414], wasm2goData_data_bin[400414:400447], wasm2goData_data_bin[400447:400480], wasm2goData_data_bin[400480:400522], wasm2goData_data_bin[400522:400536], wasm2goData_data_bin[400536:400569], wasm2goData_data_bin[400569:400668], wasm2goData_data_bin[400668:400830], wasm2goData_data_bin[400830:401688], wasm2goData_data_bin[401688:401810], wasm2goData_data_bin[401810:401852], wasm2goData_data_bin[401852:401894], wasm2goData_data_bin[401894:402096], wasm2goData_data_bin[402096:402162], wasm2goData_data_bin[402162:402181], wasm2goData_data_bin[402181:402209], wasm2goData_data_bin[402209:402243], wasm2goData_data_bin[402243:402316], wasm2goData_data_bin[402316:402324]}
-	m.ThreadStart64 = Fn2849
+	m.DataSegs = [][]byte{wasm2goData_data_bin[0:127704], wasm2goData_data_bin[127704:147689], wasm2goData_data_bin[147689:147970], wasm2goData_data_bin[147970:148141], wasm2goData_data_bin[148141:148144], wasm2goData_data_bin[148144:149177], wasm2goData_data_bin[149177:149202], wasm2goData_data_bin[149202:149227], wasm2goData_data_bin[149227:149252], wasm2goData_data_bin[149252:149277], wasm2goData_data_bin[149277:149392], wasm2goData_data_bin[149392:149395], wasm2goData_data_bin[149395:149398], wasm2goData_data_bin[149398:149513], wasm2goData_data_bin[149513:149516], wasm2goData_data_bin[149516:149519], wasm2goData_data_bin[149519:149793], wasm2goData_data_bin[149793:150067], wasm2goData_data_bin[150067:150157], wasm2goData_data_bin[150157:150199], wasm2goData_data_bin[150199:150201], wasm2goData_data_bin[150201:150203], wasm2goData_data_bin[150203:194060], wasm2goData_data_bin[194060:194350], wasm2goData_data_bin[194350:194591], wasm2goData_data_bin[194591:194593], wasm2goData_data_bin[194593:194642], wasm2goData_data_bin[194642:194699], wasm2goData_data_bin[194699:231613], wasm2goData_data_bin[231613:231647], wasm2goData_data_bin[231647:231729], wasm2goData_data_bin[231729:237626], wasm2goData_data_bin[237626:262727], wasm2goData_data_bin[262727:263335], wasm2goData_data_bin[263335:265905], wasm2goData_data_bin[265905:267078], wasm2goData_data_bin[267078:267244], wasm2goData_data_bin[267244:268177], wasm2goData_data_bin[268177:268306], wasm2goData_data_bin[268306:268435], wasm2goData_data_bin[268435:268888], wasm2goData_data_bin[268888:269030], wasm2goData_data_bin[269030:269504], wasm2goData_data_bin[269504:269636], wasm2goData_data_bin[269636:277041], wasm2goData_data_bin[277041:277100], wasm2goData_data_bin[277100:277159], wasm2goData_data_bin[277159:277218], wasm2goData_data_bin[277218:277277], wasm2goData_data_bin[277277:277336], wasm2goData_data_bin[277336:277395], wasm2goData_data_bin[277395:277454], wasm2goData_data_bin[277454:277555], wasm2goData_data_bin[277555:277656], wasm2goData_data_bin[277656:277757], wasm2goData_data_bin[277757:277858], wasm2goData_data_bin[277858:277959], wasm2goData_data_bin[277959:278060], wasm2goData_data_bin[278060:278161], wasm2goData_data_bin[278161:278262], wasm2goData_data_bin[278262:278363], wasm2goData_data_bin[278363:278464], wasm2goData_data_bin[278464:278566], wasm2goData_data_bin[278566:278668], wasm2goData_data_bin[278668:358665], wasm2goData_data_bin[358665:382612], wasm2goData_data_bin[382612:382732], wasm2goData_data_bin[382732:383173], wasm2goData_data_bin[383173:383176], wasm2goData_data_bin[383176:398048], wasm2goData_data_bin[398048:398050], wasm2goData_data_bin[398050:400623], wasm2goData_data_bin[400623:400656], wasm2goData_data_bin[400656:400689], wasm2goData_data_bin[400689:400731], wasm2goData_data_bin[400731:400745], wasm2goData_data_bin[400745:400778], wasm2goData_data_bin[400778:400877], wasm2goData_data_bin[400877:401039], wasm2goData_data_bin[401039:401897], wasm2goData_data_bin[401897:402019], wasm2goData_data_bin[402019:402061], wasm2goData_data_bin[402061:402103], wasm2goData_data_bin[402103:402305], wasm2goData_data_bin[402305:402371], wasm2goData_data_bin[402371:402390], wasm2goData_data_bin[402390:402418], wasm2goData_data_bin[402418:402452], wasm2goData_data_bin[402452:402525], wasm2goData_data_bin[402525:402533]}
+	m.ThreadStart64 = Fn2853
 	Fn19(m)
 	return m
 }
@@ -108,7 +108,7 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	m.MemShared = true
 	m.M = unsafe.Pointer(unsafe.SliceData(m.Memory))
 	m.MaxMem = uint64(len(memory))
-	m.T0 = make([]any, 2238)
+	m.T0 = make([]any, 2243)
 	m.G0 = int64(8388608)
 	m.G1 = int64(0)
 	InitElemSeg_0_0(m)
@@ -121,8 +121,8 @@ func NewFromSnapshot(wasi_snapshot_preview1 base.Wasi_snapshot_preview1Imports, 
 	InitElemSeg_2_5(m)
 	InitElemSeg_2_6(m)
 	InitElemSeg_2_7(m)
-	m.DataSegs = [][]byte{wasm2goData_data_bin[0:127632], wasm2goData_data_bin[127632:147625], wasm2goData_data_bin[147625:147906], wasm2goData_data_bin[147906:148077], wasm2goData_data_bin[148077:148080], wasm2goData_data_bin[148080:149113], wasm2goData_data_bin[149113:149138], wasm2goData_data_bin[149138:149163], wasm2goData_data_bin[149163:149188], wasm2goData_data_bin[149188:149213], wasm2goData_data_bin[149213:149328], wasm2goData_data_bin[149328:149331], wasm2goData_data_bin[149331:149334], wasm2goData_data_bin[149334:149449], wasm2goData_data_bin[149449:149452], wasm2goData_data_bin[149452:149455], wasm2goData_data_bin[149455:149729], wasm2goData_data_bin[149729:150003], wasm2goData_data_bin[150003:150093], wasm2goData_data_bin[150093:150135], wasm2goData_data_bin[150135:150137], wasm2goData_data_bin[150137:150139], wasm2goData_data_bin[150139:193996], wasm2goData_data_bin[193996:194286], wasm2goData_data_bin[194286:194527], wasm2goData_data_bin[194527:194529], wasm2goData_data_bin[194529:194578], wasm2goData_data_bin[194578:194635], wasm2goData_data_bin[194635:231397], wasm2goData_data_bin[231397:231431], wasm2goData_data_bin[231431:231513], wasm2goData_data_bin[231513:237418], wasm2goData_data_bin[237418:262519], wasm2goData_data_bin[262519:263127], wasm2goData_data_bin[263127:265697], wasm2goData_data_bin[265697:266870], wasm2goData_data_bin[266870:267036], wasm2goData_data_bin[267036:267969], wasm2goData_data_bin[267969:268098], wasm2goData_data_bin[268098:268227], wasm2goData_data_bin[268227:268680], wasm2goData_data_bin[268680:268822], wasm2goData_data_bin[268822:269296], wasm2goData_data_bin[269296:269428], wasm2goData_data_bin[269428:276833], wasm2goData_data_bin[276833:276891], wasm2goData_data_bin[276891:276950], wasm2goData_data_bin[276950:277009], wasm2goData_data_bin[277009:277068], wasm2goData_data_bin[277068:277127], wasm2goData_data_bin[277127:277186], wasm2goData_data_bin[277186:277245], wasm2goData_data_bin[277245:277346], wasm2goData_data_bin[277346:277447], wasm2goData_data_bin[277447:277548], wasm2goData_data_bin[277548:277649], wasm2goData_data_bin[277649:277750], wasm2goData_data_bin[277750:277851], wasm2goData_data_bin[277851:277952], wasm2goData_data_bin[277952:278053], wasm2goData_data_bin[278053:278154], wasm2goData_data_bin[278154:278255], wasm2goData_data_bin[278255:278357], wasm2goData_data_bin[278357:278459], wasm2goData_data_bin[278459:358456], wasm2goData_data_bin[358456:382403], wasm2goData_data_bin[382403:382523], wasm2goData_data_bin[382523:382964], wasm2goData_data_bin[382964:382967], wasm2goData_data_bin[382967:397839], wasm2goData_data_bin[397839:397841], wasm2goData_data_bin[397841:400414], wasm2goData_data_bin[400414:400447], wasm2goData_data_bin[400447:400480], wasm2goData_data_bin[400480:400522], wasm2goData_data_bin[400522:400536], wasm2goData_data_bin[400536:400569], wasm2goData_data_bin[400569:400668], wasm2goData_data_bin[400668:400830], wasm2goData_data_bin[400830:401688], wasm2goData_data_bin[401688:401810], wasm2goData_data_bin[401810:401852], wasm2goData_data_bin[401852:401894], wasm2goData_data_bin[401894:402096], wasm2goData_data_bin[402096:402162], wasm2goData_data_bin[402162:402181], wasm2goData_data_bin[402181:402209], wasm2goData_data_bin[402209:402243], wasm2goData_data_bin[402243:402316], wasm2goData_data_bin[402316:402324]}
-	m.ThreadStart64 = Fn2849
+	m.DataSegs = [][]byte{wasm2goData_data_bin[0:127704], wasm2goData_data_bin[127704:147689], wasm2goData_data_bin[147689:147970], wasm2goData_data_bin[147970:148141], wasm2goData_data_bin[148141:148144], wasm2goData_data_bin[148144:149177], wasm2goData_data_bin[149177:149202], wasm2goData_data_bin[149202:149227], wasm2goData_data_bin[149227:149252], wasm2goData_data_bin[149252:149277], wasm2goData_data_bin[149277:149392], wasm2goData_data_bin[149392:149395], wasm2goData_data_bin[149395:149398], wasm2goData_data_bin[149398:149513], wasm2goData_data_bin[149513:149516], wasm2goData_data_bin[149516:149519], wasm2goData_data_bin[149519:149793], wasm2goData_data_bin[149793:150067], wasm2goData_data_bin[150067:150157], wasm2goData_data_bin[150157:150199], wasm2goData_data_bin[150199:150201], wasm2goData_data_bin[150201:150203], wasm2goData_data_bin[150203:194060], wasm2goData_data_bin[194060:194350], wasm2goData_data_bin[194350:194591], wasm2goData_data_bin[194591:194593], wasm2goData_data_bin[194593:194642], wasm2goData_data_bin[194642:194699], wasm2goData_data_bin[194699:231613], wasm2goData_data_bin[231613:231647], wasm2goData_data_bin[231647:231729], wasm2goData_data_bin[231729:237626], wasm2goData_data_bin[237626:262727], wasm2goData_data_bin[262727:263335], wasm2goData_data_bin[263335:265905], wasm2goData_data_bin[265905:267078], wasm2goData_data_bin[267078:267244], wasm2goData_data_bin[267244:268177], wasm2goData_data_bin[268177:268306], wasm2goData_data_bin[268306:268435], wasm2goData_data_bin[268435:268888], wasm2goData_data_bin[268888:269030], wasm2goData_data_bin[269030:269504], wasm2goData_data_bin[269504:269636], wasm2goData_data_bin[269636:277041], wasm2goData_data_bin[277041:277100], wasm2goData_data_bin[277100:277159], wasm2goData_data_bin[277159:277218], wasm2goData_data_bin[277218:277277], wasm2goData_data_bin[277277:277336], wasm2goData_data_bin[277336:277395], wasm2goData_data_bin[277395:277454], wasm2goData_data_bin[277454:277555], wasm2goData_data_bin[277555:277656], wasm2goData_data_bin[277656:277757], wasm2goData_data_bin[277757:277858], wasm2goData_data_bin[277858:277959], wasm2goData_data_bin[277959:278060], wasm2goData_data_bin[278060:278161], wasm2goData_data_bin[278161:278262], wasm2goData_data_bin[278262:278363], wasm2goData_data_bin[278363:278464], wasm2goData_data_bin[278464:278566], wasm2goData_data_bin[278566:278668], wasm2goData_data_bin[278668:358665], wasm2goData_data_bin[358665:382612], wasm2goData_data_bin[382612:382732], wasm2goData_data_bin[382732:383173], wasm2goData_data_bin[383173:383176], wasm2goData_data_bin[383176:398048], wasm2goData_data_bin[398048:398050], wasm2goData_data_bin[398050:400623], wasm2goData_data_bin[400623:400656], wasm2goData_data_bin[400656:400689], wasm2goData_data_bin[400689:400731], wasm2goData_data_bin[400731:400745], wasm2goData_data_bin[400745:400778], wasm2goData_data_bin[400778:400877], wasm2goData_data_bin[400877:401039], wasm2goData_data_bin[401039:401897], wasm2goData_data_bin[401897:402019], wasm2goData_data_bin[402019:402061], wasm2goData_data_bin[402061:402103], wasm2goData_data_bin[402103:402305], wasm2goData_data_bin[402305:402371], wasm2goData_data_bin[402371:402390], wasm2goData_data_bin[402390:402418], wasm2goData_data_bin[402418:402452], wasm2goData_data_bin[402452:402525], wasm2goData_data_bin[402525:402533]}
+	m.ThreadStart64 = Fn2853
 	base.RestoreGlobals(m, globals)
 	return m
 }
@@ -145,16 +145,19 @@ func WasmShutdown(m *base.Module) {
 	Fn327(m)
 }
 func DbgVecDotF16(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32) {
-	Fn893(m, l0, l1, l2, l3, l4, l5, l6, l7)
+	Fn895(m, l0, l1, l2, l3, l4, l5, l6, l7)
 }
 func DbgVecDotQ5_0_q8_0(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32) {
-	Fn920(m, l0, l1, l2, l3, l4, l5, l6, l7)
+	Fn922(m, l0, l1, l2, l3, l4, l5, l6, l7)
 }
 func DbgVecDotQ4KQ8K(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32) {
-	Fn925(m, l0, l1, l2, l3, l4, l5, l6, l7)
+	Fn927(m, l0, l1, l2, l3, l4, l5, l6, l7)
 }
 func DbgVecDotQ6KQ8K(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32) {
-	Fn927(m, l0, l1, l2, l3, l4, l5, l6, l7)
+	Fn929(m, l0, l1, l2, l3, l4, l5, l6, l7)
+}
+func DbgQuantizeMatQ8_0_4x8(m *base.Module, l0 int64, l1 int64, l2 int64) {
+	Fn798(m, l0, l1, l2)
 }
 func DbgQuantizeMatQ8K4x8(m *base.Module, l0 int64, l1 int64, l2 int64) {
 	Fn800(m, l0, l1, l2)
@@ -165,29 +168,35 @@ func DbgGemvQ4K8x8(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 in
 func DbgGemmQ4K8x8(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32) {
 	Fn816(m, l0, l1, l2, l3, l4, l5, l6)
 }
+func DbgGemvQ5_0_8x8(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32) {
+	Fn933(m, l0, l1, l2, l3, l4, l5, l6)
+}
 func DbgGemvQ8_0_4x4(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32) {
-	Fn929(m, l0, l1, l2, l3, l4, l5, l6)
+	Fn931(m, l0, l1, l2, l3, l4, l5, l6)
+}
+func DbgGemmQ5_0_8x8(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32) {
+	Fn934(m, l0, l1, l2, l3, l4, l5, l6)
 }
 func DbgGemmQ8_0_4x4(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32) {
-	Fn930(m, l0, l1, l2, l3, l4, l5, l6)
+	Fn932(m, l0, l1, l2, l3, l4, l5, l6)
 }
 func DbgVecSwigluF32(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64) {
-	Fn894(m, l0, l1, l2, l3)
-}
-func DbgVecSoftMaxF32(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32) float64 {
-	return Fn895(m, l0, l1, l2, l3)
-}
-func DbgVecMadF16F32(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32) {
 	Fn896(m, l0, l1, l2, l3)
 }
+func DbgVecSoftMaxF32(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32) float64 {
+	return Fn897(m, l0, l1, l2, l3)
+}
+func DbgVecMadF16F32(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32) {
+	Fn898(m, l0, l1, l2, l3)
+}
 func DbgSimdGemmF32(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int32, l4 int32, l5 int32) {
-	Fn897(m, l0, l1, l2, l3, l4, l5)
+	Fn899(m, l0, l1, l2, l3, l4, l5)
 }
 func DbgFlashAttnKvF16(m *base.Module, l0 int64) {
-	Fn905(m, l0)
+	Fn907(m, l0)
 }
 func WasiThreadStart(m *base.Module, l0 int32, l1 int64) {
-	Fn2849(m, l0, l1)
+	Fn2853(m, l0, l1)
 }
 func Inv_0_0(m *base.Module, l0, l1 int64) (packed int64, err error) {
 	savedG0 := m.G0
