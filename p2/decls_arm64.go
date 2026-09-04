@@ -2307,6 +2307,12 @@ func Fn898ovrneon(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32)
 func Fn898(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32)
 func Fn90(m *base.Module, l0 int64, l1 int64, l2 int32) (r0 int64)
 func Fn901(m *base.Module, l0 int64, l1 int64, l2 float32)
+func Fn907ovrfhm(m *base.Module, l0 int64)
+
+// gcasmCPUFHM mirrors base.CPUFHM for the feature-dispatch stubs
+// (asm reads package-local data only).
+var gcasmCPUFHM = base.CPUFHM
+
 func Fn907ovrneon(m *base.Module, l0 int64)
 func Fn907(m *base.Module, l0 int64)
 func Fn909(m *base.Module, l0 int32, l1 int32) (r0 int32)
