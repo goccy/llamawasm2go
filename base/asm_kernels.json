@@ -1,0 +1,301 @@
+{
+  "kernels": [
+    {
+      "export": "dbg_gemm_q8_0_4x4",
+      "role": "gemm",
+      "quant": "q8_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemv_q8_0_4x4",
+      "role": "gemv",
+      "quant": "q8_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_simd_gemm_f32",
+      "role": "gemm",
+      "quant": "f32",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_soft_max_f32",
+      "role": "op",
+      "quant": "f32",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_swiglu_f32",
+      "role": "op",
+      "quant": "f32",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_f16",
+      "role": "vec_dot",
+      "quant": "f16",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_flash_attn_kv_f16",
+      "role": "op",
+      "quant": "f16",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_quantize_mat_q8_K_4x8",
+      "role": "quantize_mat",
+      "quant": "q8_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_quantize_mat_q8_0_4x8",
+      "role": "quantize_mat",
+      "quant": "q8_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemv_iq4_nl_8x8",
+      "role": "gemv",
+      "quant": "iq4_nl",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemm_iq4_nl_8x8",
+      "role": "gemm",
+      "quant": "iq4_nl",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemv_q4_0_8x8",
+      "role": "gemv",
+      "quant": "q4_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemm_q4_0_8x8",
+      "role": "gemm",
+      "quant": "q4_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemv_q5_0_8x8",
+      "role": "gemv",
+      "quant": "q5_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemm_q5_0_8x8",
+      "role": "gemm",
+      "quant": "q5_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemv_q4_K_8x8",
+      "role": "gemv",
+      "quant": "q4_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemm_q4_K_8x8",
+      "role": "gemm",
+      "quant": "q4_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemv_q5_K_8x8",
+      "role": "gemv",
+      "quant": "q5_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemm_q5_K_8x8",
+      "role": "gemm",
+      "quant": "q5_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemv_q6_K_8x8",
+      "role": "gemv",
+      "quant": "q6_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemm_q6_K_8x8",
+      "role": "gemm",
+      "quant": "q6_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq4_nl_q8_0",
+      "role": "vec_dot",
+      "quant": "iq4_nl",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q5_1_q8_1",
+      "role": "vec_dot",
+      "quant": "q5_1",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q4_1_q8_1",
+      "role": "vec_dot",
+      "quant": "q4_1",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q4_0_q8_0",
+      "role": "vec_dot",
+      "quant": "q4_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q8_0_q8_0",
+      "role": "vec_dot",
+      "quant": "q8_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q5_0_q8_0",
+      "role": "vec_dot",
+      "quant": "q5_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q2_K_q8_K",
+      "role": "vec_dot",
+      "quant": "q2_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q3_K_q8_K",
+      "role": "vec_dot",
+      "quant": "q3_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q5_K_q8_K",
+      "role": "vec_dot",
+      "quant": "q5_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q4_K_q8_K",
+      "role": "vec_dot",
+      "quant": "q4_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q6_K_q8_K",
+      "role": "vec_dot",
+      "quant": "q6_K",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_mad_f16_f32",
+      "role": "op",
+      "quant": "f16",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    }
+  ]
+}
