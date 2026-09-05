@@ -86,13 +86,13 @@ func Fn317(m *base.Module, l0 int64, l1 int64) int64
 //go:linkname Fn318 github.com/goccy/llamawasm2go/p2.Fn318
 func Fn318(m *base.Module, l0 int64, l1 int64) int64
 
-//go:linkname Fn319 github.com/goccy/llamawasm2go/p2.Fn319
+//go:linkname Fn319 github.com/goccy/llamawasm2go/p1.Fn319
 func Fn319(m *base.Module, l0 int64, l1 int64) int64
 
-//go:linkname Fn320 github.com/goccy/llamawasm2go/p1.Fn320
+//go:linkname Fn320 github.com/goccy/llamawasm2go/p2.Fn320
 func Fn320(m *base.Module, l0 int64, l1 int64) int64
 
-//go:linkname Fn321 github.com/goccy/llamawasm2go/p2.Fn321
+//go:linkname Fn321 github.com/goccy/llamawasm2go/p1.Fn321
 func Fn321(m *base.Module, l0 int64, l1 int64) int64
 
 //go:linkname Fn322 github.com/goccy/llamawasm2go/p2.Fn322
@@ -107,44 +107,125 @@ func Fn324(m *base.Module, l0 int64, l1 int64) int64
 //go:linkname Fn325 github.com/goccy/llamawasm2go/p2.Fn325
 func Fn325(m *base.Module, l0 int64, l1 int64) int64
 
-//go:linkname Fn327 github.com/goccy/llamawasm2go/p2.Fn327
-func Fn327(m *base.Module, l0 int64, l1 int64) int64
+//go:linkname Fn326 github.com/goccy/llamawasm2go/p2.Fn326
+func Fn326(m *base.Module, l0 int64, l1 int64) int64
 
 //go:linkname Fn328 github.com/goccy/llamawasm2go/p2.Fn328
 func Fn328(m *base.Module, l0 int64, l1 int64) int64
 
-//go:linkname Fn329 github.com/goccy/llamawasm2go/p1.Fn329
+//go:linkname Fn329 github.com/goccy/llamawasm2go/p2.Fn329
 func Fn329(m *base.Module, l0 int64, l1 int64) int64
 
-//go:linkname Fn330 github.com/goccy/llamawasm2go/p2.Fn330
-func Fn330(m *base.Module) int32
+//go:linkname Fn330 github.com/goccy/llamawasm2go/p1.Fn330
+func Fn330(m *base.Module, l0 int64, l1 int64) int64
 
 //go:linkname Fn331 github.com/goccy/llamawasm2go/p2.Fn331
-func Fn331(m *base.Module)
+func Fn331(m *base.Module) int32
 
-//go:linkname Fn935 github.com/goccy/llamawasm2go/p2.Fn935
-func Fn935(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+//go:linkname Fn332 github.com/goccy/llamawasm2go/p2.Fn332
+func Fn332(m *base.Module)
 
-//go:linkname Fn936 github.com/goccy/llamawasm2go/p2.Fn936
-func Fn936(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64)
+//go:linkname Fn838 github.com/goccy/llamawasm2go/p2.Fn838
+func Fn838(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 
-//go:linkname Fn937 github.com/goccy/llamawasm2go/p2.Fn937
-func Fn937(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32) float64
+//go:linkname Fn843 github.com/goccy/llamawasm2go/p1.Fn843
+func Fn843(m *base.Module, l0 int64, l1 int64, l2 int64)
 
-//go:linkname Fn938 github.com/goccy/llamawasm2go/p2.Fn938
-func Fn938(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32)
+//go:linkname Fn846 github.com/goccy/llamawasm2go/p1.Fn846
+func Fn846(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
 
-//go:linkname Fn939 github.com/goccy/llamawasm2go/p1.Fn939
-func Fn939(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int32, l4 int32, l5 int32)
+//go:linkname Fn848 github.com/goccy/llamawasm2go/p0.Fn848
+func Fn848(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn851 github.com/goccy/llamawasm2go/p1.Fn851
+func Fn851(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn853 github.com/goccy/llamawasm2go/p1.Fn853
+func Fn853(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn855 github.com/goccy/llamawasm2go/p1.Fn855
+func Fn855(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn859 github.com/goccy/llamawasm2go/p1.Fn859
+func Fn859(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn860 github.com/goccy/llamawasm2go/p1.Fn860
+func Fn860(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn861 github.com/goccy/llamawasm2go/p0.Fn861
+func Fn861(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn862 github.com/goccy/llamawasm2go/p1.Fn862
+func Fn862(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn863 github.com/goccy/llamawasm2go/p1.Fn863
+func Fn863(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn942 github.com/goccy/llamawasm2go/p2.Fn942
+func Fn942(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+//go:linkname Fn943 github.com/goccy/llamawasm2go/p2.Fn943
+func Fn943(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64)
+
+//go:linkname Fn944 github.com/goccy/llamawasm2go/p2.Fn944
+func Fn944(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32) float64
+
+//go:linkname Fn945 github.com/goccy/llamawasm2go/p2.Fn945
+func Fn945(m *base.Module, l0 int32, l1 int64, l2 int64, l3 float32)
+
+//go:linkname Fn946 github.com/goccy/llamawasm2go/p1.Fn946
+func Fn946(m *base.Module, l0 int64, l1 int64, l2 int64, l3 int32, l4 int32, l5 int32)
+
+//go:linkname Fn955 github.com/goccy/llamawasm2go/p2.Fn955
+func Fn955(m *base.Module, l0 int64)
+
+//go:linkname Fn968 github.com/goccy/llamawasm2go/p1.Fn968
+func Fn968(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+//go:linkname Fn969 github.com/goccy/llamawasm2go/p2.Fn969
+func Fn969(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+//go:linkname Fn970 github.com/goccy/llamawasm2go/p2.Fn970
+func Fn970(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 
 //go:linkname Fn971 github.com/goccy/llamawasm2go/p2.Fn971
-func Fn971(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+func Fn971(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 
-//go:linkname Fn972 github.com/goccy/llamawasm2go/p1.Fn972
-func Fn972(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+//go:linkname Fn972 github.com/goccy/llamawasm2go/p2.Fn972
+func Fn972(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
 
-//go:linkname Fn3048 github.com/goccy/llamawasm2go/p1.Fn3048
-func Fn3048(m *base.Module, l0 int32, l1 int64)
+//go:linkname Fn973 github.com/goccy/llamawasm2go/p2.Fn973
+func Fn973(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+//go:linkname Fn974 github.com/goccy/llamawasm2go/p1.Fn974
+func Fn974(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+//go:linkname Fn975 github.com/goccy/llamawasm2go/p2.Fn975
+func Fn975(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+//go:linkname Fn976 github.com/goccy/llamawasm2go/p1.Fn976
+func Fn976(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+//go:linkname Fn977 github.com/goccy/llamawasm2go/p1.Fn977
+func Fn977(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int64, l6 int64, l7 int32)
+
+//go:linkname Fn979 github.com/goccy/llamawasm2go/p1.Fn979
+func Fn979(m *base.Module, l0 int64, l1 int64, l2 int64)
+
+//go:linkname Fn980 github.com/goccy/llamawasm2go/p2.Fn980
+func Fn980(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn981 github.com/goccy/llamawasm2go/p1.Fn981
+func Fn981(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn982 github.com/goccy/llamawasm2go/p1.Fn982
+func Fn982(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn983 github.com/goccy/llamawasm2go/p1.Fn983
+func Fn983(m *base.Module, l0 int32, l1 int64, l2 int64, l3 int64, l4 int64, l5 int32, l6 int32)
+
+//go:linkname Fn3059 github.com/goccy/llamawasm2go/p1.Fn3059
+func Fn3059(m *base.Module, l0 int32, l1 int64)
 
 //go:linkname InitElemSeg_0_0 github.com/goccy/llamawasm2go/p0.InitElemSeg_0_0
 func InitElemSeg_0_0(m *base.Module)
