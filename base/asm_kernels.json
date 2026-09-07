@@ -217,6 +217,150 @@
       ]
     },
     {
+      "export": "dbg_gemv_mxfp4_8x8",
+      "role": "gemv",
+      "quant": "mxfp4",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_gemm_mxfp4_8x8",
+      "role": "gemm",
+      "quant": "mxfp4",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_mxfp4_q8_0",
+      "role": "vec_dot",
+      "quant": "mxfp4",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq4_xs_q8_K",
+      "role": "vec_dot",
+      "quant": "iq4_xs",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq3_xxs_q8_K",
+      "role": "vec_dot",
+      "quant": "iq3_xxs",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq3_s_q8_K",
+      "role": "vec_dot",
+      "quant": "iq3_s",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq2_xxs_q8_K",
+      "role": "vec_dot",
+      "quant": "iq2_xxs",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq2_xs_q8_K",
+      "role": "vec_dot",
+      "quant": "iq2_xs",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq2_s_q8_K",
+      "role": "vec_dot",
+      "quant": "iq2_s",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq1_s_q8_K",
+      "role": "vec_dot",
+      "quant": "iq1_s",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_iq1_m_q8_K",
+      "role": "vec_dot",
+      "quant": "iq1_m",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_tq1_0_q8_K",
+      "role": "vec_dot",
+      "quant": "tq1_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_tq2_0_q8_K",
+      "role": "vec_dot",
+      "quant": "tq2_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_nvfp4_q8_0",
+      "role": "vec_dot",
+      "quant": "nvfp4",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q1_0_q8_0",
+      "role": "vec_dot",
+      "quant": "q1_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_dot_q2_0_q8_0",
+      "role": "vec_dot",
+      "quant": "q2_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
       "export": "dbg_vec_dot_q4_0_q8_0",
       "role": "vec_dot",
       "quant": "q4_0",
