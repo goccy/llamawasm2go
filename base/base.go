@@ -683,69 +683,6 @@ func AtomicRmwAdd64At(m *Module, ea uint64, v int64) int64 {
 	return int64(atomic.AddUint64(p, uint64(v)) - uint64(v))
 }
 
-// spinRelax is the cold half of the preemption guard the emitters
-// plant in bare atomic spin loops (a loop that waits on an inline
-// atomic load and makes no other call — see spinguard.go). Such a loop
-// is fine as Go, but once the gcasm bundler captures the compiled
-// function into a .s TEXT the runtime can no longer async-preempt it,
-// and a goroutine spinning there blocks every stop-the-world — a
-// livelock when the store it waits for comes from a goroutine the GC
-// already parked.
-//
-// The generated hot path is a counter increment and a not-taken
-// branch; every 2^k-th iteration reaches this call, with k derived at
-// emission from the loop body's size so the interval is a roughly
-// constant TIME budget (see spinGuardMask). The call itself
-// is the fix — it must survive to machine code (hence //go:noinline),
-// and its prologue's stack check is the preemption point, so a
-// stop-the-world waits at most tens-to-low-hundreds of microseconds
-// of spinning. The Gosched additionally donates the core when a
-// wait is genuinely long. Calling on every iteration instead measured
-// ~40% decode overhead at n_threads=8: eight workers reaching
-// runtime.Gosched at spin rate serialize on sched.lock, and the call
-// round-trip alone showed ~15%.
-//
-// The Gosched is rate-limited across every spinning worker (the
-// spinRelaxColdCalls counter lives in the runtime template — helper
-// extraction carries function decls only): the preemption point is the
-// spinRelax call itself (its prologue's stack check), but yielding on
-// every cold call still measured double-digit scheduler churn
-// (pthread_cond_signal — wakep — at 30% of the profile) on
-// barrier-heavy workloads, where waiting IS most of a worker's time.
-// One yield per 64 cold calls kept donation proportional to aggregate
-// spin time, but on an uncontended box every yield still wakes an
-// idle scheduler thread (wakep -> pthread_cond_signal) that spins in
-// findRunnable and parks again: at n_threads = 4 on a 10-core host that
-// churn was 60% of the CPU samples of a decode step, and on a 4-core
-// host it takes cores from the workers themselves. With every agent on
-// its own processor there is nobody to donate the core to, so the
-// uncontended rate is now one yield per 1024 cold calls (tens of
-// milliseconds of spinning, sysmon's own preemption granularity, kept
-// for host goroutines); oversubscription yields on every cold call.
-//
-// When the instance runs more agents than the scheduler has processors
-// (spinAgents, maintained by threadLaunch, against GOMAXPROCS), a spinner
-// holds a processor that a runnable agent needs: every cold call yields
-// then. A barrier the guest spins on is only released once every agent
-// has arrived, and the arriving agents are exactly the ones waiting for
-// a processor, so the 1/64 rate turns each barrier into milliseconds of
-// scheduling latency (measured: n_threads twice the core count, decode
-// fell to 1/100 of the single-thread rate). Native ggml with an OpenMP
-// barrier degrades gracefully in the same setting; this is its
-// equivalent. The check is one atomic load: spinOversubscribed is
-// recomputed by threadLaunch (and agent exit) from the gauge and
-// GOMAXPROCS, because runtime.GOMAXPROCS takes sched.lock and eight
-// spinners asking it at cold-call rate measured a 3% decode loss on an
-// uncontended box.
-//
-//go:noinline
-func SpinRelax() {
-	n := atomic.AddUint32(&spinRelaxColdCalls, 1)
-	if atomic.LoadUint32(&spinOversubscribed) != 0 || n&1023 == 0 {
-		runtime.Gosched()
-	}
-}
-
 // spinAgentsAdd moves the live spawned-agent gauge by delta and
 // refreshes spinOversubscribed: the spawner itself is the extra
 // goroutine, so the instance is oversubscribed once the spawned agents
@@ -1800,17 +1737,6 @@ func Simd_p_fx42(m *Module, s0 int64) {
 
 //go:noinline
 func Simd_p_fx43(m *Module, s0 int64) {
-	n0 := Simd_m64_v128_load(m, s0, 1080)
-	_ = Simd_m64_v128_store(m, s0, 376, n0)
-	n2 := Simd_m64_v128_load(m, s0, 1064)
-	_ = Simd_m64_v128_store(m, s0, 360, n2)
-	n4 := Simd_m64_v128_load(m, s0, 1048)
-	_ = Simd_m64_v128_store(m, s0, 344, n4)
-	return
-}
-
-//go:noinline
-func Simd_p_fx44(m *Module, s0 int64) {
 	n0 := Simd_m64_v128_load(m, s0, 1168)
 	_ = Simd_m64_v128_store(m, s0, 1080, n0)
 	n2 := Simd_m64_v128_load(m, s0, 1152)
@@ -1821,25 +1747,18 @@ func Simd_p_fx44(m *Module, s0 int64) {
 }
 
 //go:noinline
-func Simd_p_fx45(m *Module, s0 int64) {
+func Simd_p_fx44(m *Module, s0 int64) {
 	n0 := Simd_m64_v128_load(m, s0, 1080)
-	_ = Simd_m64_v128_store(m, s0, 40, n0)
+	_ = Simd_m64_v128_store(m, s0, 376, n0)
 	n2 := Simd_m64_v128_load(m, s0, 1064)
-	_ = Simd_m64_v128_store(m, s0, 24, n2)
+	_ = Simd_m64_v128_store(m, s0, 360, n2)
 	n4 := Simd_m64_v128_load(m, s0, 1048)
-	_ = Simd_m64_v128_store(m, s0, 8, n4)
+	_ = Simd_m64_v128_store(m, s0, 344, n4)
 	return
 }
 
 //go:noinline
-func Simd_p_fx46(m *Module, s0 int64, s1 int64) {
-	n0 := Simd_m64_v128_load(m, s0, 0)
-	_ = Simd_m64_v128_store(m, s1, 1192, n0)
-	return
-}
-
-//go:noinline
-func Simd_p_fx47(m *Module, s0 int64) {
+func Simd_p_fx45(m *Module, s0 int64) {
 	n0 := Simd_m64_v128_load(m, s0, 720)
 	_ = Simd_m64_v128_store(m, s0, 320, n0)
 	n2 := Simd_m64_v128_load(m, s0, 704)
@@ -1850,7 +1769,7 @@ func Simd_p_fx47(m *Module, s0 int64) {
 }
 
 //go:noinline
-func Simd_p_fx48(m *Module, s0 int64) {
+func Simd_p_fx46(m *Module, s0 int64) {
 	n0 := Simd_m64_v128_load(m, s0, 1080)
 	_ = Simd_m64_v128_store(m, s0, 264, n0)
 	n2 := Simd_m64_v128_load(m, s0, 1064)
@@ -1861,7 +1780,7 @@ func Simd_p_fx48(m *Module, s0 int64) {
 }
 
 //go:noinline
-func Simd_p_fx49(m *Module, s0 int64) {
+func Simd_p_fx47(m *Module, s0 int64) {
 	n0 := Simd_m64_v128_load(m, s0, 640)
 	_ = Simd_m64_v128_store(m, s0, 208, n0)
 	n2 := Simd_m64_v128_load(m, s0, 624)
@@ -1872,7 +1791,7 @@ func Simd_p_fx49(m *Module, s0 int64) {
 }
 
 //go:noinline
-func Simd_p_fx50(m *Module, s0 int64) {
+func Simd_p_fx48(m *Module, s0 int64) {
 	n0 := Simd_m64_v128_load(m, s0, 1080)
 	_ = Simd_m64_v128_store(m, s0, 152, n0)
 	n2 := Simd_m64_v128_load(m, s0, 1064)
@@ -1883,13 +1802,31 @@ func Simd_p_fx50(m *Module, s0 int64) {
 }
 
 //go:noinline
-func Simd_p_fx51(m *Module, s0 int64) {
+func Simd_p_fx49(m *Module, s0 int64) {
 	n0 := Simd_m64_v128_load(m, s0, 1080)
 	_ = Simd_m64_v128_store(m, s0, 96, n0)
 	n2 := Simd_m64_v128_load(m, s0, 1064)
 	_ = Simd_m64_v128_store(m, s0, 80, n2)
 	n4 := Simd_m64_v128_load(m, s0, 1048)
 	_ = Simd_m64_v128_store(m, s0, 64, n4)
+	return
+}
+
+//go:noinline
+func Simd_p_fx50(m *Module, s0 int64) {
+	n0 := Simd_m64_v128_load(m, s0, 1080)
+	_ = Simd_m64_v128_store(m, s0, 40, n0)
+	n2 := Simd_m64_v128_load(m, s0, 1064)
+	_ = Simd_m64_v128_store(m, s0, 24, n2)
+	n4 := Simd_m64_v128_load(m, s0, 1048)
+	_ = Simd_m64_v128_store(m, s0, 8, n4)
+	return
+}
+
+//go:noinline
+func Simd_p_fx51(m *Module, s0 int64, s1 int64) {
+	n0 := Simd_m64_v128_load(m, s0, 0)
+	_ = Simd_m64_v128_store(m, s1, 1192, n0)
 	return
 }
 
@@ -6121,13 +6058,13 @@ func Simd_p_fx343(m *Module, s0 int64, s1 int64, p0, p0h uint64) {
 
 //go:noinline
 func Simd_p_fx344(m *Module, s0 int64, s1 int64, s2 int64, s3 int64, s4 int64, s5 int64, s6 int64) (uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64) {
-	n0 := Simd_m64_v128_load32_zero(m, s0, 8795968)
+	n0 := Simd_m64_v128_load32_zero(m, s0, 8796032)
 	n1 := Simd_m64_v128_load32_lane(m, s1, 0, 1, n0)
 	n2 := Simd_m64_v128_load32_lane(m, s2, 0, 2, n1)
 	n3 := Simd_m64_v128_load32_lane(m, s3, 0, 3, n2)
-	n4 := Simd_m64_v128_load32_splat(m, s4, 8795968)
-	n5 := Simd_m64_v128_load32_splat(m, s5, 8795968)
-	n6 := Simd_m64_v128_load32_splat(m, s6, 8795968)
+	n4 := Simd_m64_v128_load32_splat(m, s4, 8796032)
+	n5 := Simd_m64_v128_load32_splat(m, s5, 8796032)
+	n6 := Simd_m64_v128_load32_splat(m, s6, 8796032)
 	return n3[0], n3[1], n4[0], n4[1], n5[0], n5[1], n6[0], n6[1]
 }
 
@@ -6191,11 +6128,11 @@ func Simd_p_fx349(m *Module, p0, p0h uint64, p1, p1h uint64, p2, p2h uint64, p3,
 
 //go:noinline
 func Simd_p_fx350(m *Module, s0 int64, s1 int64, s2 int64, s3 int64, s4 int64) (uint64, uint64, uint64, uint64) {
-	n0 := Simd_m64_v128_load32_zero(m, s0, 8795968)
+	n0 := Simd_m64_v128_load32_zero(m, s0, 8796032)
 	n1 := Simd_m64_v128_load32_lane(m, s1, 0, 1, n0)
 	n2 := Simd_m64_v128_load32_lane(m, s2, 0, 2, n1)
 	n3 := Simd_m64_v128_load32_lane(m, s3, 0, 3, n2)
-	n4 := Simd_m64_v128_load32_splat(m, s4, 8795968)
+	n4 := Simd_m64_v128_load32_splat(m, s4, 8796032)
 	return n3[0], n3[1], n4[0], n4[1]
 }
 
@@ -6370,7 +6307,7 @@ func Simd_p_fx362(m *Module, s0 int64, p0, p0h uint64) (uint64, uint64, uint64, 
 
 //go:noinline
 func Simd_p_fx363(m *Module, s0 int64, s1 int64, p0, p0h uint64) (uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64) {
-	n0 := Simd_m64_v128_load32_splat(m, s0, 8795968)
+	n0 := Simd_m64_v128_load32_splat(m, s0, 8796032)
 	n1 := Simd_m64_v128_load_rng(m, s1+8, 0, 0, 32)
 	n2 := Simd_m64_v128_load_nc(m, s1+24, 0)
 	n3 := Simd_i8x16_shuffle(n1, n2, [2]uint64{p0, p0h})
@@ -6829,9 +6766,9 @@ func Simd_p_fx400(m *Module, p0, p0h uint64, p1, p1h uint64, p2, p2h uint64) (ui
 func Simd_p_fx401(m *Module, s0 int64, s1 int64, s2 int64, s3 int64) (uint64, uint64, uint64, uint64, uint64, uint64, uint64, uint64) {
 	n0 := Simd_m64_v128_load16x4_u(m, s3, 0)
 	n1 := Simd_f16x4_cvt(n0)
-	n2 := Simd_m64_v128_load32_splat(m, s0, 8795968)
-	n3 := Simd_m64_v128_load32_splat(m, s1, 8795968)
-	n4 := Simd_m64_v128_load32_splat(m, s2, 8795968)
+	n2 := Simd_m64_v128_load32_splat(m, s0, 8796032)
+	n3 := Simd_m64_v128_load32_splat(m, s1, 8796032)
+	n4 := Simd_m64_v128_load32_splat(m, s2, 8796032)
 	return n1[0], n1[1], n2[0], n2[1], n3[0], n3[1], n4[0], n4[1]
 }
 
@@ -6911,7 +6848,7 @@ func Simd_p_fx406(m *Module, s0 int32, s1 int32, s2 int32, s3 int32, s4 int32, p
 
 //go:noinline
 func Simd_p_fx407(m *Module, s0 int64, s1 int64, s2 int64, s3 int64) (uint64, uint64) {
-	n0 := Simd_m64_v128_load32_zero(m, s0, 8795968)
+	n0 := Simd_m64_v128_load32_zero(m, s0, 8796032)
 	n1 := Simd_m64_v128_load32_lane(m, s1, 0, 1, n0)
 	n2 := Simd_m64_v128_load32_lane(m, s2, 0, 2, n1)
 	n3 := Simd_m64_v128_load32_lane(m, s3, 0, 3, n2)
@@ -10525,7 +10462,7 @@ func Simd_p_fx731(m *Module, s0 int64, s1 int64, s2 int64, f0 float32, p0, p0h u
 	n3 := Simd_i8x16_eq(n2, [2]uint64{p1, p1h})
 	n4 := Simd_i16x8_extend_low_i8x16_s(n3)
 	n5 := Simd_i32x4_extend_low_i16x8_s(n4)
-	n6 := Simd_m64_v128_load32_zero(m, s0, 8552160)
+	n6 := Simd_m64_v128_load32_zero(m, s0, 8552224)
 	n7 := Simd_i16x8_extend_low_i8x16_u(n6)
 	n8 := Simd_i32x4_extend_low_i16x8_u(n7)
 	n9 := Simd_f32x4_convert_i32x4_s(n8)
@@ -10543,7 +10480,7 @@ func Simd_p_fx732(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8552160)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8552224)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10561,7 +10498,7 @@ func Simd_p_fx733(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8552160)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8552224)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10579,7 +10516,7 @@ func Simd_p_fx734(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8552160)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8552224)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10598,7 +10535,7 @@ func Simd_p_fx735(m *Module, s0 int64, s1 int64, s2 int64, f0 float32, p0, p0h u
 	n3 := Simd_i8x16_eq(n2, [2]uint64{p1, p1h})
 	n4 := Simd_i16x8_extend_low_i8x16_s(n3)
 	n5 := Simd_i32x4_extend_low_i16x8_s(n4)
-	n6 := Simd_m64_v128_load32_zero(m, s0, 8553184)
+	n6 := Simd_m64_v128_load32_zero(m, s0, 8553248)
 	n7 := Simd_i16x8_extend_low_i8x16_u(n6)
 	n8 := Simd_i32x4_extend_low_i16x8_u(n7)
 	n9 := Simd_f32x4_convert_i32x4_s(n8)
@@ -10616,7 +10553,7 @@ func Simd_p_fx736(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8553184)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8553248)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10634,7 +10571,7 @@ func Simd_p_fx737(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8553184)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8553248)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10652,7 +10589,7 @@ func Simd_p_fx738(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8553184)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8553248)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10671,7 +10608,7 @@ func Simd_p_fx739(m *Module, s0 int64, s1 int64, s2 int64, f0 float32, p0, p0h u
 	n3 := Simd_i8x16_eq(n2, [2]uint64{p1, p1h})
 	n4 := Simd_i16x8_extend_low_i8x16_s(n3)
 	n5 := Simd_i32x4_extend_low_i16x8_s(n4)
-	n6 := Simd_m64_v128_load32_zero(m, s0, 8553184)
+	n6 := Simd_m64_v128_load32_zero(m, s0, 8553248)
 	n7 := Simd_i16x8_extend_low_i8x16_u(n6)
 	n8 := Simd_i32x4_extend_low_i16x8_u(n7)
 	n9 := Simd_f32x4_convert_i32x4_s(n8)
@@ -10689,7 +10626,7 @@ func Simd_p_fx740(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8553184)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8553248)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10707,7 +10644,7 @@ func Simd_p_fx741(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8553184)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8553248)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10725,7 +10662,7 @@ func Simd_p_fx742(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64, p1, p
 	n2 := Simd_i8x16_eq(n1, [2]uint64{p2, p2h})
 	n3 := Simd_i16x8_extend_low_i8x16_s(n2)
 	n4 := Simd_i32x4_extend_low_i16x8_s(n3)
-	n5 := Simd_m64_v128_load32_zero(m, s0, 8553184)
+	n5 := Simd_m64_v128_load32_zero(m, s0, 8553248)
 	n6 := Simd_i16x8_extend_low_i8x16_u(n5)
 	n7 := Simd_i32x4_extend_low_i16x8_u(n6)
 	n8 := Simd_f32x4_convert_i32x4_s(n7)
@@ -10950,9 +10887,9 @@ func Simd_p_fx758(m *Module, s0 int64, p0, p0h uint64, p1, p1h uint64, p2, p2h u
 	n1 := Simd_i32x4_add(n0, [2]uint64{p1, p1h})
 	n2 := Simd_i32x4_add(n0, [2]uint64{p2, p2h})
 	n3 := Simd_i32x4_add(n0, [2]uint64{p3, p3h})
-	_ = Simd_m64_v128_store(m, s0+9059160, 0, n1)
-	_ = Simd_m64_v128_store(m, s0+9059144, 0, n2)
-	_ = Simd_m64_v128_store(m, s0+9059128, 0, n3)
+	_ = Simd_m64_v128_store(m, s0+9059224, 0, n1)
+	_ = Simd_m64_v128_store(m, s0+9059208, 0, n2)
+	_ = Simd_m64_v128_store(m, s0+9059192, 0, n3)
 	return
 }
 
@@ -12517,7 +12454,7 @@ func Simd_p_fx846(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64) (uint
 	n0 := Simd_m64_scalar_i32_add(s0, s1)
 	n1 := Simd_m64_scalar_i32_load16_u(m, n0)
 	n2 := Simd_m64_scalar_i32_shl(n1, 2)
-	n3 := Simd_m64_v128_load32_splat(m, n2, 8795968)
+	n3 := Simd_m64_v128_load32_splat(m, n2, 8796032)
 	n4 := Simd_m64_scalar_i32_add(s0, s2)
 	n5 := Simd_m64_v128_load16x4_u(m, n4, 0)
 	n6 := Simd_f16x4_cvt(n5)
@@ -12647,7 +12584,7 @@ func Simd_p_fx847(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64) (uint
 	n1 := Simd_m64_scalar_i32_add(n0, 2)
 	n2 := Simd_m64_scalar_i32_load16_u(m, n1)
 	n3 := Simd_m64_scalar_i32_shl(n2, 2)
-	n4 := Simd_m64_v128_load32_splat(m, n3, 8795968)
+	n4 := Simd_m64_v128_load32_splat(m, n3, 8796032)
 	n5 := Simd_m64_scalar_i32_add(s0, s2)
 	n6 := Simd_m64_v128_load16x4_u(m, n5, 0)
 	n7 := Simd_f16x4_cvt(n6)
@@ -12777,7 +12714,7 @@ func Simd_p_fx848(m *Module, s0 int64, s1 int64, s2 int64, s3 int64, p0, p0h uin
 	n1 := Simd_m64_scalar_i32_add(n0, 4)
 	n2 := Simd_m64_scalar_i32_load16_u(m, n1)
 	n3 := Simd_m64_scalar_i32_shl(n2, 2)
-	n4 := Simd_m64_v128_load32_splat(m, n3, 8795968)
+	n4 := Simd_m64_v128_load32_splat(m, n3, 8796032)
 	n5 := Simd_m64_scalar_i32_add(s0, s2)
 	n6 := Simd_m64_v128_load16x4_u(m, n5, 0)
 	n7 := Simd_f16x4_cvt(n6)
@@ -12905,7 +12842,7 @@ func Simd_p_fx849(m *Module, s0 int64, s1 int64, s2 int64, p0, p0h uint64) (uint
 	n1 := Simd_m64_scalar_i32_add(n0, 6)
 	n2 := Simd_m64_scalar_i32_load16_u(m, n1)
 	n3 := Simd_m64_scalar_i32_shl(n2, 2)
-	n4 := Simd_m64_v128_load32_splat(m, n3, 8795968)
+	n4 := Simd_m64_v128_load32_splat(m, n3, 8796032)
 	n5 := Simd_m64_scalar_i32_add(s0, s2)
 	n6 := Simd_m64_v128_load16x4_u(m, n5, 0)
 	n7 := Simd_f16x4_cvt(n6)
@@ -14427,7 +14364,7 @@ func Simd_p_fx984(m *Module, s0 int64, p0, p0h uint64, p1, p1h uint64) {
 
 //go:noinline
 func Simd_p_fx985(m *Module, s0 int64, s1 int64, p0, p0h uint64, p1, p1h uint64) {
-	n0 := Simd_m64_v128_load32_zero(m, s0, 8555236)
+	n0 := Simd_m64_v128_load32_zero(m, s0, 8555300)
 	n1 := Simd_i16x8_extend_low_i8x16_s(n0)
 	n2 := Simd_i32x4_extend_low_i16x8_s(n1)
 	n3 := Simd_f32x4_convert_i32x4_s(n2)
@@ -14450,7 +14387,7 @@ func Simd_p_fx986(m *Module, s0 int64, p0, p0h uint64, p1, p1h uint64, p2, p2h u
 
 //go:noinline
 func Simd_p_fx987(m *Module, s0 int64, s1 int64, p0, p0h uint64, p1, p1h uint64) {
-	n0 := Simd_m64_v128_load32_zero(m, s0, 8555236)
+	n0 := Simd_m64_v128_load32_zero(m, s0, 8555300)
 	n1 := Simd_i16x8_extend_low_i8x16_s(n0)
 	n2 := Simd_i32x4_extend_low_i16x8_s(n1)
 	n3 := Simd_f32x4_convert_i32x4_s(n2)
@@ -14473,7 +14410,7 @@ func Simd_p_fx988(m *Module, s0 int64, p0, p0h uint64, p1, p1h uint64, p2, p2h u
 
 //go:noinline
 func Simd_p_fx989(m *Module, s0 int64, s1 int64, p0, p0h uint64, p1, p1h uint64) {
-	n0 := Simd_m64_v128_load32_zero(m, s0, 8555236)
+	n0 := Simd_m64_v128_load32_zero(m, s0, 8555300)
 	n1 := Simd_i16x8_extend_low_i8x16_s(n0)
 	n2 := Simd_i32x4_extend_low_i16x8_s(n1)
 	n3 := Simd_f32x4_convert_i32x4_s(n2)
@@ -14485,7 +14422,7 @@ func Simd_p_fx989(m *Module, s0 int64, s1 int64, p0, p0h uint64, p1, p1h uint64)
 
 //go:noinline
 func Simd_p_fx990(m *Module, s0 int64, s1 int64, p0, p0h uint64, p1, p1h uint64) {
-	n0 := Simd_m64_v128_load32_zero(m, s0, 8555236)
+	n0 := Simd_m64_v128_load32_zero(m, s0, 8555300)
 	n1 := Simd_i16x8_extend_low_i8x16_s(n0)
 	n2 := Simd_i32x4_extend_low_i16x8_s(n1)
 	n3 := Simd_f32x4_convert_i32x4_s(n2)
@@ -14958,7 +14895,7 @@ func Simd_p_fxl2(m *Module, s0 int64, s1 int64, s2 int64, s3 int32, p0, p0h uint
 		n0 := Simd_m64_scalar_i32_add(s0, s1)
 		n1 := Simd_m64_scalar_i32_load16_u(m, n0)
 		n2 := Simd_m64_scalar_i32_shl(n1, 2)
-		n3 := Simd_m64_v128_load32_splat(m, n2, 8795968)
+		n3 := Simd_m64_v128_load32_splat(m, n2, 8796032)
 		n4 := Simd_m64_scalar_i32_add(s0, s2)
 		n5 := Simd_m64_v128_load16x4_u(m, n4, 0)
 		n6 := Simd_f16x4_cvt(n5)
@@ -15098,7 +15035,7 @@ func Simd_p_fxl3(m *Module, s0 int64, s1 int64, s2 int64, s3 int32, p0, p0h uint
 		n1 := Simd_m64_scalar_i32_add(n0, 2)
 		n2 := Simd_m64_scalar_i32_load16_u(m, n1)
 		n3 := Simd_m64_scalar_i32_shl(n2, 2)
-		n4 := Simd_m64_v128_load32_splat(m, n3, 8795968)
+		n4 := Simd_m64_v128_load32_splat(m, n3, 8796032)
 		n5 := Simd_m64_scalar_i32_add(s0, s2)
 		n6 := Simd_m64_v128_load16x4_u(m, n5, 0)
 		n7 := Simd_f16x4_cvt(n6)
@@ -15238,7 +15175,7 @@ func Simd_p_fxl4(m *Module, s0 int64, s1 int64, s2 int64, s3 int64, s4 int32, p0
 		n1 := Simd_m64_scalar_i32_add(n0, 4)
 		n2 := Simd_m64_scalar_i32_load16_u(m, n1)
 		n3 := Simd_m64_scalar_i32_shl(n2, 2)
-		n4 := Simd_m64_v128_load32_splat(m, n3, 8795968)
+		n4 := Simd_m64_v128_load32_splat(m, n3, 8796032)
 		n5 := Simd_m64_scalar_i32_add(s0, s2)
 		n6 := Simd_m64_v128_load16x4_u(m, n5, 0)
 		n7 := Simd_f16x4_cvt(n6)
@@ -15377,7 +15314,7 @@ func Simd_p_fxl5(m *Module, s0 int64, s1 int64, s2 int64, s3 int32, p0, p0h uint
 		n1 := Simd_m64_scalar_i32_add(n0, 6)
 		n2 := Simd_m64_scalar_i32_load16_u(m, n1)
 		n3 := Simd_m64_scalar_i32_shl(n2, 2)
-		n4 := Simd_m64_v128_load32_splat(m, n3, 8795968)
+		n4 := Simd_m64_v128_load32_splat(m, n3, 8796032)
 		n5 := Simd_m64_scalar_i32_add(s0, s2)
 		n6 := Simd_m64_v128_load16x4_u(m, n5, 0)
 		n7 := Simd_f16x4_cvt(n6)
@@ -15509,7 +15446,6 @@ func Simd_p_fxl5(m *Module, s0 int64, s1 int64, s2 int64, s3 int32, p0, p0h uint
 	return out0[0], out0[1], s0, s3
 }
 
-var spinRelaxColdCalls uint32
 var spinAgents int32
 var spinOversubscribed uint32
 
