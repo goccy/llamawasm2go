@@ -46,6 +46,51 @@
       ]
     },
     {
+      "export": "dbg_vec_geglu_erf_f32",
+      "role": "op",
+      "quant": "f32",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_sum_f32",
+      "role": "op",
+      "quant": "f32",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_vec_cvar_f32",
+      "role": "op",
+      "quant": "f32",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_cpu_fp32_to_fp16",
+      "role": "op",
+      "quant": "f16",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_cpu_fp16_to_fp32",
+      "role": "op",
+      "quant": "f16",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
       "export": "dbg_vec_dot_f16",
       "role": "vec_dot",
       "quant": "f16",
@@ -74,6 +119,15 @@
     },
     {
       "export": "dbg_quantize_mat_q8_0_4x8",
+      "role": "quantize_mat",
+      "quant": "q8_0",
+      "arches": [
+        "arm64",
+        "amd64"
+      ]
+    },
+    {
+      "export": "dbg_quantize_mat_q8_0_4x4",
       "role": "quantize_mat",
       "quant": "q8_0",
       "arches": [
